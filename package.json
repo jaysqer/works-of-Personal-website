@@ -1,0 +1,32 @@
+{
+  "name": "works-of-personal-website",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap-sass": "^3.4.1",
+    "gulp": "^3.9.1",
+    "jQuery": "^1.7.4"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-file-include": "^2.1.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-sass": "^4.0.2",
+    "node-sass": "^4.13.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jaysqer/works-of-Personal-website.git"
+  },
+  "bugs": {
+    "url": "https://github.com/jaysqer/works-of-Personal-website/issues"
+  },
+  "homepage": "https://github.com/jaysqer/works-of-Personal-website#readme",
+  "description": ""
+}
