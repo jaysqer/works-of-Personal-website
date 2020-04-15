@@ -1,0 +1,12 @@
+.banner{
+    width: 100%;
+    height: 1080px;
+    background-image: url(../img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.content{
+    height: 3000px;
+}
