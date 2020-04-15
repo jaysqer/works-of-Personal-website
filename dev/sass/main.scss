@@ -1,0 +1,18 @@
+// --- 每一頁都會用到的 ---
+
+// --- reset ---
+@import "./base/reset.scss";
+// --- var ---
+@import "./base/var.scss";
+
+// --- breadCrumb ---
+@import "./modules/breadCrumb.scss";
+// --- btn ---
+@import "./modules/btn.scss";
+
+// --- header ---
+@import "./layout/header.scss";
+// --- banner ---
+@import "./layout/banner.scss";
+// --- footer ---
+@import "./layout/footer.scss";

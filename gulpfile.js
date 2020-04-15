@@ -35,7 +35,7 @@ var web = {
 
 //流程
 gulp.task('concatjs', function () {
-    gulp.src('dev/js/*.js').pipe(gulp.dest('dest/js'));
+    gulp.src(web.js).pipe(gulp.dest('dest/js'));
 });
 
 gulp.task('img', function () {

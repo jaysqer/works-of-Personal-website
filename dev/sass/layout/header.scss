@@ -1,0 +1,53 @@
+@import "./base/var.scss";
+.fullHeader{
+    width: 100%;
+    height: 70px;
+    background-color: rgba(255,255,255,1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
+}
+.navBlock{
+    margin: auto;
+    .logo{}
+    .nav ul li{
+        display: inline-block;
+        margin-right: 30px;
+        position: relative;
+        a{
+            font-size: $fzMiddle / 1.2;
+            font-weight: bold;
+            position: relative;
+            z-index: 2;
+        }
+        & a::after{
+            font-size: $fzInfo;
+            font-weight: normal;
+            width: 80px;
+            margin-left: 2px;
+        }
+        &:nth-child(1) a::after{
+            content:"Collection";
+        }
+        &:nth-child(2) a::after{
+            content:"Services";
+            }
+        &:nth-child(3) a::after{
+            content:"Events";
+        }
+        &:nth-child(4) a::after{
+            content:"About Us";
+        }
+        &:nth-child(5) a::after{
+            content:"Teaching";
+        }
+    }
+}
+.navHover{
+    width: 50px;
+    position: absolute;
+    left: 35px;
+    top: -25px;
+}
