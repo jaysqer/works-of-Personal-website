@@ -24,11 +24,16 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 /* box-sizing*/
 * {
   box-sizing: border-box;
-  color: #676767; }
+  color: #676767;
+  font-weight: 400; }
 
 /* a */
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  display: inline-block; }
+
+img {
+  vertical-align: middle; }
 
 body {
   line-height: 1;
@@ -63,13 +68,118 @@ blockquote, q {
   align-items: center;
   overflow: hidden;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  .fullHeader .hamburger {
+    padding: 15px 15px;
+    display: none;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+    position: absolute;
+    right: 2%;
+    z-index: 10; }
+    .fullHeader .hamburger:hover {
+      opacity: 0.7; }
+    .fullHeader .hamburger.is-active .hamburger-inner,
+    .fullHeader .hamburger.is-active .hamburger-inner::before,
+    .fullHeader .hamburger.is-active .hamburger-inner::after {
+      background-color: #000; }
+    .fullHeader .hamburger.is-active:hover {
+      opacity: 0.7; }
+    .fullHeader .hamburger .hamburger-box {
+      width: 40px;
+      height: 24px;
+      display: inline-block;
+      position: relative; }
+      .fullHeader .hamburger .hamburger-box .hamburger-inner {
+        display: block;
+        top: 50%;
+        margin-top: -2px; }
+        .fullHeader .hamburger .hamburger-box .hamburger-inner::before, .fullHeader .hamburger .hamburger-box .hamburger-inner::after {
+          content: "";
+          display: block; }
+        .fullHeader .hamburger .hamburger-box .hamburger-inner::before {
+          top: -10px; }
+        .fullHeader .hamburger .hamburger-box .hamburger-inner::after {
+          bottom: -10px; }
+    .fullHeader .hamburger .hamburger-inner,
+    .fullHeader .hamburger .hamburger-inner::before,
+    .fullHeader .hamburger .hamburger-inner::after {
+      width: 40px;
+      height: 4px;
+      background-color: #000;
+      border-radius: 4px;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease; }
+  .fullHeader .hamburger--spin .hamburger-inner {
+    transition-duration: 0.22s;
+    transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+    .fullHeader .hamburger--spin .hamburger-inner::before {
+      transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+    .fullHeader .hamburger--spin .hamburger-inner::after {
+      transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .fullHeader .hamburger--spin.is-active .hamburger-inner {
+    transform: rotate(225deg);
+    transition-delay: 0.12s;
+    transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+    .fullHeader .hamburger--spin.is-active .hamburger-inner::before {
+      top: 0;
+      opacity: 0;
+      transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+    .fullHeader .hamburger--spin.is-active .hamburger-inner::after {
+      bottom: 0;
+      transform: rotate(-90deg);
+      transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+  @media all and (max-width: 991px) {
+    .fullHeader {
+      height: 80px; }
+      .fullHeader .navBlock {
+        position: relative; }
+        .fullHeader .navBlock nav {
+          display: none; }
+        .fullHeader .navBlock h1 {
+          display: inline-block;
+          position: absolute;
+          left: 2%; }
+          .fullHeader .navBlock h1 .logo img {
+            width: 90px; }
+        .fullHeader .navBlock .hamburger {
+          display: inline-block; } }
 
 .navBlock {
-  margin: auto; }
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .navBlock h1 {
+    display: none; }
+    .navBlock h1 .logo {
+      margin-right: 40px; }
+      .navBlock h1 .logo img {
+        width: 75px; }
   .navBlock .nav ul li {
     display: inline-block;
     margin-right: 30px;
     position: relative; }
+    .navBlock .nav ul li:last-child {
+      margin-right: 0px; }
+    .navBlock .nav ul li .navHover {
+      width: 50px;
+      position: absolute;
+      left: 35px;
+      top: 10px;
+      opacity: 0;
+      transition: all .8s; }
     .navBlock .nav ul li a {
       font-size: 20px;
       font-weight: bold;
@@ -81,7 +191,7 @@ blockquote, q {
       width: 80px;
       margin-left: 2px; }
     .navBlock .nav ul li:nth-child(1) a::after {
-      content: "Collection"; }
+      content: "Collections"; }
     .navBlock .nav ul li:nth-child(2) a::after {
       content: "Services"; }
     .navBlock .nav ul li:nth-child(3) a::after {
@@ -90,9 +200,46 @@ blockquote, q {
       content: "About Us"; }
     .navBlock .nav ul li:nth-child(5) a::after {
       content: "Teaching"; }
+    .navBlock .nav ul li:hover a {
+      filter: brightness(1.2); }
+    .navBlock .nav ul li:hover .navHover {
+      top: -20px;
+      opacity: 1; }
 
-.navHover {
-  width: 50px;
-  position: absolute;
-  left: 35px;
-  top: -25px; }
+.phoneHeader {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.95);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 5;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: all 1s; }
+  .phoneHeader .navBlock {
+    width: 100%;
+    height: 100%;
+    flex-direction: column; }
+  .phoneHeader h1 {
+    display: block;
+    margin-bottom: 80px; }
+    .phoneHeader h1 .logo img {
+      width: 260px; }
+  .phoneHeader .nav ul {
+    display: flex;
+    flex-direction: column; }
+    .phoneHeader .nav ul li {
+      margin-right: unset;
+      margin-bottom: 40px; }
+      .phoneHeader .nav ul li a {
+        font-size: 24px; }
+      .phoneHeader .nav ul li .navHover {
+        width: 20px;
+        position: unset;
+        opacity: 1; }
+  .phoneHeader.showMenu {
+    opacity: 1;
+    transform: translateY(0%); }

@@ -10,14 +10,21 @@ $fzInfo:16px;
 // fontColor
 $fcNormal:#676767;
 $fcPink:#fef0f0;
+$fcBlue:#a9d8eb;
 
 // backgroundImage
 $bgImage:url("../img/element/");
 
-// box-shadow 
-$slightShadow:0px 2px 4px rgba(0,0,0,.3);
-$mediumShadow:0px 2px 10px rgba(0,0,0,.3);
+// box-shadow
+$titleShadow:1px 1px 2px rgba(0,0,0,.6);
+$fontShadow:0px 1px 2px rgba(0,0,0,.4);  
+$slightShadow:0px 2px 4px rgba(0,0,0,.4);
+$mediumShadow:0px 2px 6px rgba(0,0,0,.4);
 $heavierShadow:0px 4px 15px rgba(0,0,0,.4);
 
 // border-radius
-$radius: 6px;
+$radius: 2px;
+
+// RWD : max-width
+$medium:1023px;
+$small:575px;

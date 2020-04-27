@@ -1,4 +1,6 @@
 @import "./base/var.scss";
+
+// fullScreen header
 .fullHeader{
     width: 100%;
     height: 70px;
@@ -8,14 +10,152 @@
     align-items: center;
     overflow: hidden;
     border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
+// 視窗寬度為 991px 時，顯示漢堡選單
+// hamburger css
+    .hamburger {
+    padding: 15px 15px;
+    display: none;
+    cursor: pointer;
+    transition-property: opacity, filter;
+    transition-duration: 0.15s;
+    transition-timing-function: linear;
+    font: inherit;
+    color: inherit;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+    position: absolute;
+    right: 2%;
+    z-index: 10; 
+    &:hover {
+        opacity: 0.7;
+    }
+    &.is-active{
+        .hamburger-inner,
+        .hamburger-inner::before,
+        .hamburger-inner::after {
+            background-color: #000; 
+        }
+        &:hover {
+            opacity: 0.7; 
+          }
+    }
+    .hamburger-box {
+        width: 40px;
+        height: 24px;
+        display: inline-block;
+        position: relative;
+        .hamburger-inner {
+            display: block;
+            top: 50%;
+            margin-top: -2px;
+            &::before, &::after {
+                content: "";
+                display: block; 
+            }
+            &::before{
+                top: -10px;
+            }
+            &::after {
+                bottom: -10px; 
+            }
+        }
+    }
+    .hamburger-inner,
+    .hamburger-inner::before, 
+    .hamburger-inner::after {
+      width: 40px;
+      height: 4px;
+      background-color: #000;
+      border-radius: 4px;
+      position: absolute;
+      transition-property: transform;
+      transition-duration: 0.15s;
+      transition-timing-function: ease; 
+    }   
+    }
+    .hamburger--spin{
+    .hamburger-inner{ 
+        transition-duration: 0.22s;
+        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+        &::before{
+            transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; 
+        }
+        &::after{
+            transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+        }
+    }
+    &.is-active .hamburger-inner {
+        transform: rotate(225deg);
+        transition-delay: 0.12s;
+        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+        &::before {
+            top: 0;
+            opacity: 0;
+            transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; 
+        }
+        &::after {
+            bottom: 0;
+            transform: rotate(-90deg);
+            transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+        }
+    }
+    }
+    @media all and (max-width:991px) {
+        height: 80px;
+        .navBlock{
+            position: relative;
+            nav{
+                display: none;
+            }
+            h1{
+                display: inline-block;
+                position: absolute;
+                left: 2%;
+                .logo{
+                    img{
+                        width: 90px;
+                    }
+                }
+            }
+            .hamburger{
+                display: inline-block;
+            }
+        }
+    }    
 }
 .navBlock{
+    width: 100%;
     margin: auto;
-    .logo{}
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    h1{
+        display: none;
+        .logo{
+            margin-right: 40px;
+            img{
+                width: 75px;
+            }
+        }
+    }
     .nav ul li{
         display: inline-block;
         margin-right: 30px;
         position: relative;
+        &:last-child{
+            margin-right: 0px;
+        }
+        .navHover{
+            width: 50px;
+            position: absolute;
+            left: 35px;
+            top: 10px;
+            opacity: 0;
+            transition: all .8s;
+        }
         a{
             font-size: $fzMiddle / 1.2;
             font-weight: bold;
@@ -29,7 +169,7 @@
             margin-left: 2px;
         }
         &:nth-child(1) a::after{
-            content:"Collection";
+            content:"Collections";
         }
         &:nth-child(2) a::after{
             content:"Services";
@@ -43,11 +183,63 @@
         &:nth-child(5) a::after{
             content:"Teaching";
         }
+        &:hover{
+            a{
+                filter: brightness(1.2);
+            }
+            .navHover{
+                top: -20px;
+                opacity: 1;
+            }
+        }
     }
 }
-.navHover{
-    width: 50px;
-    position: absolute;
-    left: 35px;
-    top: -25px;
+// hamburger header
+.phoneHeader{
+    width: 100%;
+    height: 100vh;
+    background-color: rgba($color: #ffffff, $alpha:.95);
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 5;
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 1s;
+    .navBlock{
+        width: 100%;
+        height: 100%;
+        flex-direction: column;
+    }
+    h1{
+        display: block;
+        margin-bottom: 80px;
+        .logo{
+            img{
+                width: 260px;
+            }
+        }
+    }
+    .nav ul{
+        display: flex;
+        flex-direction: column;
+        li{
+            margin-right: unset;
+            margin-bottom: 40px;
+            a{
+                font-size: $fzMiddle;
+            }
+            .navHover{
+                width: 20px;
+                position: unset;
+                opacity: 1;
+            }
+        }
+    }
+    &.showMenu{
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }

@@ -1,6 +1,12 @@
+.border {
+  border: 1px solid #bbb; }
+
+.wrapper {
+  background-image: url(../img/element/brickwall.png); }
+
 .banner {
   width: 100%;
-  height: 980px;
+  height: 100vh;
   position: relative;
   background-image: url(../img/banner/bannerIndex01.jpg);
   background-size: cover;
@@ -28,6 +34,318 @@
         font-size: 18px;
         font-weight: bold;
         color: #fef0f0;
-        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
         padding-left: 30px;
         margin-top: 2px; }
+  @media all and (max-width: 991px) {
+    .banner {
+      height: 768px; } }
+  @media all and (max-width: 767px) {
+    .banner {
+      height: 100%;
+      padding-top: 100%;
+      background-attachment: unset; }
+      .banner .webCenterBlock .webNameBlock .logo {
+        width: 120px; }
+      .banner .webCenterBlock .webNameBlock .webName img {
+        width: 300px; } }
+  @media all and (max-width: 575px) {
+    .banner .webCenterBlock .webNameBlock .logo {
+      width: 100px;
+      margin-right: 10px; }
+    .banner .webCenterBlock .webNameBlock .webName img {
+      width: 260px; } }
+  @media all and (max-width: 375px) {
+    .banner {
+      height: 100vh;
+      background-position: -180px center; }
+      .banner .webCenterBlock .webNameBlock {
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px; }
+        .banner .webCenterBlock .webNameBlock .logo {
+          width: 240px;
+          margin: 0;
+          margin-bottom: 60px; }
+        .banner .webCenterBlock .webNameBlock .webName {
+          align-self: flex-end;
+          margin-right: 30px; }
+          .banner .webCenterBlock .webNameBlock .webName img {
+            width: 250px; } }
+
+.content {
+  width: 100%;
+  max-width: 1200px;
+  height: 3000px;
+  margin: auto; }
+  .content .sectionBlock {
+    display: flex;
+    align-items: center;
+    flex-direction: column; }
+    .content .sectionBlock .titleBlock {
+      width: 200px;
+      padding: 20px 0;
+      font-size: 30px;
+      font-weight: bold;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end; }
+      .content .sectionBlock .titleBlock::after {
+        margin-left: 2px;
+        font-size: 24px;
+        font-weight: normal; }
+    .content .sectionBlock:nth-child(2) .titleBlock::after {
+      content: "Collections"; }
+    .content .sectionBlock:nth-child(3) .titleBlock::after {
+      content: "Services"; }
+    .content .sectionBlock:nth-child(4) .titleBlock::after {
+      content: "Events"; }
+    .content .sectionBlock:nth-child(6) .titleBlock::after {
+      content: "About Us"; }
+    .content .sectionBlock .collections .worksOut {
+      display: flex;
+      justify-content: center; }
+      .content .sectionBlock .collections .worksOut:nth-child(1) {
+        align-items: flex-end; }
+    .content .sectionBlock .collections .worksMid {
+      display: flex; }
+      .content .sectionBlock .collections .worksMid:nth-child(1) {
+        flex-direction: column; }
+      .content .sectionBlock .collections .worksMid:nth-child(2) {
+        align-items: flex-start; }
+    .content .sectionBlock .collections .worksIns {
+      display: flex; }
+      .content .sectionBlock .collections .worksIns:nth-child(1) {
+        justify-content: flex-end; }
+      .content .sectionBlock .collections .worksIns:nth-child(2) {
+        justify-content: flex-end;
+        align-items: flex-start; }
+    .content .sectionBlock .collections .worksBlock {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px; }
+      .content .sectionBlock .collections .worksBlock .worksFrame {
+        overflow: hidden;
+        box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4);
+        border-radius: 2px; }
+        .content .sectionBlock .collections .worksBlock .worksFrame img {
+          width: 100%; }
+      .content .sectionBlock .collections .worksBlock .works1 {
+        width: 350px;
+        height: 250px; }
+      .content .sectionBlock .collections .worksBlock .works2 {
+        width: 300px;
+        height: 200px; }
+      .content .sectionBlock .collections .worksBlock .works3 {
+        width: 200px;
+        height: 200px; }
+      .content .sectionBlock .collections .worksBlock .works4 {
+        width: 300px;
+        height: 200px; }
+      .content .sectionBlock .collections .worksBlock .works5 {
+        width: 275px;
+        height: 200px; }
+      .content .sectionBlock .collections .worksBlock .works6 {
+        width: 265px;
+        height: 350px; }
+      .content .sectionBlock .collections .worksBlock .works7 {
+        width: 375px;
+        height: 280px; }
+      .content .sectionBlock .collections .worksBlock .worksContent {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        line-height: 1.5;
+        transition: 1s; }
+        .content .sectionBlock .collections .worksBlock .worksContent .worksTitle, .content .sectionBlock .collections .worksBlock .worksContent .worksText {
+          height: 300px;
+          font-size: 18px;
+          font-weight: bold;
+          color: #fff;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+          transition: 1s;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+        .content .sectionBlock .collections .worksBlock .worksContent .worksTitle {
+          opacity: 1;
+          line-height: 1; }
+        .content .sectionBlock .collections .worksBlock .worksContent .worksText {
+          width: 80%;
+          opacity: 0; }
+      .content .sectionBlock .collections .worksBlock:hover .worksContent {
+        height: 100%;
+        background-color: rgba(254, 235, 227, 0.65); }
+      .content .sectionBlock .collections .worksBlock:hover .worksContent .worksTitle {
+        opacity: 0; }
+      .content .sectionBlock .collections .worksBlock:hover .worksContent .worksText {
+        opacity: 1; }
+    .content .sectionBlock .services {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      position: relative; }
+      .content .sectionBlock .services .servicesPart:nth-child(1) {
+        padding-left: 150px; }
+        .content .sectionBlock .services .servicesPart:nth-child(1) .servicesContent {
+          display: flex;
+          position: relative; }
+          .content .sectionBlock .services .servicesPart:nth-child(1) .servicesContent .servicesImage {
+            width: 500px;
+            height: 500px;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+            border-radius: 50%; }
+          .content .sectionBlock .services .servicesPart:nth-child(1) .servicesContent .coverBlock {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.2);
+            position: absolute; }
+        .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions {
+          padding-bottom: 40px;
+          display: flex;
+          justify-content: center; }
+          .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer; }
+            .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect .selectsImage {
+              width: 120px;
+              height: 120px;
+              border-radius: 50%;
+              overflow: hidden;
+              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+              filter: brightness(0.75); }
+            .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect .servicesTitle {
+              margin-top: 5px;
+              font-size: 16px;
+              font-weight: 400;
+              position: relative;
+              display: flex;
+              justify-content: center; }
+              .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect .servicesTitle::after {
+                content: "Title";
+                font-size: 12px;
+                position: absolute;
+                top: 20px; }
+            .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(1) {
+              transform: translate(-150px, -300px); }
+              .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(1) .servicesTitle::after {
+                content: "Wedding"; }
+            .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(2) {
+              transform: translate(-220px, -135px); }
+              .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(2) .servicesTitle::after {
+                content: "Marrying"; }
+            .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(3) {
+              transform: translate(-220px, -20px); }
+              .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(3) .servicesTitle::after {
+                content: "Partying"; }
+            .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(4) {
+              transform: translate(-205px, 20px); }
+              .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(4) .servicesTitle::after {
+                content: "Opening"; }
+            .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:hover .selectsImage {
+              filter: brightness(1.05); }
+      .content .sectionBlock .services .servicesPart:nth-child(2) {
+        align-self: flex-start;
+        margin: 40px 0; }
+        .content .sectionBlock .services .servicesPart:nth-child(2) .servicesTitles {
+          margin-top: 20px;
+          font-size: 28px;
+          font-weight: bolder;
+          color: #fff;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+          .content .sectionBlock .services .servicesPart:nth-child(2) .servicesTitles .subTitle {
+            font-size: 18px;
+            color: #fff;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+        .content .sectionBlock .services .servicesPart:nth-child(2) .servicesText {
+          width: 350px;
+          height: 350px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: rgba(255, 255, 255, 0.65);
+          border-radius: 50%;
+          transform: translate(-100px, 100px); }
+          .content .sectionBlock .services .servicesPart:nth-child(2) .servicesText p {
+            font-size: 16px;
+            line-height: 1.5; }
+    .content .sectionBlock .events {
+      display: flex; }
+      .content .sectionBlock .events .eventsCard {
+        width: 320px;
+        margin: 0 20px;
+        box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+        border-radius: 6px;
+        overflow: hidden;
+        padding-bottom: 20px;
+        background-color: #fff;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: 1s; }
+        .content .sectionBlock .events .eventsCard:hover {
+          transform: translateY(-6px);
+          box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
+          .content .sectionBlock .events .eventsCard:hover .cardImage img {
+            transform: scale(1.1); }
+          .content .sectionBlock .events .eventsCard:hover .cardImage::after {
+            transform: translateY(0%); }
+        .content .sectionBlock .events .eventsCard .cardImage {
+          height: 300px;
+          position: relative;
+          overflow: hidden;
+          border-radius: 0 0 45% 45%; }
+          .content .sectionBlock .events .eventsCard .cardImage img {
+            width: 100%;
+            transition: transform 1s; }
+          .content .sectionBlock .events .eventsCard .cardImage::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            width: 100%;
+            height: 400px;
+            background-color: #fef0f0;
+            opacity: .6;
+            transform: translateY(65%);
+            transition: transform 1s; }
+        .content .sectionBlock .events .eventsCard .cardContent {
+          margin-top: 10px;
+          line-height: 1.5;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center; }
+          .content .sectionBlock .events .eventsCard .cardContent .cardTitle {
+            width: 100%;
+            padding-bottom: 2px;
+            margin-bottom: 10px;
+            border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+            font-weight: bold;
+            font-size: 24px;
+            text-align: center;
+            line-height: 1.2; }
+            .content .sectionBlock .events .eventsCard .cardContent .cardTitle span {
+              font-weight: normal;
+              font-size: 16px; }
+            .content .sectionBlock .events .eventsCard .cardContent .cardTitle .subTitle {
+              font-size: 18px;
+              margin-left: 5px; }
+            .content .sectionBlock .events .eventsCard .cardContent .cardTitle .eventsDate {
+              display: block;
+              padding-left: 5px; }
+          .content .sectionBlock .events .eventsCard .cardContent .cardText {
+            width: 85%;
+            font-size: 16px; }
