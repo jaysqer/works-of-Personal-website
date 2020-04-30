@@ -1,0 +1,20 @@
+.footer{
+    background-color: $fcBlue;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    P{  
+        width: 100%;
+        box-shadow: $slightShadow;
+        text-align: center;
+        align-self: flex-end;
+        background-color: rgba($color: #fff, $alpha: .8);
+        padding: 10px 0;
+        font-size: $fzSmall;
+        .contactMe{
+            margin: 0 2px;
+            font-size: $fzInfo * .875;
+        }
+    }
+}

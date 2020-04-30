@@ -116,7 +116,7 @@
 .content{
     width: 100%;
     max-width: 1200px;
-    height: 3000px;
+    padding-bottom: 40px;
     margin: auto;
     .sectionBlock{
         display: flex;
@@ -164,8 +164,25 @@
                 content:"About Us";
             }
         }
+        // 廣告強打LatestBanner
+        .latestAds{
+            width: 100%;
+            .adsBlock{
+                width: 100%;
+                max-width: 1200px;
+                height: 320px;
+                overflow: hidden;
+                .adsWholeBlock{
+                    .adsPart{
+                        
+                    }
+                }
+            }
+            .adsControl{}
+        }
         // 作品Collections
         .collections{
+            width: 100%;
             // 外層outside     
             .worksOut{
                 display: flex;
@@ -249,7 +266,7 @@
                     justify-content: center;
                     align-items: center;
                     position: absolute;
-                    line-height: 1.5;
+                    line-height: $lineHeight;
                     transition:1s;
                     .worksTitle,.worksText{
                         height: 300px;
@@ -265,7 +282,6 @@
                     }
                     .worksTitle{
                         opacity: 1;
-                        line-height: 1;
                     }
                     .worksText{
                         width: 80%;
@@ -274,7 +290,7 @@
                 }
                 &:hover .worksContent{
                     height: 100%;
-                    background-color: rgba(254,235,227,.65);
+                    background-color: rgba(254,235,227,.68);
                 }
                 &:hover .worksContent .worksTitle{
                     opacity: 0;
@@ -305,7 +321,7 @@
                         width: 100%;
                         height: 100%;
                         border-radius: 50%;
-                        background-color: rgba($color: #fff, $alpha: .2);
+                        background-color: rgba($color: #fff, $alpha: .15);
                         position: absolute;
                     }
                 }
@@ -338,6 +354,8 @@
                                 font-size: 12px;
                                 position: absolute;
                                 top:20px;
+                                left: 50%;
+                                transform: translateX(-50%);
                             }
                         }
                         &:nth-child(1){
@@ -400,17 +418,20 @@
                     transform: translate(-100px,100px);
                     p{
                         font-size: $fzInfo;
-                        line-height: 1.5;
+                        line-height:$lineHeight;
                     }
                 }
             }
         }
         // 活動Events
         .events{
+            width: 100%;
             display: flex;
+            justify-content: center;
             .eventsCard{
-                width: 320px;
-                margin: 0 20px;
+                width: 295px;
+                height: 400px;
+                margin: 0 30px;
                 box-shadow: 0px 1px 4px rgba(0,0,0,.2);;
                 border-radius: $radius * 3;
                 overflow: hidden;
@@ -432,11 +453,11 @@
                     }
                 }
                 .cardImage{
-                    height: 300px;
+                    height: 65%;
                     position: relative;
+                    z-index:5;
                     overflow: hidden;
                     border-radius: 0 0 45% 45%;
-
                     img{
                         width: 100%;
                         transition: transform 1s;
@@ -447,7 +468,7 @@
                         z-index: 1;
                         left:0;
                         width: 100%;
-                        height: 400px;
+                        height: 120%;
                         background-color: $fcPink;
                         opacity: .6;
                         transform: translateY(65%);
@@ -456,7 +477,7 @@
                 }
                 .cardContent{
                     margin-top: 10px;
-                    line-height: 1.5;
+                    line-height:$lineHeight;
                     position: relative;
                     display: flex;
                     flex-direction: column;
@@ -470,26 +491,158 @@
                         font-weight: bold;
                         font-size: $fzMiddle;
                         text-align: center;
-                        line-height: 1.2;
                         span{
                             font-weight: normal;
-                            font-size: $fzInfo;
+                            font-size: $fzInfo * .75;
                         }
                         .subTitle{
-                            font-size: $fzSmall;
                             margin-left: 5px;
+                            font-size: $fzSmall;
                         }
                         .eventsDate{
                             display: block;
-                            padding-left: 5px;
+                            margin-top: 5px;
                         }
                     }
                     .cardText{
                         width: 85%;
+                        padding: 0 5%;
                         font-size: $fzInfo;
                     }
                 }
             }
+        }
+        // 關於AboutUs
+        .aboutUs{
+            width: 100%;
+            // 副標題
+            .aboutSubTitle{}
+            // InstagramWallBlock
+            .igWallsBlock{
+                display: flex;
+                justify-content: center;
+                .igWallsContent{   
+                    .igWalls{
+                        width: 900px;
+                        height: 450px;
+                        display: flex;
+                        // background-color:#fff;
+                        .igWallsImage{
+                            width: 50%;
+                            height: 50%;
+                            padding: 5px;
+                            transition:.5s;
+                            img{
+                                width: 100%;
+                                box-shadow: $slightShadow;
+                            }
+                            &:hover{
+                                filter: brightness(.8);
+                            }
+                        }
+                    } 
+                    .igWalls:nth-child(1){
+                        .igWallsPart:nth-child(1){
+                            width: 50%;
+                            .igWallsImage{
+                                width: 100%;
+                                height: 100%;
+                            }
+                        }
+                        .igWallsPart:nth-child(2){
+                            display: flex;
+                            flex-wrap: wrap;
+                            width:50%;
+                            .igWallsImage{
+                                width: 50%;
+                            }
+                        }
+                    }
+                    .igWalls:nth-child(2){
+                        height: 275px;
+                        .igWallsImage{
+                            width: 100%;
+                            height: 100%;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+            // 地圖MapBlock
+            .mapInfoBlock{ 
+                display: flex;
+                justify-content: center;
+                .mapInfoPart{
+                    width: 400px;
+                    &:nth-child(1){
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .mapBlock{
+                            width: 350px;
+                            height: 350px;
+                        }
+                    }
+                    &:nth-child(2){
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .mapInfo{
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 5px 0;
+                            line-height: $lineHeight;
+                            // studio工作室商標和名字
+                            .studioLogo{
+                                width: 160px;
+                                img{
+                                    width: 100%;
+                                }
+                            }
+                            .studioName{}
+                            .mapInfoTitle{
+                                margin-bottom: 4px;
+                                color:$fcGold;
+                                font-weight: bold;
+                                text-shadow: $importantFontShadow;
+                                span{
+                                    font-size: $fzInfo * .875;
+                                    color:$fcGold;
+                                    margin-left: 5px;
+                                } 
+                            }
+                            .mapInfoContent{
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+                                align-items: center;
+                            }
+                            &:nth-child(2){
+                                .mapInfoTitle{}
+                            }
+                            &:nth-child(3){
+                                .mapInfoTitle{}
+                                p{
+                                    span{
+                                        font-size: $fzInfo * .875;
+                                        margin:0 2px ;
+                                    }
+                                    .days{
+                                        margin: 0;
+                                    }
+                                }
+                            }
+        
+                        }
+                    }
+            }
+            }
+
         }
 
     }
