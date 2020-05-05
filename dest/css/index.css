@@ -1,6 +1,3 @@
-.border {
-  border: 1px solid #bbb; }
-
 .wrapper {
   background-image: url(../img/element/brickwall.png); }
 
@@ -24,18 +21,19 @@
       position: relative;
       z-index: 2; }
       .banner .webCenterBlock .webNameBlock .logo {
-        width: 150px;
-        margin: 20px 20px 0 0; }
+        width: 320px;
+        transform: translateY(-30px);
+        margin: 0 10px 0 0; }
         .banner .webCenterBlock .webNameBlock .logo img {
           width: 100%; }
       .banner .webCenterBlock .webNameBlock .webName img {
-        width: 360px; }
+        width: 400px; }
       .banner .webCenterBlock .webNameBlock .webName p {
         font-size: 18px;
         font-weight: bold;
-        color: #fef0f0;
+        color: #eee;
         text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
-        padding-left: 30px;
+        padding-left: 45px;
         margin-top: 2px; }
   @media all and (max-width: 991px) {
     .banner {
@@ -46,12 +44,14 @@
       padding-top: 100%;
       background-attachment: unset; }
       .banner .webCenterBlock .webNameBlock .logo {
-        width: 120px; }
+        width: 240px;
+        transform: translateY(-20px); }
       .banner .webCenterBlock .webNameBlock .webName img {
         width: 300px; } }
   @media all and (max-width: 575px) {
     .banner .webCenterBlock .webNameBlock .logo {
-      width: 100px;
+      width: 160px;
+      transform: translateY(0px);
       margin-right: 10px; }
     .banner .webCenterBlock .webNameBlock .webName img {
       width: 260px; } }
@@ -64,9 +64,9 @@
         align-items: center;
         margin-bottom: 20px; }
         .banner .webCenterBlock .webNameBlock .logo {
-          width: 240px;
+          width: 300px;
           margin: 0;
-          margin-bottom: 60px; }
+          margin-bottom: 20px; }
         .banner .webCenterBlock .webNameBlock .webName {
           align-self: flex-end;
           margin-right: 30px; }
@@ -81,34 +81,109 @@
   .content .sectionBlock {
     display: flex;
     align-items: center;
-    flex-direction: column; }
+    flex-direction: column;
+    margin-bottom: 80px; }
     .content .sectionBlock .titleBlock {
       width: 200px;
       padding: 20px 0;
+      margin: 30px 0;
       font-size: 30px;
       font-weight: bold;
       display: flex;
-      justify-content: flex-start;
-      align-items: flex-end; }
+      justify-content: center;
+      align-items: flex-end;
+      position: relative; }
       .content .sectionBlock .titleBlock::after {
         margin-left: 2px;
         font-size: 24px;
         font-weight: normal; }
+      .content .sectionBlock .titleBlock::before {
+        content: "";
+        width: 150%;
+        height: 10px;
+        position: absolute;
+        z-index: 2;
+        bottom: 15px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: -2px 8px 10px rgba(0, 0, 0, 0.25); }
+    .content .sectionBlock:nth-child(1) .titleBlock::after {
+      content: "LatestAds"; }
     .content .sectionBlock:nth-child(2) .titleBlock::after {
       content: "Collections"; }
     .content .sectionBlock:nth-child(3) .titleBlock::after {
       content: "Services"; }
     .content .sectionBlock:nth-child(4) .titleBlock::after {
       content: "Events"; }
+    .content .sectionBlock:nth-child(5) .titleBlock::after {
+      content: "Teaching"; }
     .content .sectionBlock:nth-child(6) .titleBlock::after {
       content: "About Us"; }
     .content .sectionBlock .latestAds {
-      width: 100%; }
+      width: 100%;
+      position: relative; }
       .content .sectionBlock .latestAds .adsBlock {
         width: 100%;
         max-width: 1200px;
-        height: 320px;
+        height: 360px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
         overflow: hidden; }
+        .content .sectionBlock .latestAds .adsBlock .adsWholeBlock {
+          width: 300%;
+          display: flex; }
+          .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart {
+            width: 34%;
+            position: relative; }
+            .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart img {
+              width: 100%; }
+            .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent {
+              margin: 4% 0 0 10%;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              font-weight: bold;
+              text-align: center;
+              position: absolute;
+              top: 0;
+              left: 0; }
+              .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent .adsTitle {
+                font-size: 30px;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+                .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent .adsTitle p {
+                  color: white; }
+              .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent .adsText {
+                margin: 20px 0 20px 0;
+                font-size: 18px;
+                text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+                line-height: 1.5; }
+                .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent .adsText p {
+                  color: white; }
+      .content .sectionBlock .latestAds .adsControlsBlock {
+        background-color: rgba(255, 255, 255, 0.8);
+        border-radius: 50% 50% 0 0;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: 0; }
+        .content .sectionBlock .latestAds .adsControlsBlock .adsControls {
+          margin: 5px 0;
+          display: flex;
+          justify-content: center;
+          align-items: center; }
+          .content .sectionBlock .latestAds .adsControlsBlock .adsControls .controlPart {
+            background-color: #888;
+            width: 12px;
+            height: 12px;
+            margin-right: 5px;
+            border-radius: 50%;
+            cursor: pointer; }
+            .content .sectionBlock .latestAds .adsControlsBlock .adsControls .controlPart:last-child {
+              margin-right: 0px; }
+            .content .sectionBlock .latestAds .adsControlsBlock .adsControls .controlPart:hover {
+              background-color: #aaa; }
     .content .sectionBlock .collections {
       width: 100%; }
       .content .sectionBlock .collections .worksOut {
@@ -170,7 +245,7 @@
           justify-content: center;
           align-items: center;
           position: absolute;
-          line-height: 1.3;
+          line-height: 1.5;
           transition: 1s; }
           .content .sectionBlock .collections .worksBlock .worksContent .worksTitle, .content .sectionBlock .collections .worksBlock .worksContent .worksText {
             height: 300px;
@@ -188,13 +263,35 @@
           .content .sectionBlock .collections .worksBlock .worksContent .worksText {
             width: 80%;
             opacity: 0; }
+          .content .sectionBlock .collections .worksBlock .worksContent::before, .content .sectionBlock .collections .worksBlock .worksContent::after {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            top: 12px;
+            right: 12px;
+            bottom: 12px;
+            left: 12px;
+            opacity: 1;
+            transition: opacity 1s,transform 1s;
+            border-radius: 2px; }
+          .content .sectionBlock .collections .worksBlock .worksContent::before {
+            border-top: 4px solid white;
+            border-bottom: 4px solid white;
+            transform: scale(0, 1); }
+          .content .sectionBlock .collections .worksBlock .worksContent::after {
+            border-right: 4px solid white;
+            border-left: 4px solid white;
+            transform: scale(1, 0); }
         .content .sectionBlock .collections .worksBlock:hover .worksContent {
           height: 100%;
           background-color: rgba(254, 235, 227, 0.68); }
-        .content .sectionBlock .collections .worksBlock:hover .worksContent .worksTitle {
-          opacity: 0; }
-        .content .sectionBlock .collections .worksBlock:hover .worksContent .worksText {
-          opacity: 1; }
+          .content .sectionBlock .collections .worksBlock:hover .worksContent .worksTitle {
+            opacity: 0; }
+          .content .sectionBlock .collections .worksBlock:hover .worksContent .worksText {
+            opacity: 1; }
+          .content .sectionBlock .collections .worksBlock:hover .worksContent::before, .content .sectionBlock .collections .worksBlock:hover .worksContent::after {
+            opacity: .8;
+            transform: scale(1); }
     .content .sectionBlock .services {
       width: 100%;
       display: flex;
@@ -231,7 +328,8 @@
               border-radius: 50%;
               overflow: hidden;
               box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
-              filter: brightness(0.75); }
+              filter: brightness(0.75);
+              transition: .25s; }
             .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect .servicesTitle {
               margin-top: 5px;
               font-size: 16px;
@@ -259,7 +357,7 @@
               .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(3) .servicesTitle::after {
                 content: "Partying"; }
             .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(4) {
-              transform: translate(-205px, 20px); }
+              transform: translate(-185px, 25px); }
               .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(4) .servicesTitle::after {
                 content: "Opening"; }
             .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:hover .selectsImage {
@@ -267,36 +365,48 @@
       .content .sectionBlock .services .servicesPart:nth-child(2) {
         align-self: flex-start;
         margin: 40px 0; }
-        .content .sectionBlock .services .servicesPart:nth-child(2) .servicesTitles {
+        .content .sectionBlock .services .servicesPart:nth-child(2) .servicesSubTitle {
           margin-top: 20px;
           font-size: 28px;
           font-weight: bolder;
-          color: #fff;
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
-          .content .sectionBlock .services .servicesPart:nth-child(2) .servicesTitles .subTitle {
+          color: #c0a79a;
+          text-shadow: 0px 1px 2px white; }
+          .content .sectionBlock .services .servicesPart:nth-child(2) .servicesSubTitle .subTitle {
             font-size: 18px;
-            color: #fff;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+            color: #c0a79a;
+            text-shadow: 0px 1px 2px white; }
         .content .sectionBlock .services .servicesPart:nth-child(2) .servicesText {
           width: 350px;
           height: 350px;
           display: flex;
+          flex-direction: column;
           justify-content: center;
           align-items: center;
+          position: relative;
           background-color: rgba(255, 255, 255, 0.65);
           border-radius: 50%;
           transform: translate(-100px, 100px); }
+          .content .sectionBlock .services .servicesPart:nth-child(2) .servicesText::before {
+            content: "";
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.8);
+            position: absolute; }
           .content .sectionBlock .services .servicesPart:nth-child(2) .servicesText p {
             font-size: 16px;
-            line-height: 1.3; }
+            line-height: 1.5;
+            margin-bottom: 30px;
+            z-index: 2; }
     .content .sectionBlock .events {
       width: 100%;
       display: flex;
-      justify-content: center; }
+      justify-content: center;
+      margin-bottom: 60px; }
       .content .sectionBlock .events .eventsCard {
         width: 295px;
         height: 400px;
-        margin: 0 30px;
+        margin: 0 40px;
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
         border-radius: 6px;
         overflow: hidden;
@@ -330,13 +440,13 @@
             left: 0;
             width: 100%;
             height: 120%;
-            background-color: #fef0f0;
-            opacity: .6;
+            background-color: rgba(254, 235, 227, 0.68);
+            opacity: .8;
             transform: translateY(65%);
             transition: transform 1s; }
         .content .sectionBlock .events .eventsCard .cardContent {
           margin-top: 10px;
-          line-height: 1.3;
+          line-height: 1.5;
           position: relative;
           display: flex;
           flex-direction: column;
@@ -363,8 +473,90 @@
             width: 85%;
             padding: 0 5%;
             font-size: 16px; }
+    .content .sectionBlock .teachAds {
+      width: 100%;
+      position: relative; }
+      .content .sectionBlock .teachAds::before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        box-shadow: inset 0px 15px 30px -10px rgba(0, 0, 0, 0.65); }
+      .content .sectionBlock .teachAds .teachAdsBgImage {
+        width: 100%;
+        height: 450px;
+        background-image: url(../img/index/teachAds/teachAdsBgIMage.jpg);
+        background-size: contain;
+        background-attachment: fixed; }
+      .content .sectionBlock .teachAds .teachAdsContent {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        line-height: 1.5;
+        text-align: center; }
+        .content .sectionBlock .teachAds .teachAdsContent p {
+          color: #fff;
+          font-size: 18px;
+          font-weight: bold;
+          text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4); }
+      .content .sectionBlock .teachAds .teachAdsBlock {
+        width: 100%;
+        display: flex;
+        position: absolute;
+        bottom: 0;
+        z-index: 3; }
+        .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart {
+          width: 50%;
+          height: 200px;
+          position: relative;
+          overflow: hidden; }
+          .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 1;
+            cursor: pointer; }
+            .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle p {
+              font-size: 28px;
+              font-weight: bold;
+              color: #fff; }
+              .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle p span {
+                font-size: 18px;
+                color: #fff;
+                margin-left: 2px; }
+            .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle::before {
+              content: '';
+              width: 95%;
+              height: 90%;
+              position: absolute;
+              border: 4px solid rgba(255, 255, 255, 0.6); }
+          .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart img {
+            width: 100%;
+            filter: brightness(0.9);
+            transition: .25s; }
+          .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart:hover img {
+            filter: brightness(1); }
     .content .sectionBlock .aboutUs {
       width: 100%; }
+      .content .sectionBlock .aboutUs .aboutSubTitle {
+        width: 900px;
+        padding: 20px 0;
+        margin: auto;
+        font-weight: bold;
+        text-shadow: 0px 1px 2px white;
+        text-align: center; }
+        .content .sectionBlock .aboutUs .aboutSubTitle p {
+          font-size: 24px;
+          color: #c0a79a; }
+          .content .sectionBlock .aboutUs .aboutSubTitle p span {
+            font-size: 18px;
+            color: #c0a79a; }
       .content .sectionBlock .aboutUs .igWallsBlock {
         display: flex;
         justify-content: center; }
@@ -402,13 +594,17 @@
               width: 100%; }
       .content .sectionBlock .aboutUs .mapInfoBlock {
         display: flex;
-        justify-content: center; }
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.6); }
         .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart {
-          width: 400px; }
+          width: 50%;
+          padding: 20px;
+          border: 2px solid rgba(0, 0, 0, 0.1); }
           .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(1) {
             display: flex;
             justify-content: center;
-            align-items: center; }
+            align-items: center;
+            border-right: 0px; }
             .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(1) .mapBlock {
               width: 350px;
               height: 350px; }
@@ -423,16 +619,26 @@
               justify-content: center;
               align-items: center;
               margin: 5px 0;
-              line-height: 1.3; }
+              line-height: 1.5; }
               .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(2) .mapInfo .studioLogo {
-                width: 160px; }
+                width: 200px; }
                 .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(2) .mapInfo .studioLogo img {
                   width: 100%; }
+              .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(2) .mapInfo .studioName {
+                width: 180px;
+                transform: translate(15px, -6px); }
+                .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(2) .mapInfo .studioName img {
+                  width: 100%; }
+                .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(2) .mapInfo .studioName p {
+                  font-weight: bold;
+                  text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4);
+                  padding-left: 20px;
+                  line-height: 1; }
               .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(2) .mapInfo .mapInfoTitle {
                 margin-bottom: 4px;
                 color: #c0a79a;
                 font-weight: bold;
-                text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.4); }
+                text-shadow: 0px 1px 2px white; }
                 .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(2) .mapInfo .mapInfoTitle span {
                   font-size: 14px;
                   color: #c0a79a;
