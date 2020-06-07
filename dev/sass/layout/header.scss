@@ -3,195 +3,128 @@
 // fullScreen header
 .fullHeader{
     width: 100%;
-    height: 70px;
+    min-height: 70px;
     background-color: rgba(255,255,255,.95);
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
+    z-index: 10;
     overflow: hidden;
-    box-shadow: 0px -20px 20px rgba($color: #000000, $alpha: .2);
+    box-shadow: 0 2px 15px rgba($color: #000000, $alpha: .2);
+    border-top: 1px solid rgba($color: #000000, $alpha: .4);
     border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
-// 視窗寬度為 991px 時，顯示漢堡選單
-// hamburger css
-    .hamburger {
-    padding: 15px 15px;
-    display: none;
-    cursor: pointer;
-    transition-property: opacity, filter;
-    transition-duration: 0.15s;
-    transition-timing-function: linear;
-    font: inherit;
-    color: inherit;
-    text-transform: none;
-    background-color: transparent;
-    border: 0;
-    margin: 0;
-    overflow: visible;
-    position: absolute;
-    right: 2%;
-    z-index: 10; 
-    &:hover {
-        opacity: 0.7;
+    &::before{
+        content: "";
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        box-shadow: 0px -20px 10px rgba($color: #000000, $alpha: .2);
     }
-    &.is-active{
-        .hamburger-inner,
-        .hamburger-inner::before,
-        .hamburger-inner::after {
-            background-color: #000; 
-        }
-        &:hover {
-            opacity: 0.7; 
-          }
-    }
-    .hamburger-box {
-        width: 40px;
-        height: 24px;
-        display: inline-block;
-        position: relative;
-        .hamburger-inner {
-            display: block;
-            top: 50%;
-            margin-top: -2px;
-            &::before, &::after {
-                content: "";
-                display: block; 
-            }
-            &::before{
-                top: -10px;
-            }
-            &::after {
-                bottom: -10px; 
-            }
-        }
-    }
-    .hamburger-inner,
-    .hamburger-inner::before, 
-    .hamburger-inner::after {
-      width: 40px;
-      height: 4px;
-      background-color: #000;
-      border-radius: 4px;
-      position: absolute;
-      transition-property: transform;
-      transition-duration: 0.15s;
-      transition-timing-function: ease; 
-    }   
-    }
-    .hamburger--spin{
-    .hamburger-inner{ 
-        transition-duration: 0.22s;
-        transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
-        &::before{
-            transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; 
-        }
-        &::after{
-            transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
-        }
-    }
-    &.is-active .hamburger-inner {
-        transform: rotate(225deg);
-        transition-delay: 0.12s;
-        transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
-        &::before {
-            top: 0;
+    // fullHeader nav
+    .navBlock{
+        justify-content: space-between;
+        transform: translateX(-215px);
+        transition: transform 1s;
+        h1 {
             opacity: 0;
-            transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; 
-        }
-        &::after {
-            bottom: 0;
-            transform: rotate(-90deg);
-            transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+            visibility: hidden;
+            transition: opacity 1s;
         }
     }
-    }
+    // 視窗寬度為 991px fullHeader消失
     @media all and (max-width:991px) {
-        height: 80px;
-        .navBlock{
-            position: relative;
-            nav{
-                display: none;
-            }
-            h1{
-                display: inline-block;
-                position: absolute;
-                left: 2%;
-                .logo{
-                    img{
-                        width: 90px;
-                    }
-                }
-            }
-            .hamburger{
-                display: inline-block;
-            }
-        }
+       display: none;
     }    
 }
+// nav 導覽列共通設定
 .navBlock{
     width: 100%;
+    max-width: 1200px;
     margin: auto;
     display: flex;
-    justify-content: center;
     align-items: center;
-    h1{
-        display: none;
-        .logo{
-            margin-right: 40px;
-            img{
-                width: 100px;
+    z-index: 5;
+    h1 {
+        a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+            .logo{
+                width: 95px;
+                img{
+                    width: 100%;
+                }
+            }
+            .webName{
+                width: 120px;
+                img{
+                    width: 100%;
+                }
             }
         }
     }
-    .nav ul li{
-        display: inline-block;
-        margin-right: 30px;
-        position: relative;
-        &:last-child{
-            margin-right: 0px;
-        }
-        .navHover{
-            width: 50px;
-            position: absolute;
-            left: 35px;
-            top: 10px;
-            opacity: 0;
-            transition: all .8s;
-        }
-        a{
-            font-size: $fzMiddle / 1.2;
-            // font-weight: bold;
+    .nav{
+        margin-right: 60px;
+        ul li{
+            display: inline-block;
+            margin-right: 30px;
             position: relative;
-            z-index: 2;
-        }
-        & a::after{
-            font-size: $fzInfo;
-            font-weight: normal;
-            width: 80px;
-            margin-left: 2px;
-        }
-        &:nth-child(1) a::after{
-            content:"Collections";
-        }
-        &:nth-child(2) a::after{
-            content:"Services";
-            }
-        &:nth-child(3) a::after{
-            content:"Events";
-        }
-        &:nth-child(4) a::after{
-            content:"About Us";
-        }
-        &:nth-child(5) a::after{
-            content:"Teaching";
-        }
-        &:hover{
-            a{
-                font-weight: bold;
-                color: #555;
+            &:last-child{
+                margin-right: 0px;
             }
             .navHover{
+                width: 50px;
+                position: absolute;
+                left: 35px;
+                top: 10px;
+                opacity: 0;
+                transition: all .8s;
+            }
+            a{
+                font-size: $fzMiddle / 1.2;
+                position: relative;
+                z-index: 2;
+            }
+            & a::after{
+                font-size: $fzInfo;
+                font-weight: normal;
+                width: 80px;
+                margin-left: 2px;
+            }
+            &:nth-child(1) a::after{
+                content:"Collections";
+            }
+            &:nth-child(2) a::after{
+                content:"Services";
+                }
+            &:nth-child(3) a::after{
+                content:"Events";
+            }
+            &:nth-child(4) a::after{
+                content:"About Us";
+            }
+            &:nth-child(5) a::after{
+                content:"Teaching";
+            }
+            &:hover{
+                a{
+                    font-weight: bold;
+                    color: #555;
+                }
+                .navHover{
+                    top: -20px;
+                    opacity: 1;
+                }
+            }
+            .navDisplay{
                 top: -20px;
                 opacity: 1;
+            }
+            .fontBold{
+                font-weight: bold; 
+                color: #555;
             }
         }
     }
@@ -199,49 +132,164 @@
 // hamburger header
 .phoneHeader{
     width: 100%;
-    height: 100vh;
-    background-color: rgba($color: #ffffff, $alpha:.95);
+    min-height: 70px;
+    display: none;
     position: fixed;
     top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 5;
-    opacity: 0;
-    transform: translateY(-100%);
-    transition: all 1s;
+    z-index: 10;
+    background-color: rgba(255,255,255,.95);
+    box-shadow: 0 2px 15px rgba($color: #000000, $alpha: .2);
+    border-top: 1px solid rgba($color: #000000, $alpha: .4);
+    border-bottom: 1px solid rgba($color: #000000, $alpha: .2);
     .navBlock{
-        width: 100%;
-        height: 100%;
-        flex-direction: column;
-    }
-    h1{
-        display: block;
-        margin-bottom: 80px;
-        .logo{
-            img{
-                width: 300px;
-            }
+        h1{
+            margin-left: 10px;
         }
-    }
-    .nav ul{
-        display: flex;
-        flex-direction: column;
-        li{
-            margin-right: unset;
-            margin-bottom: 40px;
-            a{
-                font-size: $fzMiddle;
+        .nav {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            z-index: 15;
+            background-color: rgba($color: #ffffff, $alpha:.95);
+            opacity: 0;
+            transform: translateY(-100%);
+            transition: all 1s;
+            ul{
+            display: flex;
+            flex-direction: column;
+                li{
+                    margin-right: unset;
+                    margin-bottom: 35px;
+                    a{
+                        font-size: $fzMiddle;
+                    }
+                    .navHover{
+                        width: 20px;
+                        position: unset;
+                        opacity: 1;
+                    }
+                }
             }
-            .navHover{
-                width: 20px;
-                position: unset;
+            &.showMenu{
                 opacity: 1;
+                transform: translateY(0%);
+            }
+            h1{
+                margin-bottom: 45px;
+                a{
+                    .logo{
+                        width: 260px;
+                    }
+                }
+            }
+        }
+
+        // hamburger css
+        .hamburger {
+            padding: 15px 15px;
+            display: block;
+            cursor: pointer;
+            transition-property: opacity, filter;
+            transition-duration: 0.15s;
+            transition-timing-function: linear;
+            font: inherit;
+            color: inherit;
+            text-transform: none;
+            background-color: transparent;
+            border: 0;
+            margin: 0;
+            overflow: visible;
+            position: absolute;
+            right: 2%;
+            z-index: 20; 
+            &:hover {
+                opacity: 0.7;
+            }
+            &.is-active{
+                .hamburger-inner,
+                .hamburger-inner::before,
+                .hamburger-inner::after {
+                    background-color: #000; 
+                }
+                &:hover {
+                    opacity: 0.7; 
+                  }
+            }
+            .hamburger-box {
+                width: 40px;
+                height: 24px;
+                display: inline-block;
+                position: relative;
+                .hamburger-inner {
+                    display: block;
+                    top: 50%;
+                    margin-top: -2px;
+                    &::before, &::after {
+                        content: "";
+                        display: block; 
+                    }
+                    &::before{
+                        top: -10px;
+                    }
+                    &::after {
+                        bottom: -10px; 
+                    }
+                }
+            }
+            .hamburger-inner,
+            .hamburger-inner::before, 
+            .hamburger-inner::after {
+              width: 40px;
+              height: 4px;
+              background-color: #000;
+              border-radius: 4px;
+              position: absolute;
+              transition-property: transform;
+              transition-duration: 0.15s;
+              transition-timing-function: ease; 
+            }   
+            }
+        .hamburger--spin{
+            .hamburger-inner{ 
+                transition-duration: 0.22s;
+                transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+                &::before{
+                    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; 
+                }
+                &::after{
+                    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); 
+                }
+            }
+            &.is-active .hamburger-inner {
+                transform: rotate(225deg);
+                transition-delay: 0.12s;
+                transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); 
+                &::before {
+                    top: 0;
+                    opacity: 0;
+                    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; 
+                }
+                &::after {
+                    bottom: 0;
+                    transform: rotate(-90deg);
+                    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); 
+                }
             }
         }
     }
-    &.showMenu{
-        opacity: 1;
-        transform: translateY(0%);
+    // 視窗寬度為 991px phoneHeader出現
+    @media all and (max-width:991px) {
+        display: flex;
+     }
+    @media all and (max-width: 375px ) {
+
     }
 }

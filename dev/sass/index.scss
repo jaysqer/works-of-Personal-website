@@ -1,14 +1,6 @@
 @import "./base/var.scss";
 
-// referenceBorder
-.border{
-    // border: 1px solid #bbb;
-}
 
-// background
-.wrapper{
-    background-image: url(../img/element/brickwall.png);
-}
 // firstScreen
 .banner{
     width: 100%;
@@ -122,76 +114,98 @@
 
 // mainSection
 .content{
+    // background-color: rgba($color: #fff, $alpha: .15);
     width: 100%;
     max-width: 1200px;
-    padding-bottom: 40px;
     margin: auto;
+    margin-top: 40px;
     .sectionBlock{
         display: flex;
         align-items: center;
         flex-direction: column;
         margin-bottom: 80px;
-        .titleBlock{
-            width: 200px;
-            padding: 20px 0 ;
-            margin:30px 0;
-            font-size:  $fzMiddle / 0.8;
-            font-weight: bold;
+        &:first-child{
+            padding-top: 40px;
+            .sectionTitleBlock{
+                .titleFrame_03{
+                    left: -35px;
+                }
+                .balloonsBlock{
+                    right: 15px;
+                }
+            }
+        }
+        &:nth-child(2){
+            .sectionTitleBlock{
+                .titleFrame_03{
+                    left: -50px;
+                }
+                .balloonsBlock{
+                    right: 15px;
+                }
+            }
+        }
+        // sectionTitleBlock 各個部分的標題
+        .sectionTitleBlock{
+            min-width: 165px;
+            padding: 20px 0;
+            margin:30px 0 60px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
-            align-items: flex-end;
+            align-items: center;
             position: relative;
-            &::after{
-                margin-left: 2px;
-                font-size: $fzMiddle;
-                font-weight: normal;
+            .titleBlock{
+                font-weight: bold;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                .mainTitle{
+                    color: #666;
+                    font-size: $fzLarge;
+                    margin-right: 5px;
+                }
+                .subTitle{
+                    font-size: $fzMiddle;
+                }
             }
-            &::before{
-                content: "";
-                width: 150%;
-                height: 10px;
+            .titleFrame_03{
+                width: 150px;
                 position: absolute;
-                z-index: 2;
-                bottom: 15px;
-                left: 50%;
-                transform: translateX(-50%);
-                box-shadow: -2px 8px 10px rgba(0,0,0,.25);;
+                bottom: -6px;
+                left: -70px;
+                // transform: translate(-50px,-15px);
             }
-        }
-        &:nth-child(1) .titleBlock{
-            &::after{
-                content:"LatestAds";
+            .balloonsBlock{
+                display: flex;
+                align-items: center;
+                position: absolute;
+                bottom: -15px;
+                right: 15px;
+                .ballBlue{
+                    width: 18px;
+                }
+                .ballPink{
+                    width: 20px;
+                    transform: translateY(-5px);
+                }
+                .ballYellow{
+                    width: 22px;
+                }
             }
-        }
-        &:nth-child(2) .titleBlock{
-            &::after{
-                content:"Collections";
-            }
-        }
-        &:nth-child(3) .titleBlock{
-            &::after{
-                content:"Services";
-            }
-        }
-        &:nth-child(4) .titleBlock{
-            &::after{
-                content:"Events";
-            }
-        }
-        &:nth-child(5) .titleBlock{
-            &::after{
-                content:"Teaching";
-            }
-        }
-        &:nth-child(6) .titleBlock{
-            &::after{
-                content:"About Us";
+            .titleFrame_02{
+                width: 70px;
+                position: absolute;
+                top: 20px;
+                right: -65px;
+                // transform: translate(110px,-90px);
             }
         }
         // 廣告強打LatestBanner
         .latestAds{
             width: 100%;
             position: relative;
+            overflow: hidden;
             .adsBlock{
                 width: 100%;
                 max-width: 1200px;
@@ -201,6 +215,7 @@
                 .adsWholeBlock{
                     width: 300%;
                     display: flex;
+                    position: relative;
                     .adsPart{
                         width:34%;
                         position: relative;
@@ -226,7 +241,7 @@
                                 }
                             }
                             .adsText{
-                                margin:20px 0 20px 0;
+                                margin:15px 0 45px 0;
                                 font-size: $fzSmall;
                                 text-shadow: $fontShadow;
                                 line-height: $lineHeight;
@@ -239,10 +254,9 @@
                 }
             }
             .adsControlsBlock{
-                background-color: rgba($color: #fff, $alpha: .8);
-                border-radius: 50% 50% 0 0;
                 width: 100%;
                 height: 80px;
+                background-image: url(../img/index/latestAds/latestAdBgImage.png);
                 display: flex;
                 justify-content: center;
                 align-items: center;
@@ -255,8 +269,8 @@
                     align-items: center;
                     .controlPart{
                         background-color: #888;
-                        width: 12px;
-                        height: 12px;
+                        width: 13px;
+                        height: 13px;
                         margin-right:5px;
                         border-radius: 50%;
                         cursor: pointer;
@@ -264,8 +278,11 @@
                             margin-right: 0px;
                         }
                         &:hover{
-                            background-color: #aaa;
+                            background-color: #bbb;
                         }                          
+                    }
+                    .active{
+                        background-color: #bbb;
                     }
 
                 }
@@ -305,11 +322,12 @@
             }
             // 各個works區塊
             .worksBlock{
-                position: relative;
+                margin: 15px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                margin: 15px;
+                position: relative;
+                cursor: pointer;
                 // 作品框worksFrame
                 .worksFrame{
                     overflow: hidden;
@@ -358,90 +376,238 @@
                     align-items: center;
                     position: absolute;
                     line-height: $lineHeight;
-                    transition:1s;
-                    .worksTitle,.worksText{
-                        height: 300px;
-                        font-size: $fzSmall;
-                        font-weight: bold;
-                        color: #fff;
-                        text-shadow: $titleShadow;
-                        transition: 1s;
+                    transition: background-color 1s;
+                    .decorationFrame_01{
+                        width: 150px;
+                        opacity: 0;
                         position: absolute;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                        top: 0;
+                        left: 0;
+                        transition: opacity 1s;
+                    }
+                    .decorationFrame_02{
+                        width: 180px;
+                        opacity: 0;
+                        position: absolute;
+                        bottom: 0;
+                        right: 0;
+                        transition: opacity 1s;
+                    }
+                    .worksTitle,.worksText{
+                        text-align: center;
+                        position: absolute;
+                        transition: 1s;
+                        P{
+                            font-size: $fzSmall;
+                            font-weight: bold;
+                            color: #fff;
+                            text-shadow: $titleShadow;
+                        }
                     }
                     .worksTitle{
                         opacity: 1;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .mainTitle{
+                            margin: 15px 2px 0;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: flex-start;
+                            .collectionFrame_06{
+                                width: 12px;
+                                transform: translateY(-2px);
+                                // opacity: 0;
+                            }
+                        }
+                        .collectionFrame_04,.collectionFrame_05{
+                            width: 35px;
+                            opacity: 0;
+                        }
                     }
                     .worksText{
-                        width: 80%;
                         opacity: 0;
                     }
-                    &::before,&::after{
-                        content: "";
-                        position: absolute;
-                        z-index: 2;
-                        top:12px;
-                        right: 12px;
-                        bottom:12px;
-                        left: 12px;
-                        opacity: 1;
-                        transition: opacity 1s,transform 1s;
-                        border-radius: $radius;
-                    }
-                    &::before{
-                        border-top: 4px solid rgba(255,255,255,1);
-                        border-bottom: 4px solid rgba(255,255,255,1);
-                        transform: scale(0,1);
-                    }
-                    &::after{
-                        border-right:4px solid rgba(255,255,255,1);
-                        border-left: 4px solid rgba(255,255,255,1);
-                        transform: scale(1,0);
-                    }
+                    // &::before{
+                    //     content: "";
+                    //     position: absolute;
+                    //     z-index: 2;
+                    //     top:4px;
+                    //     right: 4px;
+                    //     bottom:4px;
+                    //     left: 4px;
+                    //     border: 6px solid rgba($color: #fff, $alpha: .65);
+                    //     opacity: 0;
+                    //     transition: opacity .5s;
+                    // }
                 }
                 &:hover{
                     .worksContent{
-                        height: 100%;
                         background-color: $fcHover;
+                        .decorationFrame_01, .decorationFrame_02{
+                            opacity: .4;
+                        }
                         .worksTitle{
                             opacity: 0;
                         }
                         .worksText{
                             opacity: 1;
                         }
-                        &::before,&::after{
-                            opacity: .8;
-                            transform: scale(1);
-                        }
+                        // &::before{
+                        //     opacity: 1;
+                        // }
                     }
 
                 } 
             }
         }
+        // 作品燈箱CollectionsLightBox
+        .collectionsLightBoxBlock{
+            width: 100%;
+            height: 110%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            z-index: 15;
+            background-color: rgba($color: #000000, $alpha: .5);
+            transform: translateY(-50px);
+            opacity: 0;
+            visibility: hidden;
+            transition: .5s;
+            .worksLightBoxBlock{
+                min-width: 400px;
+                padding: 5px 10px 45px;
+                border-radius: $radius;
+                display: none;
+                transform: translateY(-10%);
+                box-shadow: $slightShadow;
+                background-color: rgba($color: #fff, $alpha: 1.0);
+                .worksLightBoxPart{
+                    position: relative;
+                    &:nth-child(2){
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        z-index: 2;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+                    // cancel 取消
+                    .cancelBlock{
+                        width: 50px;
+                        height: 50px;
+                        position: absolute;
+                        top: 4px;
+                        right: 10px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        cursor: pointer;
+                        transition: transform .5s;
+                        .line{
+                            width: 95%;
+                            height: 4px;
+                            box-shadow: $exLightShadow;
+                            display: block;
+                            position: absolute;
+                            background-color:rgba($color: #fff, $alpha: 1.0);
+
+                            &:nth-child(1){
+                                transform: rotate(45deg);
+                            }
+                            &:nth-child(2){
+                                transform: rotate(-45deg);
+                            }
+                        }
+                        &:hover{
+                            transform: rotate(90deg);
+                        }
+                    }
+                    .lightBoxImage{
+                        width: 550px;
+                        box-shadow: $slightShadow;
+                        border: 1px solid rgba($color: #000000, $alpha: .15);
+                        img{
+                            width: 100%;
+                        }
+                    }
+                    .lightBoxContent{
+                        width: 90%;
+                        height: 75%;
+                        padding: 15px;
+                        border-radius: $radius;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        transition: background-color .5s;
+                        &:hover{
+                            background-color: rgba($color: #000000, $alpha: .1);
+                        }
+                        .lightBoxTitle{
+                            margin: 5px 0 45px;
+                            padding: 10px 5px;
+                            display: flex;
+                            align-items: center;
+                            img{
+                                width: 15px;
+                            }
+                            .mainTitle{
+                                margin-right: 5px;
+                                font-size: $fzLarge;
+                                font-weight: bold;
+                                text-shadow: $titleShadow;
+                                color: #fff;
+                            }
+                        }
+                        .lightBoxText{
+                            padding: 0px 10px 20px;
+                            p{
+                                font-size: $fzSmall;
+                                font-weight: bold;
+                                text-shadow: $fontShadow;
+                                color: #fff;
+                                line-height: $lineHeight;
+                            }
+                        }
+                    }
+                }
+            }
+        }
         // 服務Services
         .services{
             width: 100%;
+            padding-left: 45px;
             display: flex;
-            justify-content: center;
             position: relative;
             .servicesPart:nth-child(1){
                 padding-left: 150px;
-                .servicesContent{
+                padding-top: 20px;
+                position: relative;
+                .servicesImageBlock{
+                    width: 500px;
+                    height: 500px;
+                    border-radius: 50%;
+                    box-shadow: $slightShadow;
+                    overflow: hidden;
                     display: flex;
                     position: relative;
                     .servicesImage{
-                        width: 500px;
-                        height: 500px;
-                        box-shadow: $slightShadow;
-                        border-radius: 50%;
+                        width: 100%;
                     }
                     .coverBlock{
                         width: 100%;
                         height: 100%;
                         border-radius: 50%;
-                        background-color: rgba($color: #fff, $alpha: .15);
+                        background-color:$imageCover;
                         position: absolute;
                     }
                 }
@@ -449,11 +615,11 @@
                     padding-bottom: 40px;
                     display: flex;
                     justify-content: center;
+                    position: relative;
                     .servicesSelect{
                         display: flex;
                         flex-direction: column;
                         align-items: center;
-                        cursor: pointer;
                         .selectsImage{
                             width: 120px;
                             height: 120px;
@@ -462,6 +628,9 @@
                             box-shadow: $slightShadow;
                             filter: brightness(.75);
                             transition: .25s;
+                        }
+                        .active{
+                            filter: brightness(1.05);
                         }
                         .servicesTitle{
                             margin-top: 5px;
@@ -503,51 +672,76 @@
                                 content: "Opening";
                             }
                         }
-                        &:hover .selectsImage{
-                            filter: brightness(1.05);
-                        }
                     }  
                 }
             }
             .servicesPart:nth-child(2){
                 align-self: flex-start;
                 margin: 40px 0;
-                .servicesSubTitle{
-                    margin-top:20px;
-                    font-size: $fzLarge;
-                    font-weight: bolder;
-                    color: $fcGold;
-                    text-shadow: $importantFontShadow;
-                    .subTitle{
-                        font-size: $fzSmall;
-                        color: $fcGold;
-                        text-shadow: $importantFontShadow;
+                position: relative;
+                .servicesContent{
+                    position: absolute; 
+                    top: 0;
+                    visibility: hidden;
+                    opacity: 0;
+                    transform: translateX(50px);
+                    transition: .5s;
+                    &:nth-child(1){
+                       visibility: visible;
+                       opacity: 1;
+                       transform: translateY(0px);
                     }
-                }
-                .servicesText{
-                    width: 350px;
-                    height: 350px;
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: center;
-                    align-items: center;
-                    position: relative;
-                    background-color: rgba($color: #fff, $alpha: .65);
-                    border-radius: 50%;
-                    transform: translate(-100px,100px);
-                    &::before{
-                        content: "";
-                        width: 90%;
-                        height: 90%;
+                    .servicesSubTitle{
+                        width: 150px;
+                        margin-top:20px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        transform: translateY(60px);
+                        .mainTitle{
+                            font-size: $fzMiddle;
+                            font-weight: bold;
+                            color: $fcGold;
+                            text-shadow: $importantFontShadow;
+                            margin-bottom: 5px;
+                        }
+                        .subTitle{
+                            font-size: $fzInfo;
+                            font-weight: bold;
+                            color: #fff;
+                            text-shadow: $titleShadow;
+                        }
+                    }
+                    .servicesTextBlock{
+                        width: 350px;
+                        height: 350px;
                         border-radius: 50%;
-                        background-color: rgba($color: #fff, $alpha: .8);
-                        position: absolute;
-                    }
-                    p{
-                        font-size: $fzInfo;
-                        line-height:$lineHeight;
-                        margin-bottom: 30px;
-                        z-index: 2;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        position: relative;
+                        box-shadow: $exLightShadow;
+                        background-color: rgba($color: #fff, $alpha: .65);
+                        transform: translate(-100px,100px);
+                        &::before{
+                            content: "";
+                            width: 90%;
+                            height: 90%;
+                            border-radius: 50%;
+                            box-shadow: $exLightShadow;
+                            background-color: rgba($color: #fff, $alpha: .65);
+                            position: absolute;
+                            right: 0;
+                        }
+                        .servicesText{
+                            z-index: 2;
+                            margin-bottom: 30px;
+                            p{
+                                font-size: $fzInfo;
+                                line-height:$lineHeight;
+                            }
+                        }
                     }
                 }
             }
@@ -557,87 +751,93 @@
             width: 100%;
             display: flex;
             justify-content: center;
-            margin-bottom: 60px;
-            .eventsCard{
-                width: 295px;
-                height: 400px;
-                margin: 0 40px;
-                box-shadow: 0px 1px 4px rgba(0,0,0,.2);;
-                border-radius: $radius * 3;
-                overflow: hidden;
-                padding-bottom: 20px;
-                background-color: #fff;
+            position: relative;
+            .eventsCardBlock{
                 display: flex;
-                flex-direction: column;
                 justify-content: center;
-                align-items: center;
-                transition: 1s;
-                &:hover{
-                    transform: translateY(-6px);
-                    box-shadow: $heavierShadow;
-                    .cardImage img{
-                        transform: scale(1.1);
-                    }
-                    .cardImage::after{
-                        transform: translateY(0%);
-                    }
-                }
-                .cardImage{
-                    height: 65%;
-                    position: relative;
-                    z-index:5;
-                    overflow: hidden;
-                    border-radius: 0 0 45% 45%;
-                    img{
-                        width: 100%;
-                        transition: transform 1s;
-                    }
-                    &::after{
-                        content: "";
-                        position: absolute;
-                        z-index: 1;
-                        left:0;
-                        width: 100%;
-                        height: 120%;
-                        background-color: $fcHover;
-                        opacity: .8;
-                        transform: translateY(65%);
-                        transition: transform 1s;
-                    }
-                }
-                .cardContent{
-                    margin-top: 10px;
-                    line-height:$lineHeight;
-                    position: relative;
+                margin-bottom: 60px;
+                .eventsCard{
+                    width: 295px;
+                    height: 400px;
+                    margin: 0 40px;
+                    padding-bottom: 20px;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
                     align-items: center;
-                    .cardTitle{
-                        width: 100%;
-                        padding-bottom: 2px;
-                        margin-bottom: 10px;
-                        border-bottom: 2px solid rgba(0, 0, 0, .1);
-                        font-weight: bold;
-                        font-size: $fzMiddle;
-                        text-align: center;
-                        span{
-                            font-weight: normal;
-                            font-size: $fzInfo * .75;
+                    box-shadow:$slightShadow;
+                    border-radius: $radius;
+                    overflow: hidden;
+                    background-color: #fff;
+                    cursor: pointer;
+                    transition: 1s;
+                    &:hover{
+                        transform: translateY(-6px);
+                        box-shadow: $heavierShadow;
+                        .cardImage img{
+                            transform: scale(1.1);
                         }
-                        .subTitle{
-                            margin-left: 5px;
-                            font-size: $fzSmall;
-                        }
-                        .eventsDate{
-                            display: block;
-                            margin-top: 5px;
+                        .cardImage::after{
+                            transform: translateY(0%);
                         }
                     }
-                    .cardText{
-                        width: 85%;
-                        padding: 0 5%;
-                        font-size: $fzInfo;
+                    .cardImage{
+                        height: 65%;
+                        position: relative;
+                        z-index:5;
+                        overflow: hidden;
+                        border-radius: 0 0 45% 45%;
+                        img{
+                            width: 100%;
+                            transition: transform 1s;
+                        }
+                        &::after{
+                            content: "";
+                            position: absolute;
+                            z-index: 1;
+                            left:0;
+                            width: 100%;
+                            height: 120%;
+                            background-color: $fcHover;
+                            opacity: .8;
+                            transform: translateY(100%);
+                            transition: transform 1s;
+                        }
+                    }
+                    .cardContent{
+                        margin-top: 10px;
+                        line-height:$lineHeight;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .cardTitle{
+                            width: 100%;
+                            padding-bottom: 2px;
+                            margin-bottom: 10px;
+                            border-bottom: 2px solid rgba(0, 0, 0, .1);
+                            font-weight: bold;
+                            font-size: $fzMiddle;
+                            text-align: center;
+                            span{
+                                font-weight: normal;
+                                font-size: $fzInfo * .75;
+                            }
+                            .subTitle{
+                                margin-left: 5px;
+                                font-size: $fzSmall;
+                            }
+                            .eventsDate{
+                                display: block;
+                                margin-top: 5px;
+                            }
+                        }
+                        .cardText{
+                            width: 85%;
+                            padding: 0 5%;
+                            font-size: $fzInfo;
+                        }
                     }
                 }
             }
@@ -650,18 +850,17 @@
                 content: "";
                 width: 100%;
                 height: 100%;
+                box-shadow: inset 0px 15px 30px -10px rgba($color: #000000, $alpha: .65);
                 position: absolute;
                 top: 0;
                 z-index: 2;
-                box-shadow: inset 0px 15px 30px -10px rgba($color: #000000, $alpha: .65);
             }
             .teachAdsBgImage{
                 width: 100%;
                 height: 450px;
                 background-image: url(../img/index/teachAds/teachAdsBgIMage.jpg);
-                background-size: contain;
+                background-size: cover;
                 background-attachment: fixed;
-                // filter: blur(2px);
             }
             .teachAdsContent{
                 position: absolute;
@@ -673,7 +872,7 @@
                 p{
                     color: #fff;
                     font-size: $fzSmall;
-                    font-weight: bold;
+                    font-weight: 700;
                     text-shadow: $fontShadow;
                 }
             }
@@ -686,17 +885,24 @@
                 .teachAdsPart{
                     width: 50%;
                     height: 200px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
                     position: relative;
                     overflow: hidden;
-                    .teachAdsTitle{
-                        width: 100%;
-                        height: 100%;
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
+                    filter: brightness(.9);
+                    cursor: pointer;
+                    transition: filter .5s;
+                    &::before{
+                        content: '';
+                        width: 95%;
+                        height: 90%;
                         position: absolute;
-                        z-index: 1;
-                        cursor: pointer;
+                        border: 4px solid rgba($color: #fff, $alpha: .6);
+                    }
+                    .teachAdsTitle{
+                        position: absolute;
+                        text-shadow: $titleShadow;
                         p{
                             font-size: $fzLarge;
                             font-weight: bold;
@@ -707,21 +913,9 @@
                                 margin-left: 2px;
                             }
                         }
-                        &::before{
-                            content: '';
-                            width: 95%;
-                            height: 90%;
-                            position: absolute;
-                            border: 4px solid rgba($color: #fff, $alpha: .6);
-                        }
                     }
-                    img{
-                        width: 100%;
-                        filter: brightness(.9);
-                        transition: .25s;
-                    }
-                    &:hover img{
-                        filter: brightness(1) ;
+                    &:hover{
+                        filter: brightness(1.02);
                     }
                 }
             }
@@ -735,16 +929,16 @@
                 width: 900px;
                 padding: 20px 0;
                 margin: auto;
-                font-weight: bold;
-                text-shadow: $importantFontShadow;
                 text-align: center;
-                p{
+                .mainTitle{
                     font-size: $fzMiddle;
+                    font-weight: bold;
                     color: $fcGold;
-                    span{
-                        font-size: $fzSmall;
-                        color: $fcGold;
-                    }
+                    text-shadow: $importantFontShadow;
+                    margin-bottom: 5px;
+                }
+                .subTitle{
+                    font-size: $fzSmall;
                 }
             }
             // InstagramWallBlock
@@ -756,18 +950,18 @@
                         width: 900px;
                         height: 450px;
                         display: flex;
-                        // background-color:#fff;
                         .igWallsImage{
                             width: 50%;
                             height: 50%;
                             padding: 5px;
-                            transition:.5s;
+                            filter: brightness(.9);
+                            transition:.25s;
                             img{
                                 width: 100%;
                                 box-shadow: $slightShadow;
                             }
                             &:hover{
-                                filter: brightness(.8);
+                                filter: brightness(1.025);
                             }
                         }
                     } 

@@ -1,0 +1,110 @@
+.bannerBlock{
+    height: 980px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba($color: #000000, $alpha: .1);
+    @each $var in _01, _02, _03, _04, _05, _06{
+        .banner#{$var} {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            &::before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                bottom: -25px;
+                z-index: 2;
+                background-image: url('../img/banner/bannerCover.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: bottom;
+            }
+            .bannerImage{
+                background-image: url('../img/banner/banner#{$var}.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 1920px;
+                height: 650px;
+                display: flex;
+                // flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                .bannerCover{
+                    width: 100%;
+                    height: 740px;
+                    position: absolute;
+                    top: -25%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .logo{
+                    width: 240px;
+                    // margin-top: 60px;
+                    z-index: 2;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .bannerTitle{
+                    margin-top: 40px;
+                    width: 420px;
+                    z-index: 2;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        @media all and (max-width : 1199px) {
+            .banner#{$var} {
+                &::before{
+                    content: "";
+                }
+                .bannerImage{
+                    height: 500px;
+                }
+            }
+        }
+        @media all and (max-width : $medium) {
+            .banner#{$var} {
+                &::before{
+                    content: "";
+                }
+                .bannerImage{
+                    width: 1200px;
+                }
+            }
+        }
+        @media all and (max-width : 991px) {
+            .banner#{$var} {
+                border-radius: 0;
+                &::before{
+                    content: "";
+                    border-radius: 0;
+                }
+                .bannerImage{
+                    background-position: center;
+                    
+                }
+            }
+        }
+        @media all and (max-width : $small) {
+            .banner#{$var} {
+                height: unset;
+                &::before{
+                    content: "";
+                }
+                .bannerImage{
+                    padding-top: 100%;
+                    height: unset;
+                }
+            }
+        }
+    }
+}

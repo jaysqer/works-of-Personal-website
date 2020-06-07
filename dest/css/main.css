@@ -60,6 +60,7 @@ blockquote, q {
   quotes: "" ""; }
 
 .btnFirst {
+  background-color: white;
   width: 180px;
   height: 50px;
   font-size: 18px;
@@ -84,10 +85,10 @@ blockquote, q {
     background-color: white;
     transition: all 1s; }
   .btnFirst .topLine, .btnFirst .bottomLine {
-    width: 20%;
+    width: 0%;
     height: 2px; }
   .btnFirst .leftLine, .btnFirst .rightLine {
-    height: 40%;
+    height: 0%;
     width: 2px; }
   .btnFirst .topLine {
     top: -1px;
@@ -102,11 +103,11 @@ blockquote, q {
     left: -1px;
     top: -1px; }
   .btnFirst:hover {
-    background-color: rgba(169, 216, 235, 0.4); }
+    background-color: rgba(169, 216, 235, 0.6); }
     .btnFirst:hover p {
       color: #fff;
       font-weight: bold;
-      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.4); }
+      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.45); }
     .btnFirst:hover .textEnglish {
       opacity: 0; }
     .btnFirst:hover .textChinese {
@@ -126,7 +127,7 @@ blockquote, q {
   height: 45px;
   font-size: 18px;
   font-weight: normal;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,13 +143,13 @@ blockquote, q {
     transition: opacity .25s; }
   .btnSecond .topLine, .btnSecond .rightLine, .btnSecond .bottomLine, .btnSecond .leftLine {
     position: absolute;
-    background-color: rgba(0, 0, 0, 0.25);
+    background-color: rgba(0, 0, 0, 0.2);
     transition: all 1s; }
   .btnSecond .topLine, .btnSecond .bottomLine {
-    width: 20%;
+    width: 0%;
     height: 2px; }
   .btnSecond .leftLine, .btnSecond .rightLine {
-    height: 40%;
+    height: 0%;
     width: 2px; }
   .btnSecond .topLine {
     top: -1px;
@@ -184,19 +185,215 @@ blockquote, q {
   .btnThird:hover {
     font-weight: bolder; }
 
+.btnGoTop {
+  width: 65px;
+  position: fixed;
+  bottom: 10%;
+  right: 1%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: .5s;
+  cursor: pointer; }
+
+.btnGo {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  background-color: #c0a79a;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 5%;
+  right: 3%;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: .5s;
+  cursor: pointer; }
+  .btnGo::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    position: absolute;
+    transform: translate(-6px, 2px);
+    transition: .5s; }
+  .btnGo:hover::before {
+    transform: translate(0px, 0px); }
+  .btnGo .line {
+    width: 50%;
+    height: 5px;
+    background-color: white;
+    position: absolute; }
+    .btnGo .line:nth-child(1) {
+      right: 5px;
+      transform: rotate(45deg);
+      border-radius: 0 10px 10px 0;
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); }
+    .btnGo .line:nth-child(2) {
+      left: 5px;
+      transform: rotate(-45deg);
+      border-radius: 10px 0 0 10px;
+      box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2); }
+
+.wrapper {
+  background-image: url(../img/element/brickwall.png); }
+
 .fullHeader {
   width: 100%;
-  height: 70px;
+  min-height: 70px;
   background-color: rgba(255, 255, 255, 0.95);
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  z-index: 10;
   overflow: hidden;
-  box-shadow: 0px -20px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
   border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
-  .fullHeader .hamburger {
+  .fullHeader::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    box-shadow: 0px -20px 10px rgba(0, 0, 0, 0.2); }
+  .fullHeader .navBlock {
+    justify-content: space-between;
+    transform: translateX(-215px);
+    transition: transform 1s; }
+    .fullHeader .navBlock h1 {
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 1s; }
+  @media all and (max-width: 991px) {
+    .fullHeader {
+      display: none; } }
+
+.navBlock {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  z-index: 5; }
+  .navBlock h1 a {
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+    .navBlock h1 a .logo {
+      width: 95px; }
+      .navBlock h1 a .logo img {
+        width: 100%; }
+    .navBlock h1 a .webName {
+      width: 120px; }
+      .navBlock h1 a .webName img {
+        width: 100%; }
+  .navBlock .nav {
+    margin-right: 60px; }
+    .navBlock .nav ul li {
+      display: inline-block;
+      margin-right: 30px;
+      position: relative; }
+      .navBlock .nav ul li:last-child {
+        margin-right: 0px; }
+      .navBlock .nav ul li .navHover {
+        width: 50px;
+        position: absolute;
+        left: 35px;
+        top: 10px;
+        opacity: 0;
+        transition: all .8s; }
+      .navBlock .nav ul li a {
+        font-size: 20px;
+        position: relative;
+        z-index: 2; }
+      .navBlock .nav ul li a::after {
+        font-size: 16px;
+        font-weight: normal;
+        width: 80px;
+        margin-left: 2px; }
+      .navBlock .nav ul li:nth-child(1) a::after {
+        content: "Collections"; }
+      .navBlock .nav ul li:nth-child(2) a::after {
+        content: "Services"; }
+      .navBlock .nav ul li:nth-child(3) a::after {
+        content: "Events"; }
+      .navBlock .nav ul li:nth-child(4) a::after {
+        content: "About Us"; }
+      .navBlock .nav ul li:nth-child(5) a::after {
+        content: "Teaching"; }
+      .navBlock .nav ul li:hover a {
+        font-weight: bold;
+        color: #555; }
+      .navBlock .nav ul li:hover .navHover {
+        top: -20px;
+        opacity: 1; }
+      .navBlock .nav ul li .navDisplay {
+        top: -20px;
+        opacity: 1; }
+      .navBlock .nav ul li .fontBold {
+        font-weight: bold;
+        color: #555; }
+
+.phoneHeader {
+  width: 100%;
+  min-height: 70px;
+  display: none;
+  position: fixed;
+  top: 0;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.2);
+  border-top: 1px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2); }
+  .phoneHeader .navBlock h1 {
+    margin-left: 10px; }
+  .phoneHeader .navBlock .nav {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 15;
+    background-color: rgba(255, 255, 255, 0.95);
+    opacity: 0;
+    transform: translateY(-100%);
+    transition: all 1s; }
+    .phoneHeader .navBlock .nav ul {
+      display: flex;
+      flex-direction: column; }
+      .phoneHeader .navBlock .nav ul li {
+        margin-right: unset;
+        margin-bottom: 35px; }
+        .phoneHeader .navBlock .nav ul li a {
+          font-size: 24px; }
+        .phoneHeader .navBlock .nav ul li .navHover {
+          width: 20px;
+          position: unset;
+          opacity: 1; }
+    .phoneHeader .navBlock .nav.showMenu {
+      opacity: 1;
+      transform: translateY(0%); }
+    .phoneHeader .navBlock .nav h1 {
+      margin-bottom: 45px; }
+      .phoneHeader .navBlock .nav h1 a .logo {
+        width: 260px; }
+  .phoneHeader .navBlock .hamburger {
     padding: 15px 15px;
-    display: none;
+    display: block;
     cursor: pointer;
     transition-property: opacity, filter;
     transition-duration: 0.15s;
@@ -210,34 +407,34 @@ blockquote, q {
     overflow: visible;
     position: absolute;
     right: 2%;
-    z-index: 10; }
-    .fullHeader .hamburger:hover {
+    z-index: 20; }
+    .phoneHeader .navBlock .hamburger:hover {
       opacity: 0.7; }
-    .fullHeader .hamburger.is-active .hamburger-inner,
-    .fullHeader .hamburger.is-active .hamburger-inner::before,
-    .fullHeader .hamburger.is-active .hamburger-inner::after {
+    .phoneHeader .navBlock .hamburger.is-active .hamburger-inner,
+    .phoneHeader .navBlock .hamburger.is-active .hamburger-inner::before,
+    .phoneHeader .navBlock .hamburger.is-active .hamburger-inner::after {
       background-color: #000; }
-    .fullHeader .hamburger.is-active:hover {
+    .phoneHeader .navBlock .hamburger.is-active:hover {
       opacity: 0.7; }
-    .fullHeader .hamburger .hamburger-box {
+    .phoneHeader .navBlock .hamburger .hamburger-box {
       width: 40px;
       height: 24px;
       display: inline-block;
       position: relative; }
-      .fullHeader .hamburger .hamburger-box .hamburger-inner {
+      .phoneHeader .navBlock .hamburger .hamburger-box .hamburger-inner {
         display: block;
         top: 50%;
         margin-top: -2px; }
-        .fullHeader .hamburger .hamburger-box .hamburger-inner::before, .fullHeader .hamburger .hamburger-box .hamburger-inner::after {
+        .phoneHeader .navBlock .hamburger .hamburger-box .hamburger-inner::before, .phoneHeader .navBlock .hamburger .hamburger-box .hamburger-inner::after {
           content: "";
           display: block; }
-        .fullHeader .hamburger .hamburger-box .hamburger-inner::before {
+        .phoneHeader .navBlock .hamburger .hamburger-box .hamburger-inner::before {
           top: -10px; }
-        .fullHeader .hamburger .hamburger-box .hamburger-inner::after {
+        .phoneHeader .navBlock .hamburger .hamburger-box .hamburger-inner::after {
           bottom: -10px; }
-    .fullHeader .hamburger .hamburger-inner,
-    .fullHeader .hamburger .hamburger-inner::before,
-    .fullHeader .hamburger .hamburger-inner::after {
+    .phoneHeader .navBlock .hamburger .hamburger-inner,
+    .phoneHeader .navBlock .hamburger .hamburger-inner::before,
+    .phoneHeader .navBlock .hamburger .hamburger-inner::after {
       width: 40px;
       height: 4px;
       background-color: #000;
@@ -246,129 +443,28 @@ blockquote, q {
       transition-property: transform;
       transition-duration: 0.15s;
       transition-timing-function: ease; }
-  .fullHeader .hamburger--spin .hamburger-inner {
+  .phoneHeader .navBlock .hamburger--spin .hamburger-inner {
     transition-duration: 0.22s;
     transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-    .fullHeader .hamburger--spin .hamburger-inner::before {
+    .phoneHeader .navBlock .hamburger--spin .hamburger-inner::before {
       transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
-    .fullHeader .hamburger--spin .hamburger-inner::after {
+    .phoneHeader .navBlock .hamburger--spin .hamburger-inner::after {
       transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
-  .fullHeader .hamburger--spin.is-active .hamburger-inner {
+  .phoneHeader .navBlock .hamburger--spin.is-active .hamburger-inner {
     transform: rotate(225deg);
     transition-delay: 0.12s;
     transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
-    .fullHeader .hamburger--spin.is-active .hamburger-inner::before {
+    .phoneHeader .navBlock .hamburger--spin.is-active .hamburger-inner::before {
       top: 0;
       opacity: 0;
       transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
-    .fullHeader .hamburger--spin.is-active .hamburger-inner::after {
+    .phoneHeader .navBlock .hamburger--spin.is-active .hamburger-inner::after {
       bottom: 0;
       transform: rotate(-90deg);
       transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
   @media all and (max-width: 991px) {
-    .fullHeader {
-      height: 80px; }
-      .fullHeader .navBlock {
-        position: relative; }
-        .fullHeader .navBlock nav {
-          display: none; }
-        .fullHeader .navBlock h1 {
-          display: inline-block;
-          position: absolute;
-          left: 2%; }
-          .fullHeader .navBlock h1 .logo img {
-            width: 90px; }
-        .fullHeader .navBlock .hamburger {
-          display: inline-block; } }
-
-.navBlock {
-  width: 100%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center; }
-  .navBlock h1 {
-    display: none; }
-    .navBlock h1 .logo {
-      margin-right: 40px; }
-      .navBlock h1 .logo img {
-        width: 100px; }
-  .navBlock .nav ul li {
-    display: inline-block;
-    margin-right: 30px;
-    position: relative; }
-    .navBlock .nav ul li:last-child {
-      margin-right: 0px; }
-    .navBlock .nav ul li .navHover {
-      width: 50px;
-      position: absolute;
-      left: 35px;
-      top: 10px;
-      opacity: 0;
-      transition: all .8s; }
-    .navBlock .nav ul li a {
-      font-size: 20px;
-      position: relative;
-      z-index: 2; }
-    .navBlock .nav ul li a::after {
-      font-size: 16px;
-      font-weight: normal;
-      width: 80px;
-      margin-left: 2px; }
-    .navBlock .nav ul li:nth-child(1) a::after {
-      content: "Collections"; }
-    .navBlock .nav ul li:nth-child(2) a::after {
-      content: "Services"; }
-    .navBlock .nav ul li:nth-child(3) a::after {
-      content: "Events"; }
-    .navBlock .nav ul li:nth-child(4) a::after {
-      content: "About Us"; }
-    .navBlock .nav ul li:nth-child(5) a::after {
-      content: "Teaching"; }
-    .navBlock .nav ul li:hover a {
-      font-weight: bold;
-      color: #555; }
-    .navBlock .nav ul li:hover .navHover {
-      top: -20px;
-      opacity: 1; }
-
-.phoneHeader {
-  width: 100%;
-  height: 100vh;
-  background-color: rgba(255, 255, 255, 0.95);
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 5;
-  opacity: 0;
-  transform: translateY(-100%);
-  transition: all 1s; }
-  .phoneHeader .navBlock {
-    width: 100%;
-    height: 100%;
-    flex-direction: column; }
-  .phoneHeader h1 {
-    display: block;
-    margin-bottom: 80px; }
-    .phoneHeader h1 .logo img {
-      width: 300px; }
-  .phoneHeader .nav ul {
-    display: flex;
-    flex-direction: column; }
-    .phoneHeader .nav ul li {
-      margin-right: unset;
-      margin-bottom: 40px; }
-      .phoneHeader .nav ul li a {
-        font-size: 24px; }
-      .phoneHeader .nav ul li .navHover {
-        width: 20px;
-        position: unset;
-        opacity: 1; }
-  .phoneHeader.showMenu {
-    opacity: 1;
-    transform: translateY(0%); }
+    .phoneHeader {
+      display: flex; } }
 
 .footer {
   height: 300px;
@@ -377,12 +473,59 @@ blockquote, q {
   align-items: center; }
   .footer P {
     width: 100%;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
     text-align: center;
     align-self: flex-end;
     background-color: rgba(255, 255, 255, 0.8);
     padding: 10px 0;
-    font-size: 18px; }
+    font-size: 16px; }
     .footer P .contactMe {
       margin: 0 2px;
       font-size: 14px; }
+
+.socialMediasBlock {
+  width: 240px;
+  height: 240px;
+  position: fixed;
+  z-index: 20;
+  bottom: 15%;
+  right: -5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 1s; }
+  .socialMediasBlock .socialMedia {
+    position: absolute;
+    animation: floatz 2s alternate infinite; }
+
+@keyframes floatz {
+  from {
+    transform: translateY(0px); }
+  to {
+    transform: translateY(-5px); } }
+    .socialMediasBlock .socialMedia img {
+      width: 100%; }
+    .socialMediasBlock .socialMedia:nth-child(1) {
+      width: 110px;
+      top: -20px;
+      left: -20px;
+      transform: translateY(0px);
+      animation-delay: 1.2s; }
+    .socialMediasBlock .socialMedia:nth-child(2) {
+      width: 70px;
+      top: 20px;
+      left: 100px;
+      transform: translateY(0px);
+      animation-delay: .8s; }
+    .socialMediasBlock .socialMedia:nth-child(3) {
+      width: 80px;
+      top: 105px;
+      left: -10px;
+      transform: translateY(0px);
+      animation-delay: .3s; }
+      .socialMediasBlock .socialMedia:nth-child(3) img {
+        transform: rotate(-5deg); }
+    .socialMediasBlock .socialMedia:nth-child(4) {
+      width: 60px;
+      top: 200px;
+      left: 10px;
+      transform: translateY(0px); }

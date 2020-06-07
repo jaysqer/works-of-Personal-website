@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch The Idea｜Services</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/page.css">
+    <!-- js -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        @@include('./layout/header.html',{
+        "fontType2":"fontBold",
+        "display2":"navDisplay"
+        })
+        <!-- banner -->
+        <div class="bannerBlock">
+            <div class="banner_02">
+                <div class="bannerImage">
+                    <div class="bannerCover">
+                        <img src="./img/banner/bannerCover_01.png" alt="">
+                    </div>
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="./img/banner/bannerLogo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="bannerTitle">
+                        <img src="./img/banner/bannerTitle_02.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Services 服務 -->
+        <main class="services border">
+            <!-- breadCrumbs 麵包屑 -->
+
+            <!-- Services 服務，分成由上到下四大區塊(暫時分成四大區塊) -->
+            <div class="servicesBlock border">
+                <!-- tab 切換標籤 -->
+                <div class="servicesTabBlock border">
+                    <div class="servicesItemsTitleBlock">
+                        <span class="leftLine"></span>
+                        <div class="servicesItemsTitle">
+                            <p class="mainTitle">服務項目</p>
+                            <p class="subTitle">LeLeBalloon's Services</p>
+                        </div>
+                        <span class="rightLine"></span>
+                    </div>
+                    <ul class="servicesTab border">
+                        <li class="-on">婚禮場地</li>
+                        <li>求婚企劃</li>
+                        <li>派對驚喜</li>
+                        <li>開幕歡慶</li>
+                    </ul>
+                </div>
+                <!-- item_01 -->
+                <div class="serviceItem -on border">
+                    <!-- serviceContent 服務內容 -->
+                    <div class="serviceContent border">
+                        <div class="servicePart border">
+                            <div class="serviceTitle">
+                                <p class="mainTitle">婚禮場地布置</p>
+                                <p class="subTitle">Wedding</p>
+                            </div>
+                            <div class="serviceText border">
+                                <p>告訴我您的需求和想要的感覺</p>
+                                <p>我會為您設計</p>
+                                <p>一個專屬於您的夢幻布置</p>
+                                <p>有任何疑問 可以立即聯絡我</p>
+                                <p>會以最快的速度回復您</p>
+                            </div>
+                            <!-- 更多內容 按鈕 -->
+                            @@include('./layout/btnSecond.html',{
+                            "link":"",
+                            "innerText1":"ContactMe",
+                            "innerText2":"聯絡我們"
+                            })
+                        </div>
+                        <div class="servicePart border">
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/weddingImage_01.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>婚禮布置</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/weddingImage_02.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>浪漫拱門</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/weddingImage_03.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>會場布置</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/weddingImage_04.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>新人看板</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- itemRelatedsBlock 服務的相關連結 -->
+                    <div class="itemRelatedsBlock border">
+                        <div class="itemRelatedsTitle border">
+                            <p class="mainTitle">相關作品連結</p>
+                            <p class="subTitle">Related Links</p>
+                        </div>
+                        <div class="itemRelatedsCarousel border">
+                            <div class="itemRelatedsContent">
+                                <div class="itemRelated border">
+                                    <div class="relatedImage border">
+                                        <img src="./img/pagination/collections/collectionItems/collectionItem_03.jpg">
+                                    </div>
+                                    <div class="relatedTitle border">
+                                        <p>我們結婚啦</p>
+                                    </div>
+                                    <div class="relatedDescription border">
+                                        <p>一句簡單的描述</p>
+                                    </div>
+                                </div>
+                                <div class="itemRelated border">
+                                    <div class="relatedImage border">
+                                        <img src="./img/pagination/collections/collectionItems/collectionItem_06.jpg">
+                                    </div>
+                                    <div class="relatedTitle border">
+                                        <p>築起戀愛的情侶門</p>
+                                    </div>
+                                    <div class="relatedDescription border">
+                                        <p>一句簡單的描述</p>
+                                    </div>
+                                </div>
+                                <div class="itemRelated border">
+                                    <div class="relatedImage border">
+                                        <img src="./img/pagination/collections/collectionItems/collectionItem_12.jpg">
+                                    </div>
+                                    <div class="relatedTitle border">
+                                        <p>藍色浪漫</p>
+                                    </div>
+                                    <div class="relatedDescription border">
+                                        <p>一句簡單的描述</p>
+                                    </div>
+                                </div>
+                                <div class="itemRelated border">
+                                    <div class="relatedImage border">
+                                        <img src="./img/pagination/collections/collectionItems/collectionItem_14.jpg">
+                                    </div>
+                                    <div class="relatedTitle border">
+                                        <p>馬卡龍色的浪漫狂想</p>
+                                    </div>
+                                    <div class="relatedDescription border">
+                                        <p>一句簡單的描述</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- controlBlock 控制區 -->
+                            <div class="itemRelatedControl border">
+                                <div class="leftArrow left" data-slide="prev">
+                                    <span class="arrowLine"></span>
+                                    <span class="arrowLine"></span>
+                                </div>
+                                <div class="rightArrow right" data-slide="next">
+                                    <span class="arrowLine"></span>
+                                    <span class="arrowLine"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- item_02 -->
+                <div class="serviceItem border">
+                    <!-- serviceContent 服務內容 -->
+                    <div class="serviceContent border">
+                        <div class="servicePart border">
+                            <div class="serviceTitle">
+                                <p class="mainTitle">求婚企劃布置</p>
+                                <p class="subTitle">Marrying</p>
+                            </div>
+                            <div class="serviceText border">
+                                <p>告訴我您的需求和想要的感覺</p>
+                                <p>我會為您設計</p>
+                                <p>一個專屬於您的夢幻布置</p>
+                                <p>有任何疑問 可以立即聯絡我</p>
+                                <p>會以最快的速度回復您</p>
+                            </div>
+                            <!-- 更多內容 按鈕 -->
+                            @@include('./layout/btnSecond.html',{
+                            "link":"",
+                            "innerText1":"ContactMe",
+                            "innerText2":"聯絡我們"
+                            })
+                        </div>
+                        <div class="servicePart border">
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/marryingImage_01.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>驚喜禮物</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/marryingImage_02.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>居家求婚</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/marryingImage_03.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>浪漫求婚</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/marryingImage_04.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>旅店求婚</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- itemRelatedsBlock 服務的相關連結 -->
+                    <div class="itemRelatedsBlock border">
+                        <div class="itemRelatedsTitle border">
+                            <p>相關作品連結</p>
+                        </div>
+                        <div class="itemRelatedsCarousel border">
+                            <div class="itemRelatedsContent">
+                                <div class="itemRelated border"></div>
+                                <div class="itemRelated border"></div>
+                                <div class="itemRelated border"></div>
+                                <div class="itemRelated border"></div>
+                            </div>
+                            <!-- controlBlock 控制區 -->
+                            <div class="itemRelatedControl border">
+                                <div class="leftArrow left" data-slide="prev">
+                                    <span class="arrowLine"></span>
+                                    <span class="arrowLine"></span>
+                                </div>
+                                <div class="rightArrow right" data-slide="next">
+                                    <span class="arrowLine"></span>
+                                    <span class="arrowLine"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- item_03 -->
+                <div class="serviceItem border">
+                    <!-- serviceContent 服務內容 -->
+                    <div class="serviceContent border">
+                        <div class="servicePart border">
+                            <div class="serviceTitle">
+                                <p class="mainTitle">派對驚喜布置</p>
+                                <p class="subTitle">Partying</p>
+                            </div>
+                            <div class="serviceText border">
+                                <p>告訴我您的需求和想要的感覺</p>
+                                <p>我會為您設計</p>
+                                <p>一個專屬於您的夢幻布置</p>
+                                <p>有任何疑問 可以立即聯絡我</p>
+                                <p>會以最快的速度回復您</p>
+                            </div>
+                            <!-- 更多內容 按鈕 -->
+                            @@include('./layout/btnSecond.html',{
+                            "link":"",
+                            "innerText1":"ContactMe",
+                            "innerText2":"聯絡我們"
+                            })
+                        </div>
+                        <div class="servicePart border">
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/partyingImage_01.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>聖誕派對</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/partyingImage_02.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>酒會布置</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/partyingImage_03.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>派對布置</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/partyingImage_04.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>生日驚喜</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- itemRelatedsBlock 服務的相關連結 -->
+                    <div class="itemRelatedsBlock border">
+                        <div class="itemRelatedsTitle border">
+                            <p>相關作品連結</p>
+                        </div>
+                        <div class="itemRelatedsCarousel border">
+                            <div class="itemRelatedsContent">
+                                <div class="itemRelated border"></div>
+                                <div class="itemRelated border"></div>
+                                <div class="itemRelated border"></div>
+                                <div class="itemRelated border"></div>
+                            </div>
+                            <!-- controlBlock 控制區 -->
+                            <div class="itemRelatedControl border">
+                                <div class="leftArrow left" data-slide="prev">
+                                    <span class="arrowLine"></span>
+                                    <span class="arrowLine"></span>
+                                </div>
+                                <div class="rightArrow right" data-slide="next">
+                                    <span class="arrowLine"></span>
+                                    <span class="arrowLine"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- item_04 -->
+                <div class="serviceItem border">
+                    <!-- serviceContent 服務內容 -->
+                    <div class="serviceContent border">
+                        <div class="servicePart border">
+                            <div class="serviceTitle">
+                                <p class="mainTitle">開幕歡慶布置</p>
+                                <p class="subTitle">Opening</p>
+                            </div>
+                            <div class="serviceText border">
+                                <p>告訴我您的需求和想要的感覺</p>
+                                <p>我會為您設計</p>
+                                <p>一個專屬於您的夢幻布置</p>
+                                <p>有任何疑問 可以立即聯絡我</p>
+                                <p>會以最快的速度回復您</p>
+                            </div>
+                            <!-- 更多內容 按鈕 -->
+                            @@include('./layout/btnSecond.html',{
+                            "link":"",
+                            "innerText1":"ContactMe",
+                            "innerText2":"聯絡我們"
+                            })
+                        </div>
+                        <div class="servicePart border">
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/openingImage_01.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>開幕看板</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/openingImage_02.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>歡迎拱門</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/openingImage_03.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>店內布置</p>
+                                </div>
+                            </div>
+                            <div class="serviceQuarter border">
+                                <img src="./img/pagination/services/openingImage_04.jpg" alt="">
+                                <div class="serviceName">
+                                    <p>漂浮布置</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- itemRelatedsBlock 服務的相關連結 -->
+                    <div class="itemRelatedsBlock border">
+                        <div class="itemRelatedsTitle border">
+                            <p>相關作品連結</p>
+                        </div>
+                        <div class="itemRelatedsCarousel border">
+                            <div class="itemRelatedsContent">
+                                <div class="itemRelated border"></div>
+                                <div class="itemRelated border"></div>
+                                <div class="itemRelated border"></div>
+                                <div class="itemRelated border"></div>
+                            </div>
+                            <!-- controlBlock 控制區 -->
+                            <div class="itemRelatedControl border">
+                                <div class="leftArrow left" data-slide="prev">
+                                    <span class="arrowLine"></span>
+                                    <span class="arrowLine"></span>
+                                </div>
+                                <div class="rightArrow right" data-slide="next">
+                                    <span class="arrowLine"></span>
+                                    <span class="arrowLine"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </main>
+        @@include('./layout/footer.html',{})
+    </div>
+</body>
+
+</html>

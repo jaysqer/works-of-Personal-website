@@ -1,6 +1,4 @@
 .footer{
-    // background-color: $fcBlue;
-    // background-color: rgba($color: #fff, $alpha: .6);
     height: 300px;
     display: flex;
     justify-content: center;
@@ -12,10 +10,64 @@
         align-self: flex-end;
         background-color: rgba($color: #fff, $alpha: .8);
         padding: 10px 0;
-        font-size: $fzSmall;
+        font-size: $fzInfo;
         .contactMe{
             margin: 0 2px;
             font-size: $fzInfo * .875;
         }
+    }
+}
+// socialMedia 社交軟體連結
+.socialMediasBlock{
+    width: 240px;
+    height: 240px;
+    position: fixed;
+    z-index: 20;
+    bottom: 15%;
+    right: -5px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    .socialMedia{
+        position: absolute;
+        animation: floatz 2s alternate infinite;
+        @keyframes floatz {
+            from{transform: translateY(0px);}
+            to{transform: translateY(-5px);}
+        }
+        img{
+            width: 100%;
+        }
+        &:nth-child(1){
+            width: 110px;
+            top: -20px;
+            left: -20px;
+            transform: translateY(0px);
+            animation-delay: 1.2s;
+        }
+        &:nth-child(2){
+            width: 70px;
+            top: 20px;
+            left: 100px;
+            transform: translateY(0px);
+            animation-delay: .8s;
+        }
+        &:nth-child(3){
+            width: 80px;
+            top: 105px;
+            left: -10px;
+            transform: translateY(0px);
+            animation-delay: .3s;
+            img{
+                transform: rotate(-5deg)
+            }
+        }
+        &:nth-child(4){
+            width: 60px;
+            top: 200px;
+            left: 10px;
+            transform: translateY(0px);
+        }
+
     }
 }

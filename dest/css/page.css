@@ -1,0 +1,1306 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-weight: inherit;
+  font-style: inherit;
+  font-size: 100%;
+  font-family: "微軟正黑體";
+  vertical-align: baseline; }
+
+/* remember to define focus styles! */
+:focus {
+  outline: 0; }
+
+/* box-sizing*/
+* {
+  box-sizing: border-box;
+  color: #676767;
+  font-weight: 400; }
+
+/* a */
+a {
+  text-decoration: none;
+  display: inline-block; }
+
+img {
+  vertical-align: middle; }
+
+body {
+  line-height: 1;
+  color: black;
+  background: white; }
+
+ol, ul {
+  list-style: none; }
+
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: separate;
+  border-spacing: 0; }
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: ""; }
+
+blockquote, q {
+  quotes: "" ""; }
+
+.bannerBlock {
+  height: 980px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1); }
+  .bannerBlock .banner_01 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+    .bannerBlock .banner_01::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: -25px;
+      z-index: 2;
+      background-image: url("../img/banner/bannerCover.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom; }
+    .bannerBlock .banner_01 .bannerImage {
+      background-image: url("../img/banner/banner_01.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 1920px;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; }
+      .bannerBlock .banner_01 .bannerImage .bannerCover {
+        width: 100%;
+        height: 740px;
+        position: absolute;
+        top: -25%; }
+        .bannerBlock .banner_01 .bannerImage .bannerCover img {
+          width: 100%;
+          height: 100%; }
+      .bannerBlock .banner_01 .bannerImage .logo {
+        width: 240px;
+        z-index: 2; }
+        .bannerBlock .banner_01 .bannerImage .logo img {
+          width: 100%; }
+      .bannerBlock .banner_01 .bannerImage .bannerTitle {
+        margin-top: 40px;
+        width: 420px;
+        z-index: 2; }
+        .bannerBlock .banner_01 .bannerImage .bannerTitle img {
+          width: 100%; }
+  @media all and (max-width: 1199px) {
+    .bannerBlock .banner_01::before {
+      content: ""; }
+    .bannerBlock .banner_01 .bannerImage {
+      height: 500px; } }
+  @media all and (max-width: 1023px) {
+    .bannerBlock .banner_01::before {
+      content: ""; }
+    .bannerBlock .banner_01 .bannerImage {
+      width: 1200px; } }
+  @media all and (max-width: 991px) {
+    .bannerBlock .banner_01 {
+      border-radius: 0; }
+      .bannerBlock .banner_01::before {
+        content: "";
+        border-radius: 0; }
+      .bannerBlock .banner_01 .bannerImage {
+        background-position: center; } }
+  @media all and (max-width: 575px) {
+    .bannerBlock .banner_01 {
+      height: unset; }
+      .bannerBlock .banner_01::before {
+        content: ""; }
+      .bannerBlock .banner_01 .bannerImage {
+        padding-top: 100%;
+        height: unset; } }
+  .bannerBlock .banner_02 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+    .bannerBlock .banner_02::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: -25px;
+      z-index: 2;
+      background-image: url("../img/banner/bannerCover.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom; }
+    .bannerBlock .banner_02 .bannerImage {
+      background-image: url("../img/banner/banner_02.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 1920px;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; }
+      .bannerBlock .banner_02 .bannerImage .bannerCover {
+        width: 100%;
+        height: 740px;
+        position: absolute;
+        top: -25%; }
+        .bannerBlock .banner_02 .bannerImage .bannerCover img {
+          width: 100%;
+          height: 100%; }
+      .bannerBlock .banner_02 .bannerImage .logo {
+        width: 240px;
+        z-index: 2; }
+        .bannerBlock .banner_02 .bannerImage .logo img {
+          width: 100%; }
+      .bannerBlock .banner_02 .bannerImage .bannerTitle {
+        margin-top: 40px;
+        width: 420px;
+        z-index: 2; }
+        .bannerBlock .banner_02 .bannerImage .bannerTitle img {
+          width: 100%; }
+  @media all and (max-width: 1199px) {
+    .bannerBlock .banner_02::before {
+      content: ""; }
+    .bannerBlock .banner_02 .bannerImage {
+      height: 500px; } }
+  @media all and (max-width: 1023px) {
+    .bannerBlock .banner_02::before {
+      content: ""; }
+    .bannerBlock .banner_02 .bannerImage {
+      width: 1200px; } }
+  @media all and (max-width: 991px) {
+    .bannerBlock .banner_02 {
+      border-radius: 0; }
+      .bannerBlock .banner_02::before {
+        content: "";
+        border-radius: 0; }
+      .bannerBlock .banner_02 .bannerImage {
+        background-position: center; } }
+  @media all and (max-width: 575px) {
+    .bannerBlock .banner_02 {
+      height: unset; }
+      .bannerBlock .banner_02::before {
+        content: ""; }
+      .bannerBlock .banner_02 .bannerImage {
+        padding-top: 100%;
+        height: unset; } }
+  .bannerBlock .banner_03 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+    .bannerBlock .banner_03::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: -25px;
+      z-index: 2;
+      background-image: url("../img/banner/bannerCover.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom; }
+    .bannerBlock .banner_03 .bannerImage {
+      background-image: url("../img/banner/banner_03.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 1920px;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; }
+      .bannerBlock .banner_03 .bannerImage .bannerCover {
+        width: 100%;
+        height: 740px;
+        position: absolute;
+        top: -25%; }
+        .bannerBlock .banner_03 .bannerImage .bannerCover img {
+          width: 100%;
+          height: 100%; }
+      .bannerBlock .banner_03 .bannerImage .logo {
+        width: 240px;
+        z-index: 2; }
+        .bannerBlock .banner_03 .bannerImage .logo img {
+          width: 100%; }
+      .bannerBlock .banner_03 .bannerImage .bannerTitle {
+        margin-top: 40px;
+        width: 420px;
+        z-index: 2; }
+        .bannerBlock .banner_03 .bannerImage .bannerTitle img {
+          width: 100%; }
+  @media all and (max-width: 1199px) {
+    .bannerBlock .banner_03::before {
+      content: ""; }
+    .bannerBlock .banner_03 .bannerImage {
+      height: 500px; } }
+  @media all and (max-width: 1023px) {
+    .bannerBlock .banner_03::before {
+      content: ""; }
+    .bannerBlock .banner_03 .bannerImage {
+      width: 1200px; } }
+  @media all and (max-width: 991px) {
+    .bannerBlock .banner_03 {
+      border-radius: 0; }
+      .bannerBlock .banner_03::before {
+        content: "";
+        border-radius: 0; }
+      .bannerBlock .banner_03 .bannerImage {
+        background-position: center; } }
+  @media all and (max-width: 575px) {
+    .bannerBlock .banner_03 {
+      height: unset; }
+      .bannerBlock .banner_03::before {
+        content: ""; }
+      .bannerBlock .banner_03 .bannerImage {
+        padding-top: 100%;
+        height: unset; } }
+  .bannerBlock .banner_04 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+    .bannerBlock .banner_04::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: -25px;
+      z-index: 2;
+      background-image: url("../img/banner/bannerCover.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom; }
+    .bannerBlock .banner_04 .bannerImage {
+      background-image: url("../img/banner/banner_04.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 1920px;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; }
+      .bannerBlock .banner_04 .bannerImage .bannerCover {
+        width: 100%;
+        height: 740px;
+        position: absolute;
+        top: -25%; }
+        .bannerBlock .banner_04 .bannerImage .bannerCover img {
+          width: 100%;
+          height: 100%; }
+      .bannerBlock .banner_04 .bannerImage .logo {
+        width: 240px;
+        z-index: 2; }
+        .bannerBlock .banner_04 .bannerImage .logo img {
+          width: 100%; }
+      .bannerBlock .banner_04 .bannerImage .bannerTitle {
+        margin-top: 40px;
+        width: 420px;
+        z-index: 2; }
+        .bannerBlock .banner_04 .bannerImage .bannerTitle img {
+          width: 100%; }
+  @media all and (max-width: 1199px) {
+    .bannerBlock .banner_04::before {
+      content: ""; }
+    .bannerBlock .banner_04 .bannerImage {
+      height: 500px; } }
+  @media all and (max-width: 1023px) {
+    .bannerBlock .banner_04::before {
+      content: ""; }
+    .bannerBlock .banner_04 .bannerImage {
+      width: 1200px; } }
+  @media all and (max-width: 991px) {
+    .bannerBlock .banner_04 {
+      border-radius: 0; }
+      .bannerBlock .banner_04::before {
+        content: "";
+        border-radius: 0; }
+      .bannerBlock .banner_04 .bannerImage {
+        background-position: center; } }
+  @media all and (max-width: 575px) {
+    .bannerBlock .banner_04 {
+      height: unset; }
+      .bannerBlock .banner_04::before {
+        content: ""; }
+      .bannerBlock .banner_04 .bannerImage {
+        padding-top: 100%;
+        height: unset; } }
+  .bannerBlock .banner_05 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+    .bannerBlock .banner_05::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: -25px;
+      z-index: 2;
+      background-image: url("../img/banner/bannerCover.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom; }
+    .bannerBlock .banner_05 .bannerImage {
+      background-image: url("../img/banner/banner_05.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 1920px;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; }
+      .bannerBlock .banner_05 .bannerImage .bannerCover {
+        width: 100%;
+        height: 740px;
+        position: absolute;
+        top: -25%; }
+        .bannerBlock .banner_05 .bannerImage .bannerCover img {
+          width: 100%;
+          height: 100%; }
+      .bannerBlock .banner_05 .bannerImage .logo {
+        width: 240px;
+        z-index: 2; }
+        .bannerBlock .banner_05 .bannerImage .logo img {
+          width: 100%; }
+      .bannerBlock .banner_05 .bannerImage .bannerTitle {
+        margin-top: 40px;
+        width: 420px;
+        z-index: 2; }
+        .bannerBlock .banner_05 .bannerImage .bannerTitle img {
+          width: 100%; }
+  @media all and (max-width: 1199px) {
+    .bannerBlock .banner_05::before {
+      content: ""; }
+    .bannerBlock .banner_05 .bannerImage {
+      height: 500px; } }
+  @media all and (max-width: 1023px) {
+    .bannerBlock .banner_05::before {
+      content: ""; }
+    .bannerBlock .banner_05 .bannerImage {
+      width: 1200px; } }
+  @media all and (max-width: 991px) {
+    .bannerBlock .banner_05 {
+      border-radius: 0; }
+      .bannerBlock .banner_05::before {
+        content: "";
+        border-radius: 0; }
+      .bannerBlock .banner_05 .bannerImage {
+        background-position: center; } }
+  @media all and (max-width: 575px) {
+    .bannerBlock .banner_05 {
+      height: unset; }
+      .bannerBlock .banner_05::before {
+        content: ""; }
+      .bannerBlock .banner_05 .bannerImage {
+        padding-top: 100%;
+        height: unset; } }
+  .bannerBlock .banner_06 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden; }
+    .bannerBlock .banner_06::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: -25px;
+      z-index: 2;
+      background-image: url("../img/banner/bannerCover.png");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position: bottom; }
+    .bannerBlock .banner_06 .bannerImage {
+      background-image: url("../img/banner/banner_06.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      width: 1920px;
+      height: 650px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative; }
+      .bannerBlock .banner_06 .bannerImage .bannerCover {
+        width: 100%;
+        height: 740px;
+        position: absolute;
+        top: -25%; }
+        .bannerBlock .banner_06 .bannerImage .bannerCover img {
+          width: 100%;
+          height: 100%; }
+      .bannerBlock .banner_06 .bannerImage .logo {
+        width: 240px;
+        z-index: 2; }
+        .bannerBlock .banner_06 .bannerImage .logo img {
+          width: 100%; }
+      .bannerBlock .banner_06 .bannerImage .bannerTitle {
+        margin-top: 40px;
+        width: 420px;
+        z-index: 2; }
+        .bannerBlock .banner_06 .bannerImage .bannerTitle img {
+          width: 100%; }
+  @media all and (max-width: 1199px) {
+    .bannerBlock .banner_06::before {
+      content: ""; }
+    .bannerBlock .banner_06 .bannerImage {
+      height: 500px; } }
+  @media all and (max-width: 1023px) {
+    .bannerBlock .banner_06::before {
+      content: ""; }
+    .bannerBlock .banner_06 .bannerImage {
+      width: 1200px; } }
+  @media all and (max-width: 991px) {
+    .bannerBlock .banner_06 {
+      border-radius: 0; }
+      .bannerBlock .banner_06::before {
+        content: "";
+        border-radius: 0; }
+      .bannerBlock .banner_06 .bannerImage {
+        background-position: center; } }
+  @media all and (max-width: 575px) {
+    .bannerBlock .banner_06 {
+      height: unset; }
+      .bannerBlock .banner_06::before {
+        content: ""; }
+      .bannerBlock .banner_06 .bannerImage {
+        padding-top: 100%;
+        height: unset; } }
+
+.collections {
+  width: 100%;
+  max-width: 1200px;
+  padding-bottom: 40px;
+  margin: auto; }
+  .collections .carouselBlock {
+    width: 100%;
+    margin: auto;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); }
+    .collections .carouselBlock .controlBlock {
+      width: 120px;
+      height: 60px;
+      display: flex;
+      background-color: rgba(254, 235, 227, 0.85);
+      position: absolute;
+      z-index: 2;
+      right: 0;
+      bottom: 0; }
+      .collections .carouselBlock .controlBlock .arrowLine {
+        width: 30px;
+        height: 8px;
+        background-color: #fff;
+        display: block;
+        cursor: pointer; }
+      .collections .carouselBlock .controlBlock .leftArrow, .collections .carouselBlock .controlBlock .rightArrow {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        width: 50%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+      .collections .carouselBlock .controlBlock .leftArrow {
+        padding-right: 10px; }
+        .collections .carouselBlock .controlBlock .leftArrow .arrowLine:nth-child(1) {
+          box-shadow: -1px 2px 2px rgba(0, 0, 0, 0.1);
+          transform: rotate(-45deg) translateX(5px); }
+        .collections .carouselBlock .controlBlock .leftArrow .arrowLine:nth-child(2) {
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+          transform: rotate(45deg) translateX(5px); }
+      .collections .carouselBlock .controlBlock .rightArrow {
+        padding-left: 10px; }
+        .collections .carouselBlock .controlBlock .rightArrow .arrowLine:nth-child(1) {
+          box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+          transform: rotate(45deg) translateX(-5px); }
+        .collections .carouselBlock .controlBlock .rightArrow .arrowLine:nth-child(2) {
+          box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.1);
+          transform: rotate(-45deg) translateX(-5px); }
+    .collections .carouselBlock .carouselItems {
+      width: 100%;
+      height: 550px;
+      display: flex;
+      justify-content: space-around;
+      background-color: rgba(254, 235, 227, 0.68); }
+      .collections .carouselBlock .carouselItems .itemContent {
+        width: 40%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative; }
+        .collections .carouselBlock .carouselItems .itemContent .itemTitle {
+          font-size: 36px;
+          color: #fff;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+          font-weight: bold;
+          margin-bottom: 5px; }
+          .collections .carouselBlock .carouselItems .itemContent .itemTitle span {
+            margin-left: 4px;
+            font-size: 30px;
+            color: #fff; }
+            .collections .carouselBlock .carouselItems .itemContent .itemTitle span::before {
+              content: "";
+              width: 4px;
+              height: 20px;
+              margin-right: 4px;
+              display: inline-block;
+              box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+              background-color: #fff; }
+        .collections .carouselBlock .carouselItems .itemContent .itemSubTitle {
+          margin-bottom: 30px; }
+        .collections .carouselBlock .carouselItems .itemContent .itemText {
+          text-align: center;
+          line-height: 1.5;
+          font-size: 18px;
+          margin-bottom: 45px; }
+        .collections .carouselBlock .carouselItems .itemContent .itemFooter {
+          font-size: 16px;
+          color: #c0a79a;
+          margin-bottom: 10px;
+          position: absolute;
+          bottom: 0; }
+          .collections .carouselBlock .carouselItems .itemContent .itemFooter span {
+            margin-left: 2px;
+            color: #c0a79a;
+            font-weight: bold;
+            text-shadow: 0px 1px 2px white; }
+      .collections .carouselBlock .carouselItems .itemImage {
+        width: 50%;
+        height: 90%;
+        align-self: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: bottom;
+        overflow: hidden;
+        position: relative; }
+        .collections .carouselBlock .carouselItems .itemImage::before {
+          content: '';
+          width: 100%;
+          height: 100%;
+          background-color: rgba(255, 255, 255, 0.15);
+          position: absolute;
+          top: 0;
+          z-index: 1; }
+      .collections .carouselBlock .carouselItems .itemImage_01 {
+        background-image: url("../img/pagination/collections/carousel/carouselImage_01.jpg"); }
+  .collections .collectionsBlock {
+    width: 100%;
+    margin-top: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; }
+    .collections .collectionsBlock .collectionItem:nth-child(even) {
+      transform: translateY(60px); }
+    .collections .collectionsBlock .collectionItem {
+      width: 280px;
+      height: 360px;
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 40px;
+      border-radius: 4px;
+      background-color: rgba(255, 255, 255, 0.65);
+      box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15); }
+      .collections .collectionsBlock .collectionItem .collectionImage {
+        margin-top: 20px;
+        overflow: hidden; }
+        .collections .collectionsBlock .collectionItem .collectionImage img {
+          width: 100%;
+          transition: transform .5s; }
+      .collections .collectionsBlock .collectionItem .collectionTitle {
+        width: 100%;
+        padding: 10px 0;
+        background-color: rgba(255, 255, 255, 0.65);
+        position: absolute;
+        bottom: 65px;
+        transition: bottom .5s; }
+        .collections .collectionsBlock .collectionItem .collectionTitle .mainTitle {
+          margin-bottom: 6px;
+          padding-left: 10px;
+          font-size: 20px;
+          font-weight: bold;
+          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+          color: white; }
+        .collections .collectionsBlock .collectionItem .collectionTitle .subTitle {
+          padding-left: 20px;
+          font-weight: bold;
+          text-shadow: 0px 1px 2px white; }
+      .collections .collectionsBlock .collectionItem:hover .collectionImage img {
+        transform: scale(1.1); }
+      .collections .collectionsBlock .collectionItem:hover .collectionTitle {
+        bottom: 0px; }
+
+.services {
+  width: 100%;
+  max-width: 1200px;
+  padding-bottom: 40px;
+  margin: auto; }
+  .services .servicesBlock {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .services .servicesBlock .servicesTabBlock {
+      width: 100%;
+      margin-bottom: 60px; }
+      .services .servicesBlock .servicesTabBlock .servicesItemsTitleBlock {
+        display: flex;
+        justify-content: center;
+        align-items: center; }
+        .services .servicesBlock .servicesTabBlock .servicesItemsTitleBlock .servicesItemsTitle {
+          margin-bottom: 20px;
+          display: flex;
+          flex-direction: column;
+          align-items: center; }
+          .services .servicesBlock .servicesTabBlock .servicesItemsTitleBlock .servicesItemsTitle .mainTitle {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 5px; }
+          .services .servicesBlock .servicesTabBlock .servicesItemsTitleBlock .servicesItemsTitle .subTitle {
+            font-size: 18px; }
+        .services .servicesBlock .servicesTabBlock .servicesItemsTitleBlock .leftLine, .services .servicesBlock .servicesTabBlock .servicesItemsTitleBlock .rightLine {
+          display: block;
+          width: 240px;
+          height: 2px;
+          background-color: rgba(0, 0, 0, 0.2); }
+        .services .servicesBlock .servicesTabBlock .servicesItemsTitleBlock .leftLine {
+          margin-right: 10px; }
+        .services .servicesBlock .servicesTabBlock .servicesItemsTitleBlock .rightLine {
+          margin-left: 10px; }
+      .services .servicesBlock .servicesTabBlock .servicesTab {
+        display: flex;
+        justify-content: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+        .services .servicesBlock .servicesTabBlock .servicesTab li {
+          border-right: 1px solid rgba(0, 0, 0, 0.1);
+          font-size: 18px;
+          padding: 15px 30px;
+          transition: background-color .2s; }
+          .services .servicesBlock .servicesTabBlock .servicesTab li:last-child {
+            border-right: unset; }
+          .services .servicesBlock .servicesTabBlock .servicesTab li:hover {
+            background-color: rgba(0, 0, 0, 0.04);
+            font-weight: bold;
+            color: rgba(0, 0, 0, 0.6);
+            cursor: pointer; }
+        .services .servicesBlock .servicesTabBlock .servicesTab .-on {
+          background-color: rgba(0, 0, 0, 0.04);
+          font-weight: bold;
+          color: rgba(0, 0, 0, 0.6); }
+    .services .servicesBlock .serviceItem {
+      width: 100%;
+      display: none; }
+      .services .servicesBlock .serviceItem .serviceContent {
+        width: 100%;
+        padding: 20px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        background-color: rgba(255, 255, 255, 0.6); }
+        .services .servicesBlock .serviceItem .serviceContent .servicePart {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap; }
+          .services .servicesBlock .serviceItem .serviceContent .servicePart:nth-child(1) {
+            flex-direction: column;
+            align-items: center;
+            position: relative; }
+            .services .servicesBlock .serviceItem .serviceContent .servicePart:nth-child(1)::before {
+              content: "";
+              width: 85%;
+              height: 85%;
+              margin-left: 2%;
+              border: 4px solid rgba(255, 255, 255, 0.8);
+              position: absolute; }
+          .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceTitle {
+            margin-bottom: 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center; }
+            .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceTitle .mainTitle {
+              font-size: 28px;
+              font-weight: bold;
+              color: #c0a79a;
+              text-shadow: 0px 1px 2px white;
+              margin-bottom: 5px; }
+            .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceTitle .subTitle {
+              font-size: 18px;
+              font-weight: bold;
+              color: #fff;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+          .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceText {
+            align-self: center;
+            margin-bottom: 45px; }
+            .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceText p {
+              text-align: center;
+              font-size: 18px;
+              line-height: 1.5; }
+          .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceQuarter {
+            width: 45%;
+            margin: 2px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
+            .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceQuarter img {
+              width: 100%;
+              transition: transform .5s; }
+            .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceQuarter .serviceName {
+              width: 100%;
+              height: 100%;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              bottom: 0;
+              z-index: 1; }
+              .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceQuarter .serviceName p {
+                width: 95%;
+                height: 95%;
+                border: 4px solid rgba(255, 255, 255, 0.6);
+                background-color: rgba(255, 255, 255, 0.2);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 18px;
+                font-weight: bold;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+                color: #fff; }
+            .services .servicesBlock .serviceItem .serviceContent .servicePart .serviceQuarter:hover img {
+              transform: scale(1.1); }
+      .services .servicesBlock .serviceItem.-on {
+        display: block; }
+      .services .servicesBlock .serviceItem .itemRelatedsBlock {
+        padding: 20px 0 40px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+        .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsTitle {
+          margin-bottom: 20px;
+          text-align: center; }
+          .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsTitle .mainTitle {
+            font-size: 24px;
+            font-weight: bold;
+            color: #c0a79a;
+            text-shadow: 0px 1px 2px white;
+            margin-bottom: 5px; }
+          .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsTitle .subTitle {
+            font-size: 18px; }
+        .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel {
+          width: 100%;
+          padding: 5px;
+          overflow: hidden;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          position: relative; }
+          .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent {
+            width: 100%;
+            align-self: flex-start;
+            display: flex;
+            position: relative;
+            z-index: 2; }
+            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated {
+              width: 280px;
+              height: 360px;
+              margin: 0 10px;
+              overflow: hidden;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              position: relative;
+              background-color: rgba(255, 255, 255, 0.65);
+              box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
+              border: 1px solid rgba(0, 0, 0, 0.1); }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated .relatedImage {
+                margin-top: 20px;
+                overflow: hidden;
+                position: relative; }
+                .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated .relatedImage img {
+                  width: 100%;
+                  transition: transform .5s; }
+                .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated .relatedImage::before {
+                  content: "";
+                  width: 100%;
+                  height: 100%;
+                  opacity: 0;
+                  position: absolute;
+                  z-index: 1;
+                  top: 0;
+                  background-color: rgba(254, 235, 227, 0.68);
+                  transition: opacity .5s; }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated .relatedTitle {
+                padding-left: 40px;
+                position: relative;
+                z-index: 2;
+                bottom: 120px;
+                transition: bottom 1s; }
+                .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated .relatedTitle p {
+                  font-size: 18px;
+                  font-weight: bold;
+                  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+                  color: white; }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated .relatedDescription {
+                position: relative;
+                bottom: 0;
+                z-index: 2;
+                opacity: 0;
+                padding-left: 40px;
+                transition: opacity 1s,bottom 1s; }
+                .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated .relatedDescription p {
+                  font-size: 18px;
+                  font-weight: bold;
+                  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+                  color: white; }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated:hover .relatedImage img {
+                transform: scale(1.1); }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated:hover .relatedImage::before {
+                opacity: 1; }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated:hover .relatedTitle {
+                bottom: 200px; }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated:hover .relatedDescription {
+                opacity: 1;
+                bottom: 180px; }
+          .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0; }
+            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .arrowLine {
+              width: 30px;
+              height: 8px;
+              background-color: #fff;
+              display: block;
+              cursor: pointer; }
+            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .leftArrow, .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .rightArrow {
+              width: auto;
+              height: 100%;
+              display: flex;
+              flex-direction: column;
+              justify-content: center;
+              align-items: center;
+              position: absolute;
+              z-index: 2;
+              transition: background-color .2s; }
+            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .leftArrow {
+              padding-right: 10px;
+              left: 0; }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .leftArrow .arrowLine:nth-child(1) {
+                box-shadow: -1px 2px 2px rgba(0, 0, 0, 0.1);
+                transform: rotate(-45deg) translateX(5px); }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .leftArrow .arrowLine:nth-child(2) {
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+                transform: rotate(45deg) translateX(5px); }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .leftArrow:hover {
+                background-color: rgba(0, 0, 0, 0.05); }
+            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .rightArrow {
+              padding-left: 10px;
+              right: 0; }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .rightArrow .arrowLine:nth-child(1) {
+                box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.1);
+                transform: rotate(45deg) translateX(-5px); }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .rightArrow .arrowLine:nth-child(2) {
+                box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.1);
+                transform: rotate(-45deg) translateX(-5px); }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .rightArrow:hover {
+                background-color: rgba(0, 0, 0, 0.05); }
+
+.events {
+  width: 100%;
+  max-width: 1200px;
+  padding-bottom: 40px;
+  margin: auto; }
+  .events .eventsBlock .eventItem {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    background-color: rgba(255, 255, 255, 0.65);
+    display: flex;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: 1s; }
+    .events .eventsBlock .eventItem:last-child {
+      margin-bottom: unset; }
+    .events .eventsBlock .eventItem::before {
+      content: "";
+      width: 97%;
+      height: 92%;
+      align-self: center;
+      position: absolute;
+      border: 6px solid rgba(255, 255, 255, 0.65); }
+    .events .eventsBlock .eventItem .eventItemPart {
+      width: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .events .eventsBlock .eventItem .eventItemPart:nth-child(2) {
+        justify-content: flex-start;
+        margin-left: 20px;
+        padding: 5px; }
+      .events .eventsBlock .eventItem .eventItemPart .eventItemImage {
+        width: 100%;
+        max-width: 475px;
+        padding: 30px 15px; }
+        .events .eventsBlock .eventItem .eventItemPart .eventItemImage img {
+          width: 100%;
+          overflow: hidden;
+          border-radius: 4px;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
+      .events .eventsBlock .eventItem .eventItemPart .eventItemContent {
+        width: 100%;
+        transform: translateX(-10%);
+        height: 85%;
+        padding-left: 40px;
+        background-color: rgba(255, 255, 255, 0.65);
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative; }
+        .events .eventsBlock .eventItem .eventItemPart .eventItemContent .eventTitle {
+          width: 60%;
+          margin-bottom: 30px;
+          padding-bottom: 10px;
+          border-bottom: 4px solid rgba(192, 167, 154, 0.75); }
+          .events .eventsBlock .eventItem .eventItemPart .eventItemContent .eventTitle .mainTitle {
+            font-size: 28px;
+            font-weight: bold;
+            text-shadow: 0px 1px 2px white;
+            color: #c0a79a; }
+          .events .eventsBlock .eventItem .eventItemPart .eventItemContent .eventTitle .subTitle {
+            margin-top: 5px;
+            padding-left: 5px;
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            color: #fff; }
+        .events .eventsBlock .eventItem .eventItemPart .eventItemContent .eventText {
+          line-height: 1.5;
+          margin-bottom: 45px; }
+          .events .eventsBlock .eventItem .eventItemPart .eventItemContent .eventText p {
+            font-size: 18px; }
+        .events .eventsBlock .eventItem .eventItemPart .eventItemContent .btnSecond {
+          align-self: center; }
+    .events .eventsBlock .eventItem:hover {
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4);
+      transform: translateY(-4px); }
+
+.aboutUs {
+  width: 100%;
+  max-width: 1200px;
+  padding-bottom: 40px;
+  margin: auto; }
+  .aboutUs .aboutUsBlock {
+    display: flex;
+    flex-direction: column; }
+    .aboutUs .aboutUsBlock .aboutUsPart {
+      margin-bottom: 60px; }
+      .aboutUs .aboutUsBlock .aboutUsPart .aboutUsTitle {
+        text-align: center;
+        margin: 0 auto;
+        margin-bottom: 45px;
+        position: relative; }
+        .aboutUs .aboutUsBlock .aboutUsPart .aboutUsTitle .mainTitle {
+          font-size: 24px;
+          font-weight: bold;
+          text-shadow: 0px 1px 2px white;
+          color: #c0a79a;
+          margin-bottom: 5px; }
+        .aboutUs .aboutUsBlock .aboutUsPart .aboutUsTitle .subTitle {
+          font-size: 18px; }
+      .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock {
+        width: 100%;
+        margin: auto;
+        background-color: rgba(255, 255, 255, 0.65);
+        border-radius: 4px;
+        padding: 20px 40px;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center; }
+        .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo {
+          background-color: rgba(255, 255, 255, 0.4);
+          border: 1px solid rgba(0, 0, 0, 0.05);
+          border-radius: 4px;
+          width: 100%;
+          padding: 20px 0px; }
+          .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo:last-child {
+            margin-bottom: unset; }
+          .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo:nth-child(2) {
+            justify-content: center; }
+            .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo:nth-child(2) .contentPart:nth-child(1) {
+              display: none; }
+          .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent {
+            display: flex;
+            justify-content: center; }
+            .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart {
+              width: 50%;
+              min-height: 400px;
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              justify-content: center; }
+              .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart:nth-child(1) {
+                border-right: 1px solid rgba(0, 0, 0, 0.05); }
+              .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .aboutUsText {
+                text-align: center;
+                line-height: 1.5; }
+                .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .aboutUsText .mapInfo {
+                  margin-bottom: 10px;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center; }
+                  .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .aboutUsText .mapInfo .studioName {
+                    width: 180px;
+                    margin-bottom: 10px; }
+                    .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .aboutUsText .mapInfo .studioName img {
+                      width: 100%; }
+                    .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .aboutUsText .mapInfo .studioName p {
+                      font-weight: bold;
+                      text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.45);
+                      line-height: 1; }
+                  .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .aboutUsText .mapInfo p span {
+                    font-size: 14px;
+                    margin: 0 2px; }
+                  .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .aboutUsText .mapInfo p .days {
+                    margin: 0; }
+                  .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .aboutUsText .mapInfo:last-child {
+                    margin-bottom: unset; }
+              .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .studioOfficeBlock {
+                width: 80%;
+                border-radius: 4px;
+                box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+                position: relative; }
+                .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .studioOfficeBlock .studioOfficeContent {
+                  width: 300%;
+                  display: flex; }
+                  .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .studioOfficeBlock .studioOfficeContent .studioOfficePart {
+                    width: 100%; }
+                    .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .studioOfficeBlock .studioOfficeContent .studioOfficePart img {
+                      width: 100%; }
+                .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .studioOfficeBlock .studioControlBlock {
+                  width: 100%;
+                  height: 60px;
+                  background-color: rgba(255, 255, 255, 0.8);
+                  align-self: center;
+                  position: absolute;
+                  bottom: 0;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center; }
+                  .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .studioOfficeBlock .studioControlBlock .studioControls {
+                    display: flex; }
+                    .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .studioOfficeBlock .studioControlBlock .studioControls .controlPart {
+                      background-color: #888;
+                      width: 13px;
+                      height: 13px;
+                      border-radius: 50%;
+                      margin-right: 4px; }
+                      .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .studioOfficeBlock .studioControlBlock .studioControls .controlPart:last-child {
+                        margin-right: unset; }
+                      .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .aboutUsContent .contentPart .studioOfficeBlock .studioControlBlock .studioControls .controlPart:hover {
+                        background-color: #aaa; }
+          .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock {
+            display: flex;
+            justify-content: center; }
+            .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls {
+              width: 900px;
+              height: 450px;
+              display: flex; }
+              .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls .igWallsImage {
+                width: 50%;
+                height: 50%;
+                padding: 5px;
+                filter: brightness(0.9);
+                transition: .25s; }
+                .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls .igWallsImage img {
+                  width: 100%;
+                  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
+                .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls .igWallsImage:hover {
+                  filter: brightness(1.025); }
+            .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(1) {
+              width: 50%; }
+              .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(1) .igWallsImage {
+                width: 100%;
+                height: 100%; }
+            .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(2) {
+              display: flex;
+              flex-wrap: wrap;
+              width: 50%; }
+              .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(2) .igWallsImage {
+                width: 50%; }
+            .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls:nth-child(2) {
+              height: 275px; }
+              .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls:nth-child(2) .igWallsImage {
+                width: 100%;
+                height: 100%; }
+                .aboutUs .aboutUsBlock .aboutUsPart .aboutUsInfoBlock .aboutUsInfo .igWallsBlock .igWallsContent .igWalls:nth-child(2) .igWallsImage img {
+                  width: 100%; }
+
+.teaching {
+  width: 100%;
+  max-width: 1200px;
+  padding-bottom: 40px;
+  margin: auto; }
+  .teaching .teachingBlock .teachingPart {
+    width: 100%;
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; }
+    .teaching .teachingBlock .teachingPart:last-child {
+      margin-bottom: unset; }
+    .teaching .teachingBlock .teachingPart .teachingCourse {
+      width: 100%;
+      overflow: hidden;
+      position: relative; }
+      .teaching .teachingBlock .teachingPart .teachingCourse .teachingCourseImage {
+        height: 450px;
+        padding: 0 5px;
+        filter: blur(1.5px); }
+        .teaching .teachingBlock .teachingPart .teachingCourse .teachingCourseImage img {
+          width: 100%; }
+      .teaching .teachingBlock .teachingPart .teachingCourse .teachingContent {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 0;
+        left: 0; }
+        .teaching .teachingBlock .teachingPart .teachingCourse .teachingContent::before {
+          content: "";
+          width: 98%;
+          height: 95%;
+          position: absolute;
+          background-color: rgba(255, 255, 255, 0.15); }
+        .teaching .teachingBlock .teachingPart .teachingCourse .teachingContent .contentPart {
+          width: 50%;
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative; }
+          .teaching .teachingBlock .teachingPart .teachingCourse .teachingContent .contentPart:nth-child(1) {
+            transform: translateX(100px); }
+          .teaching .teachingBlock .teachingPart .teachingCourse .teachingContent .contentPart .teachingCourseTitle {
+            text-align: center;
+            margin-bottom: 45px; }
+            .teaching .teachingBlock .teachingPart .teachingCourse .teachingContent .contentPart .teachingCourseTitle .mainTitle {
+              font-size: 28px;
+              font-weight: bold;
+              color: white;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+              margin-bottom: 5px; }
+            .teaching .teachingBlock .teachingPart .teachingCourse .teachingContent .contentPart .teachingCourseTitle .subTitle {
+              font-size: 24px;
+              font-weight: bold;
+              color: white;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+          .teaching .teachingBlock .teachingPart .teachingCourse .teachingContent .contentPart .teachingCourseText {
+            margin-bottom: 45px; }
+            .teaching .teachingBlock .teachingPart .teachingCourse .teachingContent .contentPart .teachingCourseText p {
+              font-size: 18px;
+              font-weight: bold;
+              line-height: 1.5;
+              text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.45);
+              color: #fff; }
+    .teaching .teachingBlock .teachingPart .teachingItems {
+      width: 100%;
+      margin-top: 10px;
+      display: flex; }
+      .teaching .teachingBlock .teachingPart .teachingItems .teachingItem {
+        width: 33.33%;
+        margin: 0 5px 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+        overflow: hidden;
+        position: relative; }
+        .teaching .teachingBlock .teachingPart .teachingItems .teachingItem img {
+          width: 100%;
+          transition: .5s; }
+        .teaching .teachingBlock .teachingPart .teachingItems .teachingItem .teachingItemName {
+          width: 100%;
+          height: 100%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          position: absolute;
+          top: 0;
+          left: 0; }
+          .teaching .teachingBlock .teachingPart .teachingItems .teachingItem .teachingItemName p {
+            font-size: 18px;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+            color: #fff; }
+          .teaching .teachingBlock .teachingPart .teachingItems .teachingItem .teachingItemName::before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background-image: url("../img/element/imageFrame_01.png");
+            background-size: contain;
+            position: absolute;
+            opacity: .4;
+            transition: opacity .5s; }
+        .teaching .teachingBlock .teachingPart .teachingItems .teachingItem:hover img {
+          transform: scale(1.1) rotate(2deg);
+          filter: blur(1px); }
+        .teaching .teachingBlock .teachingPart .teachingItems .teachingItem:hover ::before {
+          opacity: .65; }

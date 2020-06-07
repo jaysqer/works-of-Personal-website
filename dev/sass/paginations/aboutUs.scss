@@ -1,0 +1,211 @@
+
+// --- mainSection
+.aboutUs{
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 40px;
+    margin: auto;
+    .aboutUsBlock{
+        display: flex;
+        flex-direction: column;
+        .aboutUsPart{
+            margin-bottom: 60px;
+            // aboutUsTitle 標題
+            .aboutUsTitle{
+                text-align: center;
+                margin: 0 auto;
+                margin-bottom: 45px;
+                position: relative;
+                .mainTitle{
+                    font-size: $fzMiddle;
+                    font-weight: bold;
+                    text-shadow: $importantFontShadow;
+                    color: $fcGold;
+                    margin-bottom: 5px;
+                }
+                .subTitle{
+                    font-size: $fzSmall;
+                }
+            }
+            // information 關於我們的資訊
+            .aboutUsInfoBlock{
+                width: 100%;
+                margin: auto;;
+                background-color: rgba($color: #fff, $alpha: .65);
+                border-radius: $radius; 
+                padding: 20px 40px;
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                .aboutUsInfo{
+                    background-color: rgba($color: #fff, $alpha: .4);
+                    border: 1px solid rgba($color: #000000, $alpha: .05);
+                    border-radius: $radius;
+                    width: 100%;
+                    padding:20px 0px;
+                    &:last-child{
+                        margin-bottom: unset;
+                    }
+                    &:nth-child(2){
+                        justify-content: center;
+                        .contentPart:nth-child(1){
+                            display: none;
+                        }
+                    }
+                    .aboutUsContent{
+                        display: flex;
+                        justify-content: center;
+                        .contentPart{   
+                            width: 50%;
+                            min-height: 400px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: center;
+                            &:nth-child(1){
+                                border-right: 1px solid rgba($color: #000000, $alpha: .05);
+                            }
+                            .aboutUsText{
+                                text-align: center;
+                                line-height: $lineHeight;
+                                .mapInfo{
+                                    margin-bottom: 10px;
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+                                     // studio工作室商標和名字
+                                    .studioName{
+                                        width: 180px;
+                                        margin-bottom: 10px;
+                                        img{
+                                            width: 100%;
+                                        }
+                                        p{
+                                            font-weight: bold;
+                                            text-shadow: $fontShadow;
+                                            line-height: 1;
+                                        }
+                                    }
+                                    p{
+                                        span{
+                                            font-size: $fzInfo * .875;
+                                            margin:0 2px ;
+                                        }
+                                        .days{
+                                            margin: 0;
+                                        }
+                                    }
+                                    &:last-child{
+                                        margin-bottom: unset;
+                                    }
+                                }
+                            }
+                            // studioOfficeBlock 工作室環境
+                            .studioOfficeBlock{
+                                width: 80%;
+                                border-radius: $radius;
+                                box-shadow: $slightShadow;
+                                display: flex;
+                                flex-direction: column;
+                                overflow: hidden;
+                                position: relative;
+                                .studioOfficeContent{
+                                    width: 300%;
+                                    display: flex;
+                                    .studioOfficePart{
+                                        width: 100%;
+                                        img{
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+                                .studioControlBlock{
+                                    width: 100%;
+                                    height: 60px;
+                                    background-color: rgba($color: #fff, $alpha: .8);
+                                    align-self: center;
+                                    position: absolute;
+                                    bottom: 0;
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+                                    .studioControls{
+                                        display: flex;
+                                        .controlPart{
+                                            background-color: #888;
+                                            width: 13px;
+                                            height: 13px;
+                                            border-radius: 50%;
+                                            margin-right: 4px;
+                                            &:last-child{
+                                                margin-right: unset;
+                                            }
+                                            &:hover{
+                                                background-color: #aaa;
+                                            }                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    // Instagram 關於我們的Ig
+                    .igWallsBlock{
+                        display: flex;
+                        justify-content: center;
+                        .igWallsContent{   
+                            .igWalls{
+                                width: 900px;
+                                height: 450px;
+                                display: flex;
+                                .igWallsImage{
+                                    width: 50%;
+                                    height: 50%;
+                                    padding: 5px;
+                                    filter: brightness(.9);
+                                    transition:.25s;
+                                    img{
+                                        width: 100%;
+                                        box-shadow: $slightShadow;
+                                    }
+                                    &:hover{
+                                        filter: brightness(1.025);
+                                    }
+                                }
+                            } 
+                            .igWalls:nth-child(1){
+                                .igWallsPart:nth-child(1){
+                                    width: 50%;
+                                    .igWallsImage{
+                                        width: 100%;
+                                        height: 100%;
+                                    }
+                                }
+                                .igWallsPart:nth-child(2){
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    width:50%;
+                                    .igWallsImage{
+                                        width: 50%;
+                                    }
+                                }
+                            }
+                            .igWalls:nth-child(2){
+                                height: 275px;
+                                .igWallsImage{
+                                    width: 100%;
+                                    height: 100%;
+                                    img{
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }        
+    }
+}

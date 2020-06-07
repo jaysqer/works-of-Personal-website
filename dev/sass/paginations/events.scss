@@ -1,0 +1,105 @@
+
+// --- mainSection
+.events{
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 40px;
+    margin: auto;
+    .eventsBlock{
+        // eventItem 事件項目
+        .eventItem{
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            margin-bottom: 60px;
+            background-color: rgba($color: #fff, $alpha: .65);
+            display: flex;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba($color: #000000, $alpha: .1);
+            border-radius: $radius;
+            box-shadow: $slightShadow;
+            transition: 1s;
+            &:last-child{
+                margin-bottom: unset;
+            }
+            &::before{
+                content: "";
+                width: 97%;
+                height: 92%;
+                align-self: center;
+                position: absolute;
+                border: 6px solid rgba($color: #fff, $alpha: .65);
+            }
+            .eventItemPart{
+                width: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &:nth-child(2){
+                    justify-content: flex-start;
+                    margin-left: 20px;
+                    padding:5px;
+                }
+                .eventItemImage{
+                    width: 100%;
+                    max-width: 475px;
+                    padding: 30px 15px;
+                    img{
+                        width: 100%;
+                        overflow: hidden;
+                        border-radius: $radius;
+                        box-shadow: $slightShadow;
+                    }
+                }
+                .eventItemContent{
+                    width: 100%;
+                    transform: translateX(-10%);
+                    height: 85%;
+                    padding-left: 40px;
+                    background-color: rgba($color: #fff, $alpha: .65);
+                    border: 1px solid rgba($color: #000, $alpha: .1);
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    position: relative;
+                    .eventTitle{
+                        width: 60%;
+                        margin-bottom: 30px;
+                        padding-bottom: 10px;
+                        border-bottom: 4px solid rgba($color: $fcGold, $alpha: .75);
+                        .mainTitle{
+                            font-size: $fzLarge;
+                            font-weight: bold;
+                            text-shadow: $importantFontShadow;
+                            color: $fcGold;
+                        }
+                        .subTitle{
+                            margin-top: 5px;
+                            padding-left: 5px;
+                            font-size: $fzSmall;
+                            font-weight: bold;
+                            text-shadow: $titleShadow;
+                            color: #fff;
+                        }
+                    }
+                    .eventText{
+                        line-height: $lineHeight;
+                        margin-bottom: 45px;
+                        p{
+                            font-size: $fzSmall;
+                        }
+                    }
+                    .btnSecond{
+                        align-self: center;
+                    }
+                }
+            }
+            &:hover{
+                box-shadow: $heavierShadow;
+                transform: translateY(-4px);
+            }
+        }
+    }
+}
