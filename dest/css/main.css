@@ -312,6 +312,7 @@ blockquote, q {
         transition: all .8s; }
       .navBlock .nav ul li a {
         font-size: 20px;
+        padding: 10px 0;
         position: relative;
         z-index: 2; }
       .navBlock .nav ul li a::after {
@@ -333,10 +334,10 @@ blockquote, q {
         font-weight: bold;
         color: #555; }
       .navBlock .nav ul li:hover .navHover {
-        top: -20px;
+        top: -15px;
         opacity: 1; }
       .navBlock .nav ul li .navDisplay {
-        top: -20px;
+        top: -15px;
         opacity: 1; }
       .navBlock .nav ul li .fontBold {
         font-weight: bold;
@@ -503,7 +504,10 @@ blockquote, q {
   to {
     transform: translateY(-5px); } }
     .socialMediasBlock .socialMedia img {
-      width: 100%; }
+      width: 100%;
+      filter: brightness(0.95); }
+    .socialMediasBlock .socialMedia:hover img {
+      filter: brightness(1.05); }
     .socialMediasBlock .socialMedia:nth-child(1) {
       width: 110px;
       top: -20px;

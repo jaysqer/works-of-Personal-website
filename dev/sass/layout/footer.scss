@@ -37,6 +37,12 @@
         }
         img{
             width: 100%;
+            filter: brightness(.95);
+        }
+        &:hover{
+            img{
+                filter: brightness(1.05);
+            }
         }
         &:nth-child(1){
             width: 110px;

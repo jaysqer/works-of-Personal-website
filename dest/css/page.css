@@ -522,14 +522,16 @@ blockquote, q {
       background-color: rgba(254, 235, 227, 0.85);
       position: absolute;
       z-index: 2;
-      right: 0;
-      bottom: 0; }
+      left: 50%;
+      transform: translateX(-70%);
+      bottom: 0;
+      cursor: pointer; }
       .collections .carouselBlock .controlBlock .arrowLine {
         width: 30px;
         height: 8px;
         background-color: #fff;
         display: block;
-        cursor: pointer; }
+        transition: .5s; }
       .collections .carouselBlock .controlBlock .leftArrow, .collections .carouselBlock .controlBlock .rightArrow {
         border: 1px solid rgba(0, 0, 0, 0.1);
         width: 50%;
@@ -546,6 +548,8 @@ blockquote, q {
         .collections .carouselBlock .controlBlock .leftArrow .arrowLine:nth-child(2) {
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
           transform: rotate(45deg) translateX(5px); }
+        .collections .carouselBlock .controlBlock .leftArrow:hover .arrowLine:nth-child(2) {
+          box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); }
       .collections .carouselBlock .controlBlock .rightArrow {
         padding-left: 10px; }
         .collections .carouselBlock .controlBlock .rightArrow .arrowLine:nth-child(1) {
@@ -554,75 +558,114 @@ blockquote, q {
         .collections .carouselBlock .controlBlock .rightArrow .arrowLine:nth-child(2) {
           box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.1);
           transform: rotate(-45deg) translateX(-5px); }
-    .collections .carouselBlock .carouselItems {
+        .collections .carouselBlock .controlBlock .rightArrow:hover .arrowLine:nth-child(2) {
+          box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.25); }
+    .collections .carouselBlock .carouselsContent {
       width: 100%;
       height: 550px;
-      display: flex;
-      justify-content: space-around;
-      background-color: rgba(254, 235, 227, 0.68); }
-      .collections .carouselBlock .carouselItems .itemContent {
-        width: 40%;
+      position: relative; }
+      .collections .carouselBlock .carouselsContent .active {
+        z-index: 1;
+        opacity: 1;
+        visibility: visible; }
+      .collections .carouselBlock .carouselsContent .carouselItems {
+        width: 100%;
         height: 100%;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative; }
-        .collections .carouselBlock .carouselItems .itemContent .itemTitle {
-          font-size: 36px;
-          color: #fff;
-          text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-          font-weight: bold;
-          margin-bottom: 5px; }
-          .collections .carouselBlock .carouselItems .itemContent .itemTitle span {
-            margin-left: 4px;
-            font-size: 30px;
-            color: #fff; }
-            .collections .carouselBlock .carouselItems .itemContent .itemTitle span::before {
-              content: "";
-              width: 4px;
-              height: 20px;
-              margin-right: 4px;
-              display: inline-block;
-              box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-              background-color: #fff; }
-        .collections .carouselBlock .carouselItems .itemContent .itemSubTitle {
-          margin-bottom: 30px; }
-        .collections .carouselBlock .carouselItems .itemContent .itemText {
-          text-align: center;
-          line-height: 1.5;
-          font-size: 18px;
-          margin-bottom: 45px; }
-        .collections .carouselBlock .carouselItems .itemContent .itemFooter {
-          font-size: 16px;
-          color: #c0a79a;
-          margin-bottom: 10px;
-          position: absolute;
-          bottom: 0; }
-          .collections .carouselBlock .carouselItems .itemContent .itemFooter span {
-            margin-left: 2px;
-            color: #c0a79a;
-            font-weight: bold;
-            text-shadow: 0px 1px 2px white; }
-      .collections .carouselBlock .carouselItems .itemImage {
-        width: 50%;
-        height: 90%;
-        align-self: center;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: bottom;
-        overflow: hidden;
-        position: relative; }
-        .collections .carouselBlock .carouselItems .itemImage::before {
-          content: '';
-          width: 100%;
+        justify-content: space-around;
+        position: absolute;
+        top: 0;
+        background-color: rgba(254, 235, 227, 0.68); }
+        .collections .carouselBlock .carouselsContent .carouselItems .itemContent {
+          width: 40%;
           height: 100%;
-          background-color: rgba(255, 255, 255, 0.15);
-          position: absolute;
-          top: 0;
-          z-index: 1; }
-      .collections .carouselBlock .carouselItems .itemImage_01 {
-        background-image: url("../img/pagination/collections/carousel/carouselImage_01.jpg"); }
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          position: relative; }
+          .collections .carouselBlock .carouselsContent .carouselItems .itemContent .itemTitle {
+            margin-bottom: 30px;
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20%);
+            transition: .5s ease-in-out; }
+            .collections .carouselBlock .carouselsContent .carouselItems .itemContent .itemTitle .mainTitle {
+              font-size: 36px;
+              color: #fff;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+              font-weight: bold;
+              margin-bottom: 5px; }
+              .collections .carouselBlock .carouselsContent .carouselItems .itemContent .itemTitle .mainTitle span {
+                margin-left: 4px;
+                font-size: 30px;
+                color: #fff; }
+                .collections .carouselBlock .carouselsContent .carouselItems .itemContent .itemTitle .mainTitle span::before {
+                  content: "";
+                  width: 4px;
+                  height: 20px;
+                  margin-right: 4px;
+                  display: inline-block;
+                  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+                  background-color: #fff; }
+          .collections .carouselBlock .carouselsContent .carouselItems .itemContent .itemText {
+            text-align: center;
+            line-height: 1.5;
+            font-size: 18px;
+            margin-bottom: 45px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20%);
+            transition: .5s ease-in-out; }
+          .collections .carouselBlock .carouselsContent .carouselItems .itemContent .itemFooter {
+            font-size: 16px;
+            font-weight: bold;
+            color: #c0a79a;
+            margin-bottom: 10px;
+            position: absolute;
+            bottom: 0; }
+            .collections .carouselBlock .carouselsContent .carouselItems .itemContent .itemFooter span {
+              margin-left: 2px;
+              color: #c0a79a;
+              font-weight: bold;
+              text-shadow: 0px 1px 2px white; }
+        .collections .carouselBlock .carouselsContent .carouselItems .itemImage {
+          width: 50%;
+          height: 90%;
+          align-self: center;
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-position: bottom;
+          overflow: hidden;
+          position: relative;
+          opacity: 0;
+          visibility: hidden;
+          transform: translateX(20%);
+          transition: .5s ease-in-out; }
+          .collections .carouselBlock .carouselsContent .carouselItems .itemImage::before {
+            content: '';
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.15);
+            position: absolute;
+            top: 0;
+            z-index: 1; }
+        .collections .carouselBlock .carouselsContent .carouselItems .itemImage_01 {
+          background-image: url("../img/pagination/collections/carousel/carouselImage_01.jpg"); }
+        .collections .carouselBlock .carouselsContent .carouselItems .itemImage_02 {
+          background-image: url("../img/pagination/collections/carousel/carouselImage_02.jpg"); }
+        .collections .carouselBlock .carouselsContent .carouselItems .itemImage_03 {
+          background-image: url("../img/pagination/collections/carousel/carouselImage_03.jpg"); }
+      .collections .carouselBlock .carouselsContent .active.carouselItems .itemContent .itemTitle,
+      .collections .carouselBlock .carouselsContent .active.carouselItems .itemContent .itemText {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0); }
+      .collections .carouselBlock .carouselsContent .active.carouselItems .itemImage {
+        opacity: 1;
+        visibility: visible;
+        transform: translateX(0); }
   .collections .collectionsBlock {
     width: 100%;
     margin-top: 120px;
@@ -838,7 +881,6 @@ blockquote, q {
           align-items: center;
           position: relative; }
           .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent {
-            width: 100%;
             align-self: flex-start;
             display: flex;
             position: relative;
@@ -855,6 +897,10 @@ blockquote, q {
               background-color: rgba(255, 255, 255, 0.65);
               box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.15);
               border: 1px solid rgba(0, 0, 0, 0.1); }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated:first-child {
+                margin-left: 0; }
+              .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated:last-child {
+                margin-right: 0; }
               .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated .relatedImage {
                 margin-top: 20px;
                 overflow: hidden;
@@ -904,6 +950,14 @@ blockquote, q {
               .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated:hover .relatedDescription {
                 opacity: 1;
                 bottom: 180px; }
+            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .active.left {
+              left: -25.5%; }
+            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .active.right {
+              left: 25.5%; }
+            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .next {
+              left: 25.5%; }
+            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .prev {
+              left: -25.5%; }
           .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl {
             width: 100%;
             height: 100%;

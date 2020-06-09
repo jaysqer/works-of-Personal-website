@@ -5,7 +5,7 @@
     max-width: 1200px;
     padding-bottom: 40px;
     margin: auto;
-    // sliderBlock
+    // carouselBlock
     .carouselBlock{
         width: 100%;
         margin: auto;
@@ -22,14 +22,16 @@
             background-color: rgba(254,235,227,.85);
             position: absolute;
             z-index: 2;
-            right: 0;
+            left:50%;
+            transform: translateX(-70%);
             bottom: 0;
+            cursor: pointer;
             .arrowLine{
                 width: 30px;
                 height: 8px;
                 background-color: #fff;
                 display: block;
-                cursor: pointer;
+                transition: .5s;
             }
             .leftArrow,.rightArrow{
                 border: 1px solid rgba($color: #000000, $alpha: .1);
@@ -39,6 +41,7 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+
             }
             .leftArrow{
                 padding-right: 10px;
@@ -50,6 +53,11 @@
                     box-shadow: 0px 2px 4px rgba($color: #000000, $alpha: .1);
                     transform: rotate(45deg) translateX(5px);
                 }
+                &:hover{
+                    .arrowLine:nth-child(2){
+                        box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: .25);
+                    }
+                }
             }
             .rightArrow{
                 padding-left: 10px;
@@ -60,91 +68,139 @@
                 .arrowLine:nth-child(2){
                     box-shadow: -1px 2px 4px rgba($color: #000000, $alpha: .1);
                     transform: rotate(-45deg) translateX(-5px);
-                }   
+                }
+                &:hover{
+                    .arrowLine:nth-child(2){
+                        box-shadow: -2px 2px 4px rgba($color: #000000, $alpha: .25);
+                    }
+                }  
             }
         }
         // carouselItems 輪播內容
-        .carouselItems{
+        .carouselsContent{
             width: 100%;
             height: 550px;
-            display: flex;
-            justify-content: space-around;
-            background-color: $fcHover;
-            // carouselContent
-            .itemContent{
-                width: 40%;
+            position: relative;
+            .active{
+                z-index: 1;
+                opacity: 1;
+                visibility: visible;
+            }
+            .carouselItems{
+                width: 100%;
                 height: 100%;
                 display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                position: relative;
-                .itemTitle{
-                    font-size: 36px;
-                    color:#fff;
-                    text-shadow: $titleShadow;
-                    font-weight: bold;
-                    margin-bottom: 5px;
-                    span{
-                        margin-left: 4px;
-                        font-size: 30px;
-                        color: #fff;
-                        &::before{
-                            content: "";
-                            width: 4px;
-                            height: 20px;
-                            margin-right: 4px;
-                            display: inline-block;
-                            box-shadow: $titleShadow;
-                            background-color: #fff;
+                justify-content: space-around;
+                position: absolute;
+                top: 0;
+                background-color: $fcHover;
+                // carouselContent
+                .itemContent{
+                    width: 40%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    position: relative;
+                    .itemTitle{
+                        margin-bottom: 30px;
+                        text-align: center;
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateY(20%);
+                        transition: .5s ease-in-out;
+                        .mainTitle{
+                            font-size: 36px;
+                            color:#fff;
+                            text-shadow: $titleShadow;
+                            font-weight: bold;
+                            margin-bottom: 5px;
+                            span{
+                                margin-left: 4px;
+                                font-size: 30px;
+                                color: #fff;
+                                &::before{
+                                    content: "";
+                                    width: 4px;
+                                    height: 20px;
+                                    margin-right: 4px;
+                                    display: inline-block;
+                                    box-shadow: $titleShadow;
+                                    background-color: #fff;
+                                }
+                            }
+                        }
+                    }
+                    .itemText{
+                        text-align: center;
+                        line-height: $lineHeight;
+                        font-size: $fzSmall;
+                        margin-bottom: 45px;
+                        opacity: 0;
+                        visibility: hidden;
+                        transform: translateY(20%);
+                        transition: .5s ease-in-out;
+                    }
+                    .itemFooter{
+                        font-size: $fzInfo;
+                        font-weight: bold;
+                        color: $fcGold;
+                        margin-bottom: 10px;
+                        position: absolute;
+                        bottom: 0;
+                        span{
+                            margin-left: 2px;
+                            color: $fcGold;
+                            font-weight: bold;
+                            text-shadow: $importantFontShadow;
                         }
                     }
                 }
-                .itemSubTitle{
-                    margin-bottom: 30px;
-                }
-                .itemText{
-                    text-align: center;
-                    line-height: $lineHeight;
-                    font-size: $fzSmall;
-                    margin-bottom: 45px;
-                }
-                .itemFooter{
-                    font-size: $fzInfo;
-                    color: $fcGold;
-                    margin-bottom: 10px;
-                    position: absolute;
-                    bottom: 0;
-                    span{
-                        margin-left: 2px;
-                        color: $fcGold;
-                        font-weight: bold;
-                        text-shadow: $importantFontShadow;
+                // carouselImage
+                .itemImage{
+                    width: 50%;
+                    height: 90%;
+                    align-self: center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                    background-position: bottom;
+                    overflow: hidden;
+                    position: relative;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateX(20%);
+                    transition: .5s ease-in-out;
+                    &::before{
+                        content: '';
+                        width: 100%;
+                        height: 100%;
+                        background-color: $imageCover;
+                        position: absolute;
+                        top: 0;
+                        z-index: 1;
                     }
                 }
-            }
-            // carouselImage
-            .itemImage{
-                width: 50%;
-                height: 90%;
-                align-self: center;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: bottom;
-                overflow: hidden;
-                position: relative;
-                &::before{
-                    content: '';
-                    width: 100%;
-                    height: 100%;
-                    background-color: $imageCover;
-                    position: absolute;
-                    top: 0;
-                    z-index: 1;
+                .itemImage_01{
+                    background-image: url('../img/pagination/collections/carousel/carouselImage_01.jpg');
+                }
+                .itemImage_02{
+                    background-image: url('../img/pagination/collections/carousel/carouselImage_02.jpg');
+                }
+                .itemImage_03{
+                    background-image: url('../img/pagination/collections/carousel/carouselImage_03.jpg');
                 }
             }
-            .itemImage_01{
-                background-image: url('../img/pagination/collections/carousel/carouselImage_01.jpg');
+            .active.carouselItems .itemContent .itemTitle,
+            .active.carouselItems .itemContent .itemText{
+                opacity: 1;
+                visibility: visible;
+                transform: translateY(0);
+            }
+            .active.carouselItems .itemImage{
+                opacity: 1;
+                visibility: visible;
+                transform: translateX(0);
             }
         }
 

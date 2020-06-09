@@ -208,7 +208,7 @@
                     align-items: center;
                     position: relative;
                     .itemRelatedsContent{
-                        width: 100%;
+                        // width: 100%;
                         align-self: flex-start;
                         display: flex;
                         position: relative;
@@ -225,6 +225,12 @@
                             background-color: rgba($color: #fff, $alpha: .65);
                             box-shadow: $itemsShadow;
                             border: 1px solid rgba($color: #000000, $alpha: .1);
+                            &:first-child{
+                                margin-left: 0;
+                            }
+                            &:last-child{
+                                margin-right: 0;
+                            }
                             .relatedImage{
                                 margin-top: 20px;
                                 overflow: hidden;
@@ -289,6 +295,20 @@
                                     bottom: 180px;
                                 }
                             }
+                        }
+                        .active{
+                            &.left{
+                                left: -25.5%;
+                            }
+                            &.right{
+                                left: 25.5%;
+                            }
+                        }
+                        .next{
+                            left: 25.5%;
+                        }
+                        .prev{
+                            left: -25.5%;
                         }
                     }
                     // controlBlock 控制區

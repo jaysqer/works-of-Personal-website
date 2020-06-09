@@ -1,8 +1,8 @@
-// jquery 啟用
+// jquery 啟用 全部寫一起時
 $(document).ready(function () {
 
   // hamburger control switch
-  $(function () {
+  $(function () { // 同樣是jquery引用，單個寫時
     $(".hamburger").on("click", function () {
       $(this).toggleClass("is-active");
     });
@@ -63,23 +63,23 @@ $(document).ready(function () {
   $(window).scroll(function () {
     if ($(this).scrollTop() > k) {
       btnGoTop.css({
-        'visibility':'visible',
-        'opacity':'1',
-        'transform':'translateY(-20px)'
+        'visibility': 'visible',
+        'opacity': '1',
+        'transform': 'translateY(-20px)'
       });
       socialMedia.css({
-        'visibility':'visible',
-        'opacity':'1'
+        'visibility': 'visible',
+        'opacity': '1'
       });
     } else {
       btnGoTop.css({
-        'visibility':'hidden',
-        'opacity':'0',
-        'transform':'translateY(20px)'
+        'visibility': 'hidden',
+        'opacity': '0',
+        'transform': 'translateY(20px)'
       });
       socialMedia.css({
-        'visibility':'hidden',
-        'opacity':'0'
+        'visibility': 'hidden',
+        'opacity': '0'
       });
     };
   });
@@ -164,7 +164,42 @@ $(document).ready(function () {
     });
   });
 
+  //collections.html
+  var collections = $('.collections'); // 有共同使用的class名稱時，可以用分頁的main.class 去找
+  $(function () {
+    //carousel 輪播 文字內容向下切換 和 圖片向右切換
+    $('.carouselItems').eq(0).addClass('active');
+    var total = $('.carouselItems').length;
+    var current = 0;
+    collections.find('.rightArrow').on('click', function () {
+      var next = current;
+      current = current + 1;
+      setSlide(next, current);
+    });
+    collections.find('.leftArrow').on('click', function () {
+      var prev = current;
+      current = current - 1;
+      setSlide(prev, current);
+    });
+    function setSlide(prev, next) {
+      var slide = current;
+      if (next > total - 1) { //當 next 的索引值 > length-1 時，會重置到第一個
+        slide = 0;
+        current = 0;
+      }
+      if (next < 0) { // 當 next 的索引值 < 0 時，會重置到最後一個
+        slide = total - 1;
+        current = total - 1;
+      }
+      $('.carouselItems').eq(prev).removeClass('active');
+      $('.carouselItems').eq(slide).addClass('active');
+    };
+
+  });
+
+
   // services.html
+  var services = $('.services'); // 有共同使用的class名稱時，可以用分頁的main.class 去找
   $(function () {
     // Tab 切換標籤
     $('.servicesTab li').on("click", function () {
@@ -175,7 +210,16 @@ $(document).ready(function () {
       $(".serviceItem").removeClass("-on");
       $(".serviceItem").eq($(this).index()).addClass("-on");
     });
-    // carousel 輪播切換
+    // carousel 輪播切換 點擊向左右移動一次，重複輪替
+
+    var itemWidth = services.find('.itemRelatedsContent .itemRelated').width() + 20;
+    var movez = 0;
+    services.find('.rightArrow').on('click', function () {
+      $('.itemRelated').addClass('active left');
+    });
+    $().on('click', function () {
+
+    });
 
   });
 
