@@ -50,7 +50,7 @@
             .servicesTab{
                 display: flex;
                 justify-content: center;
-                border-bottom: 1px solid rgba($color: #000000, $alpha: .1);
+                border-bottom: 2px solid rgba($color: #000000, $alpha: .15);
                 li{
                     border-right: 1px solid rgba($color: #000000, $alpha: .1);
                     font-size: $fzSmall;
@@ -212,7 +212,9 @@
                         align-self: flex-start;
                         display: flex;
                         position: relative;
+                        left: 0;
                         z-index: 2;
+                        transition:.5s;
                         .itemRelated{
                             width: 280px;
                             height: 360px;
@@ -296,20 +298,6 @@
                                 }
                             }
                         }
-                        .active{
-                            &.left{
-                                left: -25.5%;
-                            }
-                            &.right{
-                                left: 25.5%;
-                            }
-                        }
-                        .next{
-                            left: 25.5%;
-                        }
-                        .prev{
-                            left: -25.5%;
-                        }
                     }
                     // controlBlock 控制區
                     .itemRelatedControl{
@@ -317,12 +305,12 @@
                         height: 100%;
                         position: absolute;
                         top: 0;
+                        cursor: pointer;
                         .arrowLine{
                             width: 30px;
                             height: 8px;
                             background-color: #fff;
                             display: block;
-                            cursor: pointer;
                         }
                         .leftArrow,.rightArrow{ 
                             width: auto;

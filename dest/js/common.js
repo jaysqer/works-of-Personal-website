@@ -21,7 +21,7 @@ $(document).ready(function () {
   var k = fullHeader.offset().top; // 取header與視窗頂端距離的定值
   var logoBlock = fullHeader.find('h1'); // logoBlock (logo和webName)
   var btnGoTop = $('.btnGo'); // btnGoTop 回到頂端
-  var socialMedia = $('.socialMediasBlock'); // socialMedia 社交軟體連結
+  var socialMedia = $('.socialMediasBlock'); // socialMedia 社交軟體
   console.log(logoBlock);
   $(window).resize(function () {
     k = fullHeader.offset().top;
@@ -88,7 +88,7 @@ $(document).ready(function () {
   var latestAds = $('.latestAds');
   adsBlocks = latestAds.find('.adsWholeBlock');
   adsControls = latestAds.find('.adsControls .controlPart');
-  adsWidth = latestAds.find('.adsWholeBlock .adsPart').eq(0).width();
+  // adsWidth = latestAds.find('.adsWholeBlock .adsPart').eq(0).width();
   var timer = null;
   var iNow = 0;
   adsControls.on('click', function () {
@@ -96,7 +96,7 @@ $(document).ready(function () {
     var index = $(this).index();
     iNow = index;
     adsBlocks.animate({
-      'left': -adsWidth * iNow,
+      'left': -100 * iNow + '%',
     });
   });
   function autoPlay() {
@@ -210,16 +210,41 @@ $(document).ready(function () {
       $(".serviceItem").removeClass("-on");
       $(".serviceItem").eq($(this).index()).addClass("-on");
     });
-    // carousel 輪播切換 點擊向左右移動一次，重複輪替
-
-    var itemWidth = services.find('.itemRelatedsContent .itemRelated').width() + 20;
-    var movez = 0;
-    services.find('.rightArrow').on('click', function () {
-      $('.itemRelated').addClass('active left');
-    });
-    $().on('click', function () {
-
-    });
+    // carousel 輪播切換 點擊向左右移動一次 混加了 js 去寫
+    var itemsLength = services.find('.itemRelatedsContent').find('.itemRelated').length / 4;
+    var itemWidth = services.find('.itemRelatedsContent').find('.itemRelated').width() + 22;
+    var itemRelatedsCarouselWidth = services.find('.itemRelatedsCarousel').width() + 20; // 因為 padding 有誤差值 20px
+    var itemRelatedsContent = services.find('.itemRelatedsContent');
+    // var itemRelatedsContentLeft = parseInt(services.find('.itemRelatedsContent').css('left'));
+    var currentLeftOffset = itemRelatedsContent.css('left') ? parseInt(itemRelatedsContent.css('left')) : 0;
+    if (itemRelatedsCarouselWidth >= 1192) {
+      var movez = 0;
+      var limit = itemsLength - 4;
+      // console.log(limit)
+      services.find('.rightArrow').on('click', next);
+      // services.find('.leftArrow').on('click', prev);
+    }
+    function next() {
+      movez++;
+      // console.log(movez);
+      totalLeft = currentLeftOffset - (movez * itemWidth);
+      itemRelatedsContent.css('left', totalLeft + 'px');
+      services.find('.leftArrow').off('click').on('click', prev);
+      if (movez == limit) {
+        // $(this).css('display', 'none');
+        $(this).off('click', next);
+      }
+    };
+    function prev() {
+      movez--;
+      services.find('.rightArrow').off('click').on('click', next);
+      totalLeft = currentLeftOffset - (movez * itemWidth);
+      itemRelatedsContent.css('left', totalLeft + 'px');
+      // services.find('.rightArrow').css('display', 'flex');
+      if (movez == 0) {
+        $(this).off('click', prev);
+      }
+    }
 
   });
 

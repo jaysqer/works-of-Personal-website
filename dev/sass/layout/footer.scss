@@ -31,6 +31,7 @@
     .socialMedia{
         position: absolute;
         animation: floatz 2s alternate infinite;
+        transform: translateY(0);
         @keyframes floatz {
             from{transform: translateY(0px);}
             to{transform: translateY(-5px);}
@@ -48,21 +49,18 @@
             width: 110px;
             top: -20px;
             left: -20px;
-            transform: translateY(0px);
             animation-delay: 1.2s;
         }
         &:nth-child(2){
             width: 70px;
             top: 20px;
             left: 100px;
-            transform: translateY(0px);
             animation-delay: .8s;
         }
         &:nth-child(3){
             width: 80px;
             top: 105px;
             left: -10px;
-            transform: translateY(0px);
             animation-delay: .3s;
             img{
                 transform: rotate(-5deg)
@@ -72,8 +70,39 @@
             width: 60px;
             top: 200px;
             left: 10px;
-            transform: translateY(0px);
         }
 
+    }
+    @media all and (max-width: $medium) {
+        bottom: 5%;
+        right: -40px;
+     }
+    @media all and (max-width: $small) {
+        width: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        right: 15px;
+        bottom: 25%;
+        .socialMedia{
+            width: 75px !important;
+            margin-bottom: 5px;
+            position: static;
+            &:nth-child(1),&:nth-child(2){
+                width: 80px !important;
+            }
+        }
+    }
+    @media all and (max-width: $smaller) {
+        right: 15px;
+        bottom: 15%;
+        .socialMedia{
+            width: 50px !important;
+            margin-bottom: 5px;
+            position: static;
+            &:nth-child(1),&:nth-child(2){
+                width: 52px !important;
+            }
+        }
     }
 }

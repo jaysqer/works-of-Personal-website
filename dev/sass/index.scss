@@ -48,10 +48,10 @@
             }
         }
     }
-    @media all and (max-width:991px) {
+    @media all and (max-width:$medium) {
         height: 768px;
     }
-    @media all and (max-width:767px) {
+    @media all and (max-width:$small) {
         height: 100%;
         padding-top: 100%;
         background-attachment: unset;
@@ -70,7 +70,7 @@
             }
         }
     }
-    @media all and (max-width:$small) {
+    @media all and (max-width:$smaller) {
         .webCenterBlock{
             .webNameBlock{
                 .logo{
@@ -87,7 +87,7 @@
             }
         }
     }
-    @media all and (max-width:375px) {
+    @media all and (max-width:$cellPhone) {
         height: 100vh;
         background-position: -180px center;
         .webCenterBlock{
@@ -204,21 +204,27 @@
         // 廣告強打LatestBanner
         .latestAds{
             width: 100%;
+            display: flex;
+            justify-content: center;
             position: relative;
             overflow: hidden;
             .adsBlock{
                 width: 100%;
                 max-width: 1200px;
                 height: 360px;
+                position: relative;
                 border: 1px solid rgba($color: #000000, $alpha: .1);
                 overflow: hidden;
                 .adsWholeBlock{
                     width: 300%;
+                    height: 100%;
                     display: flex;
                     position: relative;
                     .adsPart{
                         width:34%;
+                        height: 100%;
                         position: relative;
+                        overflow: hidden;
                         img{
                             width: 100%;
                         }
@@ -231,6 +237,7 @@
                             font-weight: bold;
                             text-align: center;
                             position: absolute;
+                            z-index: 2;
                             top: 0;
                             left: 0;
                             .adsTitle{
@@ -252,39 +259,114 @@
                         }
                     }
                 }
-            }
-            .adsControlsBlock{
-                width: 100%;
-                height: 80px;
-                background-image: url(../img/index/latestAds/latestAdBgImage.png);
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                position: absolute;
-                bottom: 0;
-                .adsControls{
-                    margin: 5px 0;
+                @media all and (max-width: 1219px) {
+                    max-width: 960px;
+                    .adsWholeBlock{
+                        .adsPart{
+                            img{
+                                width: unset;
+                                height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 50%;
+                                transform: translateX(-50%);
+                            }
+                        }
+                    }
+
+                }
+                @media all and (max-width: $medium) {
+                    max-width: 750px;
+                }
+                @media all and (max-width: $small) {
+                    max-width: 560px;
+                    height: 320px;
+                    .adsWholeBlock{
+                        .adsPart{
+                            display: flex;
+                            justify-content: center;
+                            img{
+                                height: 400px;
+                            }
+                            .adsContent{
+                                width: 100%;
+                                margin: 10% 0 0;
+                                left: 50%;
+                                transform: translateX(-50%);
+                                .adsText{
+                                    margin-bottom: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+                @media all and (max-width: $smaller) {
+                    max-width: 400px;
+                    .adsWholeBlock{
+                        .adsPart{
+                            .adsContent{
+                                margin: 15% 0 0;
+                            }
+                        }
+                    }
+                }
+                @media all and (max-width: $cellPhone) {
+                    max-width: 360px;
+                    height: 360px;
+                    .adsWholeBlock{
+                        .adsPart{
+                            img{
+                                height: 360px;
+                            }
+                        }
+                    }
+                }
+                // adsControls
+                .adsControlsBlock{
+                    width: 100%;
+                    height: 80px;
+                    background-image: url(../img/index/latestAds/latestAdBgImage.png);
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                    background-position: bottom;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    .controlPart{
-                        background-color: #888;
-                        width: 13px;
-                        height: 13px;
-                        margin-right:5px;
-                        border-radius: 50%;
-                        cursor: pointer;
-                        &:last-child{
-                            margin-right: 0px;
+                    position: absolute;
+                    bottom: 0;
+                    .adsControls{
+                        margin: 5px 0;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        .controlPart{
+                            background-color: #888;
+                            width: 13px;
+                            height: 13px;
+                            margin-right:5px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            &:last-child{
+                                margin-right: 0px;
+                            }
+                            &:hover{
+                                background-color: #bbb;
+                            }                          
                         }
-                        &:hover{
+                        .active{
                             background-color: #bbb;
-                        }                          
+                        }
+    
                     }
-                    .active{
-                        background-color: #bbb;
+                    @media all and (max-width: 1219px) {
+                        align-items: flex-end;
+                        .adsControls{
+                            margin: 5px 0 10px;
+                        }
                     }
-
+                    @media all and (max-width: $medium) {
+                        background-size: cover;
+                    }
                 }
             }
         }
@@ -298,6 +380,18 @@
                 &:nth-child(1){
                     align-items: flex-end;
                 }
+                @media all and (max-width: $small){
+                    &:nth-child(2){
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
+                @media all and (max-width: $smaller){
+                    &:nth-child(1){
+                        flex-direction: column;
+                        align-items: center;
+                    }
+                }
             }
             // 中層middle
             .worksMid{
@@ -307,6 +401,11 @@
                 }
                 &:nth-child(2){
                     align-items: flex-start;
+                }
+                @media all and (max-width: $small){
+                    &:nth-child(2){
+                        display: none;
+                    }
                 }
             }
             // 裏層inside
@@ -318,6 +417,15 @@
                 &:nth-child(2){
                     justify-content: flex-end;
                     align-items: flex-start;
+                }
+                @media all and (max-width: $small){
+                    &:nth-child(2){
+                        justify-content: center;
+                    }
+                }
+                @media all and (max-width: $smaller){
+                    flex-direction: column;
+                    align-items: center !important;
                 }
             }
             // 各個works區塊
@@ -335,6 +443,10 @@
                     border-radius: $radius;
                     img{
                         width: 100%;
+                    }
+                    @media all and (max-width: $smaller){
+                        width: 300px !important;
+                        height: auto !important;
                     }
                 }
                 // 各作品works
@@ -429,36 +541,133 @@
                     .worksText{
                         opacity: 0;
                     }
-                    // &::before{
-                    //     content: "";
-                    //     position: absolute;
-                    //     z-index: 2;
-                    //     top:4px;
-                    //     right: 4px;
-                    //     bottom:4px;
-                    //     left: 4px;
-                    //     border: 6px solid rgba($color: #fff, $alpha: .65);
-                    //     opacity: 0;
-                    //     transition: opacity .5s;
-                    // }
                 }
                 &:hover{
                     .worksContent{
                         background-color: $fcHover;
-                        .decorationFrame_01, .decorationFrame_02{
-                            opacity: .4;
-                        }
+                        // .decorationFrame_01, .decorationFrame_02{
+                        //     opacity: .4;
+                        // }
                         .worksTitle{
                             opacity: 0;
                         }
                         .worksText{
                             opacity: 1;
                         }
-                        // &::before{
-                        //     opacity: 1;
-                        // }
+                    }
+                    @media all and (max-width: $smaller){
+                        .worksContent{
+                            background-color: unset;
+                            .worksTitle{
+                                opacity: unset;
+                            }
+                            .worksText{
+                                display: none;
+                            }
+                        }
                     }
 
+                }
+                @media all and (max-width: 1039px){
+                    margin: 10px;
+                    // 各作品works
+                    .works1{
+                        width: 320px;
+                        height: 250px;
+                    }
+                    .works2{
+                        width: 270px;
+                        height: 200px;
+                    }
+                    .works3{
+                        width: 180px;
+                        height: 180px;
+                    }
+                    .works4{
+                        width: 280px;
+                        height: 180px;
+                    }
+                    .works5{
+                        width: 240px;
+                        height: 180px;
+                    }
+                    .works6{
+                        width: 240px;
+                        height: 300px;
+                    }
+                    .works7{
+                        width: 300px;
+                        height: 240px;
+                    }
+                    
+                }
+                @media all and (max-width: $medium){
+                    margin: 10px;
+                    // 各作品works
+                    .works1{
+                        width: 280px;
+                        height: 200px;
+                    }
+                    .works2{
+                        width: 220px;
+                        height: 160px;
+                    }
+                    .works3{
+                        width: 160px;
+                        height: 160px;
+                    }
+                    .works4{
+                        width: 240px;
+                        height: 160px;
+                    }
+                    .works5{
+                        width: 200px;
+                        height: 140px;
+                    }
+                    .works6{
+                        width: 200px;
+                        height: 260px;
+                    }
+                    .works7{
+                        width: 240px;
+                        height: 180px;
+                    }
+                    
+                }
+                @media all and (max-width: $small){
+                    // 各作品works
+                    .works1{
+                        width: 280px;
+                        height: 200px;
+                    }
+                    .works2{
+                        width: 220px;
+                        height: 160px;
+                    }
+                    .works3{
+                        width: 200px;
+                        height: 200px;
+                    }
+                    .works4{
+                        width: 280px;
+                        height: 200px;
+                    }
+                    .works5{
+                        width: 220px;
+                        height: 160px;
+                    }
+                    .works6{
+                        width: 220px;
+                        height: 280px;
+                    }
+                    .works7{
+                        width: 240px;
+                        height: 180px;
+                    }
+                    
+                }
+                @media all and (max-width: $smaller){
+                    margin: 20px 10px;
                 } 
             }
         }
@@ -474,7 +683,7 @@
             right: 0;
             bottom: 0;
             left: 0;
-            z-index: 15;
+            z-index: 40;
             background-color: rgba($color: #000000, $alpha: .5);
             transform: translateY(-50px);
             opacity: 0;
@@ -581,171 +790,256 @@
                         }
                     }
                 }
+                @media all and (max-width: $smaller){
+                    min-width: 360px;
+                }
             }
         }
         // 服務Services
         .services{
             width: 100%;
-            padding-left: 45px;
             display: flex;
+            justify-content: center;
             position: relative;
-            .servicesPart:nth-child(1){
-                padding-left: 150px;
-                padding-top: 20px;
-                position: relative;
-                .servicesImageBlock{
-                    width: 500px;
-                    height: 500px;
-                    border-radius: 50%;
-                    box-shadow: $slightShadow;
-                    overflow: hidden;
-                    display: flex;
+            overflow: hidden;
+            .servicesPart{
+                &:nth-child(1){
+                    padding-left: 150px;
+                    padding-top: 20px;
                     position: relative;
-                    .servicesImage{
-                        width: 100%;
-                    }
-                    .coverBlock{
-                        width: 100%;
-                        height: 100%;
+                    .servicesImageBlock{
+                        width: 500px;
+                        height: 500px;
+                        margin: auto;
                         border-radius: 50%;
-                        background-color:$imageCover;
-                        position: absolute;
-                    }
-                }
-                .servicesOptions{
-                    padding-bottom: 40px;
-                    display: flex;
-                    justify-content: center;
-                    position: relative;
-                    .servicesSelect{
+                        box-shadow: $slightShadow;
+                        overflow: hidden;
                         display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        .selectsImage{
-                            width: 120px;
-                            height: 120px;
-                            border-radius: 50%;
-                            overflow: hidden;
-                            box-shadow: $slightShadow;
-                            filter: brightness(.75);
-                            transition: .25s;
-                        }
-                        .active{
-                            filter: brightness(1.05);
-                        }
-                        .servicesTitle{
-                            margin-top: 5px;
-                            font-size: $fzInfo;
-                            font-weight: 400;
-                            position: relative;
-                            display: flex;
-                            justify-content: center;
-                            &::after{
-                                content: "Title";
-                                font-size: 12px;
-                                position: absolute;
-                                top:20px;
-                                left: 50%;
-                                transform: translateX(-50%);
-                            }
-                        }
-                        &:nth-child(1){
-                            transform: translate(-150px,-300px);
-                            .servicesTitle::after{
-                                content: "Wedding";
-                            }
-                        }
-                        &:nth-child(2){
-                            transform: translate(-220px,-135px);
-                            .servicesTitle::after{
-                                content: "Marrying";
-                            }
-                        }
-                        &:nth-child(3){
-                            transform: translate(-220px,-20px);
-                            .servicesTitle::after{
-                                content: "Partying";
-                            }
-                        }
-                        &:nth-child(4){
-                            transform: translate(-185px,25px);
-                            .servicesTitle::after{
-                                content: "Opening";
-                            }
-                        }
-                    }  
-                }
-            }
-            .servicesPart:nth-child(2){
-                align-self: flex-start;
-                margin: 40px 0;
-                position: relative;
-                .servicesContent{
-                    position: absolute; 
-                    top: 0;
-                    visibility: hidden;
-                    opacity: 0;
-                    transform: translateX(50px);
-                    transition: .5s;
-                    &:nth-child(1){
-                       visibility: visible;
-                       opacity: 1;
-                       transform: translateY(0px);
-                    }
-                    .servicesSubTitle{
-                        width: 150px;
-                        margin-top:20px;
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        transform: translateY(60px);
-                        .mainTitle{
-                            font-size: $fzMiddle;
-                            font-weight: bold;
-                            color: $fcGold;
-                            text-shadow: $importantFontShadow;
-                            margin-bottom: 5px;
-                        }
-                        .subTitle{
-                            font-size: $fzInfo;
-                            font-weight: bold;
-                            color: #fff;
-                            text-shadow: $titleShadow;
-                        }
-                    }
-                    .servicesTextBlock{
-                        width: 350px;
-                        height: 350px;
-                        border-radius: 50%;
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
                         position: relative;
-                        box-shadow: $exLightShadow;
-                        background-color: rgba($color: #fff, $alpha: .65);
-                        transform: translate(-100px,100px);
-                        &::before{
-                            content: "";
-                            width: 90%;
-                            height: 90%;
+                        .servicesImage{
+                            width: 100%;
+                        }
+                        .coverBlock{
+                            width: 100%;
+                            height: 100%;
                             border-radius: 50%;
+                            background-color:$imageCover;
+                            position: absolute;
+                        }
+                        @media all and (max-width: $smaller){
+                            width: 320px;
+                            height: 320px;
+                        }
+                    }
+                    .servicesOptions{
+                        padding-bottom: 40px;
+                        display: flex;
+                        justify-content: center;
+                        position: relative;
+                        .servicesSelect{
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            .selectsImage{
+                                width: 120px;
+                                height: 120px;
+                                border-radius: 50%;
+                                overflow: hidden;
+                                box-shadow: $slightShadow;
+                                filter: brightness(.75);
+                                transition: .25s;
+                            }
+                            .active{
+                                filter: brightness(1.05);
+                            }
+                            .servicesTitle{
+                                margin-top: 5px;
+                                font-size: $fzInfo;
+                                font-weight: 400;
+                                position: relative;
+                                display: flex;
+                                justify-content: center;
+                                &::after{
+                                    content: "";
+                                    font-size: 12px;
+                                    position: absolute;
+                                    top:20px;
+                                    left: 50%;
+                                    transform: translateX(-50%);
+                                }
+                            }
+                            &:nth-child(1){
+                                transform: translate(-150px,-300px);
+                                .servicesTitle::after{
+                                    content: "Wedding";
+                                }
+                            }
+                            &:nth-child(2){
+                                transform: translate(-220px,-135px);
+                                .servicesTitle::after{
+                                    content: "Marrying";
+                                }
+                            }
+                            &:nth-child(3){
+                                transform: translate(-220px,-20px);
+                                .servicesTitle::after{
+                                    content: "Partying";
+                                }
+                            }
+                            &:nth-child(4){
+                                transform: translate(-185px,25px);
+                                .servicesTitle::after{
+                                    content: "Opening";
+                                }
+                            }
+                            @media all and (max-width: $medium){
+                                transform: unset !important;
+                                margin: 0 5px;
+                            }
+                            @media all and (max-width: $smaller){
+                                .selectsImage{
+                                    width: 75px;
+                                    height: 75px;
+                                }
+                            }
+
+                        }
+                        @media all and (max-width: $medium){
+                            margin-top: 45px;
+                        }  
+                    }
+                    @media all and (max-width: $medium){
+                        padding-left: unset;
+                    }
+                    @media all and (max-width: $small){
+                        padding-top: 45px;
+                    }
+                }
+                &:nth-child(2){
+                    width: 200px;
+                    margin: 40px 0;
+                    align-self: flex-start;
+                    position: relative;
+                    .servicesContent{
+                        position: absolute; 
+                        top: 0;
+                        visibility: hidden;
+                        opacity: 0;
+                        transform: translateX(50px);
+                        transition: .5s;
+                        &:nth-child(1){
+                           visibility: visible;
+                           opacity: 1;
+                           transform: translateY(0px);
+                        }
+                        .servicesSubTitle{
+                            width: 150px;
+                            margin-top:20px;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            transform: translateY(60px);
+                            .mainTitle{
+                                font-size: $fzMiddle;
+                                font-weight: bold;
+                                color: $fcGold;
+                                text-shadow: $importantFontShadow;
+                                margin-bottom: 5px;
+                            }
+                            .subTitle{
+                                font-size: $fzInfo;
+                                font-weight: bold;
+                                color: #fff;
+                                text-shadow: $titleShadow;
+                            }
+                            @media all and (max-width: $medium){
+                                transform:translate(-55px,60px)
+                            }
+                            @media all and (max-width: $small){
+                                margin-top: 0px;
+                                position: absolute;
+                                top: -20px;
+                                right: -50px;
+                                transform: unset;
+                            }
+                            @media all and (max-width: $smaller){
+                                top: -30px;
+                                right: -30px;
+                            }
+                        }
+                        .servicesTextBlock{
+                            width: 350px;
+                            height: 350px;
+                            border-radius: 50%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            position: relative;
                             box-shadow: $exLightShadow;
                             background-color: rgba($color: #fff, $alpha: .65);
-                            position: absolute;
-                            right: 0;
-                        }
-                        .servicesText{
-                            z-index: 2;
-                            margin-bottom: 30px;
-                            p{
-                                font-size: $fzInfo;
-                                line-height:$lineHeight;
+                            transform: translate(-100px,100px);
+                            &::before{
+                                content: "";
+                                width: 90%;
+                                height: 90%;
+                                border-radius: 50%;
+                                box-shadow: $exLightShadow;
+                                background-color: rgba($color: #fff, $alpha: .65);
+                                position: absolute;
+                                right: 0;
+                            }
+                            .servicesText{
+                                z-index: 2;
+                                margin-bottom: 30px;
+                                p{
+                                    font-size: $fzInfo;
+                                    line-height:$lineHeight;
+                                }
+                            }
+                            @media all and (max-width: $medium){
+                                transform: translate(-160px,100px);
+                            }
+                            @media all and (max-width: $small){
+                                width: 300px;
+                                height: 300px;
+                                transform: translate(-160px,240px);
+                            }
+                            @media all and (max-width: $smaller){
+                                width: 320px;
+                                height: 320px;
+                                padding-bottom: 20px;
+                                background-color: unset;
+                                transform: unset;
+                                justify-content: flex-end;
+                                &::before{
+                                    content: "";
+                                    display: none;
+                                }
+                                .servicesText{
+                                    z-index: 2;
+                                    margin-bottom: 30px;
+                                    p{
+                                        color: #fff;
+                                        font-weight: bold;
+                                        text-shadow: $titleShadow;
+                                    }
+                                }
                             }
                         }
                     }
-                }
+                    @media all and (max-width: $small){
+                        position: absolute;
+                    }
+                    @media all and (max-width: $smaller){
+                        width: 100%;
+                        // height: 100%;
+                        display: flex;
+                        justify-content: center;
+                    }
+                }      
             }
+
         }
         // 活動Events
         .events{
@@ -758,10 +1052,11 @@
                 justify-content: center;
                 margin-bottom: 60px;
                 .eventsCard{
-                    width: 295px;
-                    height: 400px;
-                    margin: 0 40px;
+                    width: 325px;
+                    height: 450px;
+                    margin: 0 20px;
                     padding-bottom: 20px;
+                    position: relative;
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
@@ -771,7 +1066,7 @@
                     overflow: hidden;
                     background-color: #fff;
                     cursor: pointer;
-                    transition: 1s;
+                    transition: transform 1s ,box-shadow 1s;
                     &:hover{
                         transform: translateY(-6px);
                         box-shadow: $heavierShadow;
@@ -841,11 +1136,74 @@
                         }
                     }
                 }
+                @media all and (max-width: 1150px){
+                    .eventsCard{
+                        width: 295px;
+                        height: 400px;
+                        margin: unset;
+                        margin-right: 20px;
+                        &:last-child{
+                            margin-right: 0px;
+                        }
+                    }
+                }
+                @media all and (max-width: $medium){
+                    display: block;
+                    .eventsCard{
+                        width: 600px;
+                        height: 450px;
+                        margin: unset;
+                        margin-bottom: 60px;
+                        padding-bottom: 0;
+                        justify-content: flex-end;
+                        &:last-child{
+                            margin-bottom: 0px;
+                        }
+                        .cardImage{
+                            width: 100%;
+                            height: unset;
+                            position: absolute;
+                            border-radius: unset;
+                        }
+                        .cardContent{
+                            margin-bottom: 20px;
+                            padding: 10px 0;
+                            z-index: 10;
+                            background-color: rgba($color: #fff, $alpha: .95);
+                            box-shadow: $mediumShadow;
+                        }
+                    }
+                }
+                @media all and (max-width: $small){
+                    .eventsCard{
+                        width: 450px;
+                    }
+                }
+                @media all and (max-width: $smaller){
+                    .eventsCard{
+                        width: 325px;
+                        height: 420px;
+                        padding-bottom: 0px;
+                        .cardImage{
+                            position: relative;
+                            border-radius: 0 0 45% 45%;
+                            &::after{
+                                content: "";
+                                display: none;
+                            }
+                        }
+                        .cardContent{
+                            margin: unset;
+                            box-shadow: unset;
+                        }
+                    }
+                }
             }
         }
         // 教學Teach 廣告橫幅
         .teachAds{
             width: 100%;
+            margin-bottom: 60px;
             position: relative;
             &::before{
                 content: "";
@@ -864,6 +1222,8 @@
                 background-attachment: fixed;
             }
             .teachAdsContent{
+                width: 100%;
+                padding: 10px 0;
                 position: absolute;
                 top: 15%;
                 left: 50%;
@@ -891,9 +1251,9 @@
                     align-items: center;
                     position: relative;
                     overflow: hidden;
-                    filter: brightness(.9);
-                    cursor: pointer;
-                    transition: filter .5s;
+                    // filter: brightness(.9);
+                    // transition: filter .5s;
+                    // cursor: pointer;
                     &::before{
                         content: '';
                         width: 95%;
@@ -903,31 +1263,93 @@
                     }
                     .teachAdsTitle{
                         position: absolute;
-                        text-shadow: $titleShadow;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
                         p{
-                            font-size: $fzLarge;
-                            font-weight: bold;
                             color: #fff;
-                            span{
-                                font-size: $fzSmall;
-                                color: #fff;
-                                margin-left: 2px;
-                            }
+                            text-shadow: $titleShadow;
+                            font-weight: bold;
+                        }
+                        .mainTitle{
+                            font-size: $fzLarge;
+                        }
+                        .subTitle{
+                            font-size: $fzSmall;
+                            margin-left: 2px;
                         }
                     }
-                    &:hover{
-                        filter: brightness(1.02);
+                    // &:hover{
+                    //     filter: brightness(1.02);
+                    // }
+                }
+            }
+            @media all and (max-width: $small){
+                .teachAdsBgImage{
+                    height: 400px;    
+                }
+                .teachAdsContent{
+                    width: 80%;
+                    p{
+                        font-size: $fzInfo;
+                    }
+                }
+                .teachAdsBlock{
+                    .teachAdsPart{
+                        height: 150px;
                     }
                 }
             }
-
+            @media all and (max-width: $smaller){
+                .teachAdsBgImage{
+                    height: 320px;
+                }
+                .teachAdsBlock{
+                    .teachAdsPart{
+                        height: 120px;
+                        &:nth-child(1){
+                            img{
+                                height: 100%;
+                            }
+                        }
+                        &:nth-child(2){
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        .teachAdsTitle{
+                            flex-direction: column;
+                            .mainTitle{
+                                font-size: $fzMiddle;
+                                margin-bottom: 5px;
+                            }
+                            .subTitle{
+                                font-size: $fzInfo;
+                            }
+                        }
+                    }
+                }
+            }
+            @media all and (max-width: $cellPhone){
+                .teachAdsBgImage{
+                    height: unset;
+                    padding-top: 100%;
+                }
+                .teachAdsBlock{
+                    .teachAdsPart{
+                        img{
+                            width: unset !important;
+                            height: 100% !important;
+                        }
+                    }
+                }
+            }
         }
         // 關於AboutUs
         .aboutUs{
             width: 100%;
             // 副標題
             .aboutSubTitle{
-                width: 900px;
                 padding: 20px 0;
                 margin: auto;
                 text-align: center;
@@ -949,11 +1371,8 @@
                 .igWallsContent{   
                     .igWalls{
                         width: 900px;
-                        height: 450px;
                         display: flex;
                         .igWallsImage{
-                            width: 50%;
-                            height: 50%;
                             padding: 5px;
                             filter: brightness(.9);
                             transition:.25s;
@@ -965,34 +1384,39 @@
                                 filter: brightness(1.025);
                             }
                         }
-                    } 
-                    .igWalls:nth-child(1){
-                        .igWallsPart:nth-child(1){
-                            width: 50%;
-                            .igWallsImage{
-                                width: 100%;
-                                height: 100%;
-                            }
-                        }
-                        .igWallsPart:nth-child(2){
-                            display: flex;
-                            flex-wrap: wrap;
-                            width:50%;
-                            .igWallsImage{
-                                width: 50%;
-                            }
-                        }
-                    }
-                    .igWalls:nth-child(2){
-                        height: 275px;
-                        .igWallsImage{
+                        .igWallsPart{
                             width: 100%;
-                            height: 100%;
-                            img{
-                                width: 100%;
+                        }
+                        &:nth-child(1){
+                            .igWallsPart{
+                                &:nth-child(2){
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    .igWallsImage{
+                                        width: 50%;
+                                    }
+                                }
                             }
                         }
-                    }
+                        &:nth-child(2){
+                            .igWallsPart{
+                                display: flex;
+                                .igWallsImage{
+                                    width: 25%;
+                                }
+                            }
+                        }
+                        @media all and (max-width:$medium){
+                            width: 720px;
+                        }
+                        @media all and (max-width:$small){
+                            width: 450px;
+                            flex-direction: column;
+                        }
+                        @media all and (max-width:$smaller){
+                            width: 350px;
+                        }
+                    } 
                 }
             }
             // 地圖MapBlock
@@ -1063,11 +1487,7 @@
                                 justify-content: center;
                                 align-items: center;
                             }
-                            &:nth-child(2){
-                                .mapInfoTitle{}
-                            }
                             &:nth-child(3){
-                                .mapInfoTitle{}
                                 p{
                                     span{
                                         font-size: $fzInfo * .875;
@@ -1080,6 +1500,23 @@
                             }
         
                         }
+                    }
+                }
+                @media all and (max-width:$small){
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    .mapInfoPart{
+                        width: 80%;
+                        &:nth-child(1){
+                            border-right: 2px solid rgba($color: #000000, $alpha: .1);
+                            border-bottom: 0px;
+                        }
+                    }
+                }
+                @media all and (max-width:$smaller){
+                    .mapInfoPart{
+                        width: 100%;
                     }
                 }
             }

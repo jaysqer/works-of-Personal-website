@@ -115,7 +115,7 @@ blockquote, q {
       content: ""; }
     .bannerBlock .banner_01 .bannerImage {
       height: 500px; } }
-  @media all and (max-width: 1023px) {
+  @media all and (max-width: 991px) {
     .bannerBlock .banner_01::before {
       content: ""; }
     .bannerBlock .banner_01 .bannerImage {
@@ -128,7 +128,7 @@ blockquote, q {
         border-radius: 0; }
       .bannerBlock .banner_01 .bannerImage {
         background-position: center; } }
-  @media all and (max-width: 575px) {
+  @media all and (max-width: 767px) {
     .bannerBlock .banner_01 {
       height: unset; }
       .bannerBlock .banner_01::before {
@@ -188,7 +188,7 @@ blockquote, q {
       content: ""; }
     .bannerBlock .banner_02 .bannerImage {
       height: 500px; } }
-  @media all and (max-width: 1023px) {
+  @media all and (max-width: 991px) {
     .bannerBlock .banner_02::before {
       content: ""; }
     .bannerBlock .banner_02 .bannerImage {
@@ -201,7 +201,7 @@ blockquote, q {
         border-radius: 0; }
       .bannerBlock .banner_02 .bannerImage {
         background-position: center; } }
-  @media all and (max-width: 575px) {
+  @media all and (max-width: 767px) {
     .bannerBlock .banner_02 {
       height: unset; }
       .bannerBlock .banner_02::before {
@@ -261,7 +261,7 @@ blockquote, q {
       content: ""; }
     .bannerBlock .banner_03 .bannerImage {
       height: 500px; } }
-  @media all and (max-width: 1023px) {
+  @media all and (max-width: 991px) {
     .bannerBlock .banner_03::before {
       content: ""; }
     .bannerBlock .banner_03 .bannerImage {
@@ -274,7 +274,7 @@ blockquote, q {
         border-radius: 0; }
       .bannerBlock .banner_03 .bannerImage {
         background-position: center; } }
-  @media all and (max-width: 575px) {
+  @media all and (max-width: 767px) {
     .bannerBlock .banner_03 {
       height: unset; }
       .bannerBlock .banner_03::before {
@@ -334,7 +334,7 @@ blockquote, q {
       content: ""; }
     .bannerBlock .banner_04 .bannerImage {
       height: 500px; } }
-  @media all and (max-width: 1023px) {
+  @media all and (max-width: 991px) {
     .bannerBlock .banner_04::before {
       content: ""; }
     .bannerBlock .banner_04 .bannerImage {
@@ -347,7 +347,7 @@ blockquote, q {
         border-radius: 0; }
       .bannerBlock .banner_04 .bannerImage {
         background-position: center; } }
-  @media all and (max-width: 575px) {
+  @media all and (max-width: 767px) {
     .bannerBlock .banner_04 {
       height: unset; }
       .bannerBlock .banner_04::before {
@@ -407,7 +407,7 @@ blockquote, q {
       content: ""; }
     .bannerBlock .banner_05 .bannerImage {
       height: 500px; } }
-  @media all and (max-width: 1023px) {
+  @media all and (max-width: 991px) {
     .bannerBlock .banner_05::before {
       content: ""; }
     .bannerBlock .banner_05 .bannerImage {
@@ -420,7 +420,7 @@ blockquote, q {
         border-radius: 0; }
       .bannerBlock .banner_05 .bannerImage {
         background-position: center; } }
-  @media all and (max-width: 575px) {
+  @media all and (max-width: 767px) {
     .bannerBlock .banner_05 {
       height: unset; }
       .bannerBlock .banner_05::before {
@@ -480,7 +480,7 @@ blockquote, q {
       content: ""; }
     .bannerBlock .banner_06 .bannerImage {
       height: 500px; } }
-  @media all and (max-width: 1023px) {
+  @media all and (max-width: 991px) {
     .bannerBlock .banner_06::before {
       content: ""; }
     .bannerBlock .banner_06 .bannerImage {
@@ -493,7 +493,7 @@ blockquote, q {
         border-radius: 0; }
       .bannerBlock .banner_06 .bannerImage {
         background-position: center; } }
-  @media all and (max-width: 575px) {
+  @media all and (max-width: 767px) {
     .bannerBlock .banner_06 {
       height: unset; }
       .bannerBlock .banner_06::before {
@@ -752,7 +752,7 @@ blockquote, q {
       .services .servicesBlock .servicesTabBlock .servicesTab {
         display: flex;
         justify-content: center;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+        border-bottom: 2px solid rgba(0, 0, 0, 0.15); }
         .services .servicesBlock .servicesTabBlock .servicesTab li {
           border-right: 1px solid rgba(0, 0, 0, 0.1);
           font-size: 18px;
@@ -884,7 +884,9 @@ blockquote, q {
             align-self: flex-start;
             display: flex;
             position: relative;
-            z-index: 2; }
+            left: 0;
+            z-index: 2;
+            transition: .5s; }
             .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated {
               width: 280px;
               height: 360px;
@@ -950,25 +952,17 @@ blockquote, q {
               .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .itemRelated:hover .relatedDescription {
                 opacity: 1;
                 bottom: 180px; }
-            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .active.left {
-              left: -25.5%; }
-            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .active.right {
-              left: 25.5%; }
-            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .next {
-              left: 25.5%; }
-            .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedsContent .prev {
-              left: -25.5%; }
           .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl {
             width: 100%;
             height: 100%;
             position: absolute;
-            top: 0; }
+            top: 0;
+            cursor: pointer; }
             .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .arrowLine {
               width: 30px;
               height: 8px;
               background-color: #fff;
-              display: block;
-              cursor: pointer; }
+              display: block; }
             .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .leftArrow, .services .servicesBlock .serviceItem .itemRelatedsBlock .itemRelatedsCarousel .itemRelatedControl .rightArrow {
               width: auto;
               height: 100%;

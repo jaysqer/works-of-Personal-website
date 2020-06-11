@@ -52,7 +52,7 @@
       margin-right: 10px; }
     .banner .webCenterBlock .webNameBlock .webName img {
       width: 260px; } }
-  @media all and (max-width: 375px) {
+  @media all and (max-width: 414px) {
     .banner {
       height: 100vh;
       background-position: -180px center; }
@@ -135,21 +135,27 @@
         right: -65px; }
     .content .sectionBlock .latestAds {
       width: 100%;
+      display: flex;
+      justify-content: center;
       position: relative;
       overflow: hidden; }
       .content .sectionBlock .latestAds .adsBlock {
         width: 100%;
         max-width: 1200px;
         height: 360px;
+        position: relative;
         border: 1px solid rgba(0, 0, 0, 0.1);
         overflow: hidden; }
         .content .sectionBlock .latestAds .adsBlock .adsWholeBlock {
           width: 300%;
+          height: 100%;
           display: flex;
           position: relative; }
           .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart {
             width: 34%;
-            position: relative; }
+            height: 100%;
+            position: relative;
+            overflow: hidden; }
             .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart img {
               width: 100%; }
             .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent {
@@ -160,6 +166,7 @@
               font-weight: bold;
               text-align: center;
               position: absolute;
+              z-index: 2;
               top: 0;
               left: 0; }
               .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent .adsTitle {
@@ -174,33 +181,84 @@
                 line-height: 1.5; }
                 .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent .adsText p {
                   color: white; }
-      .content .sectionBlock .latestAds .adsControlsBlock {
-        width: 100%;
-        height: 80px;
-        background-image: url(../img/index/latestAds/latestAdBgImage.png);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        bottom: 0; }
-        .content .sectionBlock .latestAds .adsControlsBlock .adsControls {
-          margin: 5px 0;
+        @media all and (max-width: 1219px) {
+          .content .sectionBlock .latestAds .adsBlock {
+            max-width: 960px; }
+            .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart img {
+              width: unset;
+              height: 100%;
+              position: absolute;
+              top: 0;
+              left: 50%;
+              transform: translateX(-50%); } }
+        @media all and (max-width: 991px) {
+          .content .sectionBlock .latestAds .adsBlock {
+            max-width: 750px; } }
+        @media all and (max-width: 767px) {
+          .content .sectionBlock .latestAds .adsBlock {
+            max-width: 560px;
+            height: 320px; }
+            .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart {
+              display: flex;
+              justify-content: center; }
+              .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart img {
+                height: 400px; }
+              .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent {
+                width: 100%;
+                margin: 10% 0 0;
+                left: 50%;
+                transform: translateX(-50%); }
+                .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent .adsText {
+                  margin-bottom: 30px; } }
+        @media all and (max-width: 575px) {
+          .content .sectionBlock .latestAds .adsBlock {
+            max-width: 400px; }
+            .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart .adsContent {
+              margin: 15% 0 0; } }
+        @media all and (max-width: 414px) {
+          .content .sectionBlock .latestAds .adsBlock {
+            max-width: 360px;
+            height: 360px; }
+            .content .sectionBlock .latestAds .adsBlock .adsWholeBlock .adsPart img {
+              height: 360px; } }
+        .content .sectionBlock .latestAds .adsBlock .adsControlsBlock {
+          width: 100%;
+          height: 80px;
+          background-image: url(../img/index/latestAds/latestAdBgImage.png);
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: bottom;
           display: flex;
           justify-content: center;
-          align-items: center; }
-          .content .sectionBlock .latestAds .adsControlsBlock .adsControls .controlPart {
-            background-color: #888;
-            width: 13px;
-            height: 13px;
-            margin-right: 5px;
-            border-radius: 50%;
-            cursor: pointer; }
-            .content .sectionBlock .latestAds .adsControlsBlock .adsControls .controlPart:last-child {
-              margin-right: 0px; }
-            .content .sectionBlock .latestAds .adsControlsBlock .adsControls .controlPart:hover {
+          align-items: center;
+          position: absolute;
+          bottom: 0; }
+          .content .sectionBlock .latestAds .adsBlock .adsControlsBlock .adsControls {
+            margin: 5px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center; }
+            .content .sectionBlock .latestAds .adsBlock .adsControlsBlock .adsControls .controlPart {
+              background-color: #888;
+              width: 13px;
+              height: 13px;
+              margin-right: 5px;
+              border-radius: 50%;
+              cursor: pointer; }
+              .content .sectionBlock .latestAds .adsBlock .adsControlsBlock .adsControls .controlPart:last-child {
+                margin-right: 0px; }
+              .content .sectionBlock .latestAds .adsBlock .adsControlsBlock .adsControls .controlPart:hover {
+                background-color: #bbb; }
+            .content .sectionBlock .latestAds .adsBlock .adsControlsBlock .adsControls .active {
               background-color: #bbb; }
-          .content .sectionBlock .latestAds .adsControlsBlock .adsControls .active {
-            background-color: #bbb; }
+          @media all and (max-width: 1219px) {
+            .content .sectionBlock .latestAds .adsBlock .adsControlsBlock {
+              align-items: flex-end; }
+              .content .sectionBlock .latestAds .adsBlock .adsControlsBlock .adsControls {
+                margin: 5px 0 10px; } }
+          @media all and (max-width: 991px) {
+            .content .sectionBlock .latestAds .adsBlock .adsControlsBlock {
+              background-size: cover; } }
     .content .sectionBlock .collections {
       width: 100%; }
       .content .sectionBlock .collections .worksOut {
@@ -208,12 +266,23 @@
         justify-content: center; }
         .content .sectionBlock .collections .worksOut:nth-child(1) {
           align-items: flex-end; }
+        @media all and (max-width: 767px) {
+          .content .sectionBlock .collections .worksOut:nth-child(2) {
+            flex-direction: column;
+            align-items: center; } }
+        @media all and (max-width: 575px) {
+          .content .sectionBlock .collections .worksOut:nth-child(1) {
+            flex-direction: column;
+            align-items: center; } }
       .content .sectionBlock .collections .worksMid {
         display: flex; }
         .content .sectionBlock .collections .worksMid:nth-child(1) {
           flex-direction: column; }
         .content .sectionBlock .collections .worksMid:nth-child(2) {
           align-items: flex-start; }
+        @media all and (max-width: 767px) {
+          .content .sectionBlock .collections .worksMid:nth-child(2) {
+            display: none; } }
       .content .sectionBlock .collections .worksIns {
         display: flex; }
         .content .sectionBlock .collections .worksIns:nth-child(1) {
@@ -221,6 +290,13 @@
         .content .sectionBlock .collections .worksIns:nth-child(2) {
           justify-content: flex-end;
           align-items: flex-start; }
+        @media all and (max-width: 767px) {
+          .content .sectionBlock .collections .worksIns:nth-child(2) {
+            justify-content: center; } }
+        @media all and (max-width: 575px) {
+          .content .sectionBlock .collections .worksIns {
+            flex-direction: column;
+            align-items: center !important; } }
       .content .sectionBlock .collections .worksBlock {
         margin: 15px;
         display: flex;
@@ -234,6 +310,10 @@
           border-radius: 4px; }
           .content .sectionBlock .collections .worksBlock .worksFrame img {
             width: 100%; }
+          @media all and (max-width: 575px) {
+            .content .sectionBlock .collections .worksBlock .worksFrame {
+              width: 300px !important;
+              height: auto !important; } }
         .content .sectionBlock .collections .worksBlock .works1 {
           width: 350px;
           height: 250px; }
@@ -309,12 +389,90 @@
             opacity: 0; }
         .content .sectionBlock .collections .worksBlock:hover .worksContent {
           background-color: rgba(254, 235, 227, 0.68); }
-          .content .sectionBlock .collections .worksBlock:hover .worksContent .decorationFrame_01, .content .sectionBlock .collections .worksBlock:hover .worksContent .decorationFrame_02 {
-            opacity: .4; }
           .content .sectionBlock .collections .worksBlock:hover .worksContent .worksTitle {
             opacity: 0; }
           .content .sectionBlock .collections .worksBlock:hover .worksContent .worksText {
             opacity: 1; }
+        @media all and (max-width: 575px) {
+          .content .sectionBlock .collections .worksBlock:hover .worksContent {
+            background-color: unset; }
+            .content .sectionBlock .collections .worksBlock:hover .worksContent .worksTitle {
+              opacity: unset; }
+            .content .sectionBlock .collections .worksBlock:hover .worksContent .worksText {
+              display: none; } }
+        @media all and (max-width: 1039px) {
+          .content .sectionBlock .collections .worksBlock {
+            margin: 10px; }
+            .content .sectionBlock .collections .worksBlock .works1 {
+              width: 320px;
+              height: 250px; }
+            .content .sectionBlock .collections .worksBlock .works2 {
+              width: 270px;
+              height: 200px; }
+            .content .sectionBlock .collections .worksBlock .works3 {
+              width: 180px;
+              height: 180px; }
+            .content .sectionBlock .collections .worksBlock .works4 {
+              width: 280px;
+              height: 180px; }
+            .content .sectionBlock .collections .worksBlock .works5 {
+              width: 240px;
+              height: 180px; }
+            .content .sectionBlock .collections .worksBlock .works6 {
+              width: 240px;
+              height: 300px; }
+            .content .sectionBlock .collections .worksBlock .works7 {
+              width: 300px;
+              height: 240px; } }
+        @media all and (max-width: 991px) {
+          .content .sectionBlock .collections .worksBlock {
+            margin: 10px; }
+            .content .sectionBlock .collections .worksBlock .works1 {
+              width: 280px;
+              height: 200px; }
+            .content .sectionBlock .collections .worksBlock .works2 {
+              width: 220px;
+              height: 160px; }
+            .content .sectionBlock .collections .worksBlock .works3 {
+              width: 160px;
+              height: 160px; }
+            .content .sectionBlock .collections .worksBlock .works4 {
+              width: 240px;
+              height: 160px; }
+            .content .sectionBlock .collections .worksBlock .works5 {
+              width: 200px;
+              height: 140px; }
+            .content .sectionBlock .collections .worksBlock .works6 {
+              width: 200px;
+              height: 260px; }
+            .content .sectionBlock .collections .worksBlock .works7 {
+              width: 240px;
+              height: 180px; } }
+        @media all and (max-width: 767px) {
+          .content .sectionBlock .collections .worksBlock .works1 {
+            width: 280px;
+            height: 200px; }
+          .content .sectionBlock .collections .worksBlock .works2 {
+            width: 220px;
+            height: 160px; }
+          .content .sectionBlock .collections .worksBlock .works3 {
+            width: 200px;
+            height: 200px; }
+          .content .sectionBlock .collections .worksBlock .works4 {
+            width: 280px;
+            height: 200px; }
+          .content .sectionBlock .collections .worksBlock .works5 {
+            width: 220px;
+            height: 160px; }
+          .content .sectionBlock .collections .worksBlock .works6 {
+            width: 220px;
+            height: 280px; }
+          .content .sectionBlock .collections .worksBlock .works7 {
+            width: 240px;
+            height: 180px; } }
+        @media all and (max-width: 575px) {
+          .content .sectionBlock .collections .worksBlock {
+            margin: 20px 10px; } }
     .content .sectionBlock .collectionsLightBoxBlock {
       width: 100%;
       height: 105%;
@@ -326,7 +484,7 @@
       right: 0;
       bottom: 0;
       left: 0;
-      z-index: 15;
+      z-index: 40;
       background-color: rgba(0, 0, 0, 0.5);
       transform: translateY(-50px);
       opacity: 0;
@@ -415,11 +573,15 @@
                 text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.45);
                 color: #fff;
                 line-height: 1.5; }
+        @media all and (max-width: 575px) {
+          .content .sectionBlock .collectionsLightBoxBlock .worksLightBoxBlock {
+            min-width: 360px; } }
     .content .sectionBlock .services {
       width: 100%;
-      padding-left: 45px;
       display: flex;
-      position: relative; }
+      justify-content: center;
+      position: relative;
+      overflow: hidden; }
       .content .sectionBlock .services .servicesPart:nth-child(1) {
         padding-left: 150px;
         padding-top: 20px;
@@ -427,6 +589,7 @@
         .content .sectionBlock .services .servicesPart:nth-child(1) .servicesImageBlock {
           width: 500px;
           height: 500px;
+          margin: auto;
           border-radius: 50%;
           box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
           overflow: hidden;
@@ -440,6 +603,10 @@
             border-radius: 50%;
             background-color: rgba(255, 255, 255, 0.15);
             position: absolute; }
+          @media all and (max-width: 575px) {
+            .content .sectionBlock .services .servicesPart:nth-child(1) .servicesImageBlock {
+              width: 320px;
+              height: 320px; } }
         .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions {
           padding-bottom: 40px;
           display: flex;
@@ -467,7 +634,7 @@
               display: flex;
               justify-content: center; }
               .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect .servicesTitle::after {
-                content: "Title";
+                content: "";
                 font-size: 12px;
                 position: absolute;
                 top: 20px;
@@ -489,9 +656,27 @@
               transform: translate(-185px, 25px); }
               .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect:nth-child(4) .servicesTitle::after {
                 content: "Opening"; }
+            @media all and (max-width: 991px) {
+              .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect {
+                transform: unset !important;
+                margin: 0 5px; } }
+            @media all and (max-width: 575px) {
+              .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions .servicesSelect .selectsImage {
+                width: 75px;
+                height: 75px; } }
+          @media all and (max-width: 991px) {
+            .content .sectionBlock .services .servicesPart:nth-child(1) .servicesOptions {
+              margin-top: 45px; } }
+        @media all and (max-width: 991px) {
+          .content .sectionBlock .services .servicesPart:nth-child(1) {
+            padding-left: unset; } }
+        @media all and (max-width: 767px) {
+          .content .sectionBlock .services .servicesPart:nth-child(1) {
+            padding-top: 45px; } }
       .content .sectionBlock .services .servicesPart:nth-child(2) {
-        align-self: flex-start;
+        width: 200px;
         margin: 40px 0;
+        align-self: flex-start;
         position: relative; }
         .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent {
           position: absolute;
@@ -522,6 +707,20 @@
               font-weight: bold;
               color: #fff;
               text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+            @media all and (max-width: 991px) {
+              .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesSubTitle {
+                transform: translate(-55px, 60px); } }
+            @media all and (max-width: 767px) {
+              .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesSubTitle {
+                margin-top: 0px;
+                position: absolute;
+                top: -20px;
+                right: -50px;
+                transform: unset; } }
+            @media all and (max-width: 575px) {
+              .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesSubTitle {
+                top: -30px;
+                right: -30px; } }
           .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesTextBlock {
             width: 350px;
             height: 350px;
@@ -549,6 +748,40 @@
               .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesTextBlock .servicesText p {
                 font-size: 16px;
                 line-height: 1.5; }
+            @media all and (max-width: 991px) {
+              .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesTextBlock {
+                transform: translate(-160px, 100px); } }
+            @media all and (max-width: 767px) {
+              .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesTextBlock {
+                width: 300px;
+                height: 300px;
+                transform: translate(-160px, 240px); } }
+            @media all and (max-width: 575px) {
+              .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesTextBlock {
+                width: 320px;
+                height: 320px;
+                padding-bottom: 20px;
+                background-color: unset;
+                transform: unset;
+                justify-content: flex-end; }
+                .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesTextBlock::before {
+                  content: "";
+                  display: none; }
+                .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesTextBlock .servicesText {
+                  z-index: 2;
+                  margin-bottom: 30px; }
+                  .content .sectionBlock .services .servicesPart:nth-child(2) .servicesContent .servicesTextBlock .servicesText p {
+                    color: #fff;
+                    font-weight: bold;
+                    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); } }
+        @media all and (max-width: 767px) {
+          .content .sectionBlock .services .servicesPart:nth-child(2) {
+            position: absolute; } }
+        @media all and (max-width: 575px) {
+          .content .sectionBlock .services .servicesPart:nth-child(2) {
+            width: 100%;
+            display: flex;
+            justify-content: center; } }
     .content .sectionBlock .events {
       width: 100%;
       display: flex;
@@ -559,10 +792,11 @@
         justify-content: center;
         margin-bottom: 60px; }
         .content .sectionBlock .events .eventsCardBlock .eventsCard {
-          width: 295px;
-          height: 400px;
-          margin: 0 40px;
+          width: 325px;
+          height: 450px;
+          margin: 0 20px;
           padding-bottom: 20px;
+          position: relative;
           display: flex;
           flex-direction: column;
           justify-content: center;
@@ -572,7 +806,7 @@
           overflow: hidden;
           background-color: #fff;
           cursor: pointer;
-          transition: 1s; }
+          transition: transform 1s ,box-shadow 1s; }
           .content .sectionBlock .events .eventsCardBlock .eventsCard:hover {
             transform: translateY(-6px);
             box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.4); }
@@ -629,8 +863,57 @@
               width: 85%;
               padding: 0 5%;
               font-size: 16px; }
+        @media all and (max-width: 1150px) {
+          .content .sectionBlock .events .eventsCardBlock .eventsCard {
+            width: 295px;
+            height: 400px;
+            margin: unset;
+            margin-right: 20px; }
+            .content .sectionBlock .events .eventsCardBlock .eventsCard:last-child {
+              margin-right: 0px; } }
+        @media all and (max-width: 991px) {
+          .content .sectionBlock .events .eventsCardBlock {
+            display: block; }
+            .content .sectionBlock .events .eventsCardBlock .eventsCard {
+              width: 600px;
+              height: 450px;
+              margin: unset;
+              margin-bottom: 60px;
+              padding-bottom: 0;
+              justify-content: flex-end; }
+              .content .sectionBlock .events .eventsCardBlock .eventsCard:last-child {
+                margin-bottom: 0px; }
+              .content .sectionBlock .events .eventsCardBlock .eventsCard .cardImage {
+                width: 100%;
+                height: unset;
+                position: absolute;
+                border-radius: unset; }
+              .content .sectionBlock .events .eventsCardBlock .eventsCard .cardContent {
+                margin-bottom: 20px;
+                padding: 10px 0;
+                z-index: 10;
+                background-color: rgba(255, 255, 255, 0.95);
+                box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4); } }
+        @media all and (max-width: 767px) {
+          .content .sectionBlock .events .eventsCardBlock .eventsCard {
+            width: 450px; } }
+        @media all and (max-width: 575px) {
+          .content .sectionBlock .events .eventsCardBlock .eventsCard {
+            width: 325px;
+            height: 420px;
+            padding-bottom: 0px; }
+            .content .sectionBlock .events .eventsCardBlock .eventsCard .cardImage {
+              position: relative;
+              border-radius: 0 0 45% 45%; }
+              .content .sectionBlock .events .eventsCardBlock .eventsCard .cardImage::after {
+                content: "";
+                display: none; }
+            .content .sectionBlock .events .eventsCardBlock .eventsCard .cardContent {
+              margin: unset;
+              box-shadow: unset; } }
     .content .sectionBlock .teachAds {
       width: 100%;
+      margin-bottom: 60px;
       position: relative; }
       .content .sectionBlock .teachAds::before {
         content: "";
@@ -647,6 +930,8 @@
         background-size: cover;
         background-attachment: fixed; }
       .content .sectionBlock .teachAds .teachAdsContent {
+        width: 100%;
+        padding: 10px 0;
         position: absolute;
         top: 15%;
         left: 50%;
@@ -671,10 +956,7 @@
           justify-content: center;
           align-items: center;
           position: relative;
-          overflow: hidden;
-          filter: brightness(0.9);
-          cursor: pointer;
-          transition: filter .5s; }
+          overflow: hidden; }
           .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart::before {
             content: '';
             width: 95%;
@@ -683,21 +965,53 @@
             border: 4px solid rgba(255, 255, 255, 0.6); }
           .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle {
             position: absolute;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); }
+            display: flex;
+            justify-content: center;
+            align-items: center; }
             .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle p {
-              font-size: 28px;
-              font-weight: bold;
-              color: #fff; }
-              .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle p span {
-                font-size: 18px;
-                color: #fff;
-                margin-left: 2px; }
-          .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart:hover {
-            filter: brightness(1.02); }
+              color: #fff;
+              text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+              font-weight: bold; }
+            .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle .mainTitle {
+              font-size: 28px; }
+            .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle .subTitle {
+              font-size: 18px;
+              margin-left: 2px; }
+      @media all and (max-width: 767px) {
+        .content .sectionBlock .teachAds .teachAdsBgImage {
+          height: 400px; }
+        .content .sectionBlock .teachAds .teachAdsContent {
+          width: 80%; }
+          .content .sectionBlock .teachAds .teachAdsContent p {
+            font-size: 16px; }
+        .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart {
+          height: 150px; } }
+      @media all and (max-width: 575px) {
+        .content .sectionBlock .teachAds .teachAdsBgImage {
+          height: 320px; }
+        .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart {
+          height: 120px; }
+          .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart:nth-child(1) img {
+            height: 100%; }
+          .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart:nth-child(2) img {
+            width: 100%; }
+          .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle {
+            flex-direction: column; }
+            .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle .mainTitle {
+              font-size: 24px;
+              margin-bottom: 5px; }
+            .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart .teachAdsTitle .subTitle {
+              font-size: 16px; } }
+      @media all and (max-width: 414px) {
+        .content .sectionBlock .teachAds .teachAdsBgImage {
+          height: unset;
+          padding-top: 100%; }
+        .content .sectionBlock .teachAds .teachAdsBlock .teachAdsPart img {
+          width: unset !important;
+          height: 100% !important; } }
     .content .sectionBlock .aboutUs {
       width: 100%; }
       .content .sectionBlock .aboutUs .aboutSubTitle {
-        width: 900px;
         padding: 20px 0;
         margin: auto;
         text-align: center; }
@@ -714,11 +1028,8 @@
         justify-content: center; }
         .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls {
           width: 900px;
-          height: 450px;
           display: flex; }
           .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls .igWallsImage {
-            width: 50%;
-            height: 50%;
             padding: 5px;
             filter: brightness(0.9);
             transition: .25s; }
@@ -727,24 +1038,27 @@
               box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); }
             .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls .igWallsImage:hover {
               filter: brightness(1.025); }
-        .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(1) {
-          width: 50%; }
-          .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(1) .igWallsImage {
-            width: 100%;
-            height: 100%; }
-        .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(2) {
-          display: flex;
-          flex-wrap: wrap;
-          width: 50%; }
-          .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(2) .igWallsImage {
-            width: 50%; }
-        .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(2) {
-          height: 275px; }
-          .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(2) .igWallsImage {
-            width: 100%;
-            height: 100%; }
-            .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(2) .igWallsImage img {
-              width: 100%; }
+          .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls .igWallsPart {
+            width: 100%; }
+          .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(2) {
+            display: flex;
+            flex-wrap: wrap; }
+            .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(1) .igWallsPart:nth-child(2) .igWallsImage {
+              width: 50%; }
+          .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(2) .igWallsPart {
+            display: flex; }
+            .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls:nth-child(2) .igWallsPart .igWallsImage {
+              width: 25%; }
+          @media all and (max-width: 991px) {
+            .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls {
+              width: 720px; } }
+          @media all and (max-width: 767px) {
+            .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls {
+              width: 450px;
+              flex-direction: column; } }
+          @media all and (max-width: 575px) {
+            .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls {
+              width: 350px; } }
       .content .sectionBlock .aboutUs .mapInfoBlock {
         display: flex;
         justify-content: center;
@@ -806,3 +1120,16 @@
                 margin: 0 2px; }
               .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(2) .mapInfo:nth-child(3) p .days {
                 margin: 0; }
+        @media all and (max-width: 767px) {
+          .content .sectionBlock .aboutUs .mapInfoBlock {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center; }
+            .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart {
+              width: 80%; }
+              .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart:nth-child(1) {
+                border-right: 2px solid rgba(0, 0, 0, 0.1);
+                border-bottom: 0px; } }
+        @media all and (max-width: 575px) {
+          .content .sectionBlock .aboutUs .mapInfoBlock .mapInfoPart {
+            width: 100%; } }
