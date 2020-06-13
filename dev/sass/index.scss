@@ -906,6 +906,9 @@
                         }
                         @media all and (max-width: $medium){
                             margin-top: 45px;
+                        }
+                        @media all and (max-width: $smaller){
+                            margin-top: 85px;
                         }  
                     }
                     @media all and (max-width: $medium){
@@ -1024,6 +1027,9 @@
                                         font-weight: bold;
                                         text-shadow: $titleShadow;
                                     }
+                                }
+                                .btnSecond{
+                                    transform: translateY(80px);
                                 }
                             }
                         }
@@ -1302,7 +1308,10 @@
             }
             @media all and (max-width: $smaller){
                 .teachAdsBgImage{
-                    height: 320px;
+                    height: 360px;
+                }
+                .teachAdsContent{
+                    top: 10%;
                 }
                 .teachAdsBlock{
                     .teachAdsPart{

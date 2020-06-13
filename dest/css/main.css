@@ -284,18 +284,20 @@ blockquote, q {
   display: flex;
   align-items: center;
   z-index: 5; }
-  .navBlock h1 a {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .navBlock h1 a .logo {
-      width: 95px; }
-      .navBlock h1 a .logo img {
-        width: 100%; }
-    .navBlock h1 a .webName {
-      width: 120px; }
-      .navBlock h1 a .webName img {
-        width: 100%; }
+  .navBlock h1 {
+    padding-left: 20px; }
+    .navBlock h1 a {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .navBlock h1 a .logo {
+        width: 95px; }
+        .navBlock h1 a .logo img {
+          width: 100%; }
+      .navBlock h1 a .webName {
+        width: 120px; }
+        .navBlock h1 a .webName img {
+          width: 100%; }
   .navBlock .nav {
     margin-right: 60px; }
     .navBlock .nav ul li {
@@ -486,12 +488,10 @@ blockquote, q {
       font-size: 14px; }
 
 .socialMediasBlock {
-  width: 240px;
-  height: 240px;
   position: fixed;
   z-index: 20;
-  bottom: 15%;
-  right: -5px;
+  bottom: 300px;
+  right: 235px;
   visibility: hidden;
   opacity: 0;
   transition: opacity 1s; }
@@ -533,16 +533,15 @@ blockquote, q {
       left: 10px; }
   @media all and (max-width: 991px) {
     .socialMediasBlock {
-      bottom: 5%;
-      right: -40px; } }
+      right: 200px; } }
   @media all and (max-width: 767px) {
     .socialMediasBlock {
       width: unset;
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      right: 15px;
-      bottom: 25%; }
+      right: 10px;
+      bottom: 15%; }
       .socialMediasBlock .socialMedia {
         width: 75px !important;
         margin-bottom: 5px;
@@ -551,8 +550,8 @@ blockquote, q {
           width: 80px !important; } }
   @media all and (max-width: 575px) {
     .socialMediasBlock {
-      right: 15px;
-      bottom: 15%; }
+      right: 17px;
+      bottom: 20%; }
       .socialMediasBlock .socialMedia {
         width: 50px !important;
         margin-bottom: 5px;

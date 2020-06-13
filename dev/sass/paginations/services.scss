@@ -14,7 +14,8 @@
         // servicesTab 服務項目選項
         .servicesTabBlock{
             width: 100%;
-            margin-bottom: 60px;
+            margin-bottom: 40px;
+            padding: 10px;
             .servicesItemsTitleBlock{
                 display: flex;
                 justify-content: center;
@@ -31,7 +32,6 @@
                     }
                     .subTitle{
                         font-size: $fzSmall;
-                        
                     }
                 }
                 .leftLine ,.rightLine{
@@ -72,9 +72,40 @@
                     color: rgba($color: #000000, $alpha: .6);
                 }
             }
+            @media all and (max-width: $small){
+                margin-bottom: 10px;
+                .servicesItemsTitleBlock{
+                    
+                    .leftLine ,.rightLine{
+                        width: 150px;
+                    }
+                }
+            }
+            @media all and (max-width: $smaller){
+                padding: 5px;
+                .servicesItemsTitleBlock{
+                    .servicesItemsTitle{
+                        text-align: center;
+                        margin-bottom: 10px;
+                        .subTitle{
+                            font-size: $fzInfo;
+                        }
+                    }
+                    .leftLine ,.rightLine{
+                        width: 60px;
+                    }
+                }
+                .servicesTab{
+                    li{
+                        font-size: $fzInfo;
+                        padding: 15px 10px;
+                    }
+                }
+            }
         }
         .serviceItem{    
             width: 100%;
+            padding: 10px;
             display: none;
             // services 服務內容
             .serviceContent{
@@ -208,7 +239,6 @@
                     align-items: center;
                     position: relative;
                     .itemRelatedsContent{
-                        // width: 100%;
                         align-self: flex-start;
                         display: flex;
                         position: relative;
@@ -218,7 +248,7 @@
                         .itemRelated{
                             width: 280px;
                             height: 360px;
-                            margin: 0 10px;
+                            margin: 0 8.5px;
                             overflow: hidden;
                             display: flex;
                             flex-direction: column;
@@ -354,8 +384,130 @@
                             }   
                         }
                     }
+                    @media all and (max-width: 1199px){
+                        max-width: 960px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 225px;
+                                height: 300px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: $medium){
+                        max-width: 885px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 280px;
+                                height: 360px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: 919px){
+                        max-width: 720px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 225px;
+                                height: 300px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: $small){
+                        max-width: 590px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 280px;
+                                height: 360px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: 624px){
+                        max-width: 480px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 225px;
+                                height: 300px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: $smaller){
+                        max-width: 310px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 300px;
+                                height: 400px;
+                            }
+                        }
+                    }
                 }
             }
+            @media all and (max-width: $medium){
+                .serviceContent{
+                    .servicePart{
+                        &:nth-child(1){
+                            &::before{
+                                width: 95%;
+                                height: 100%;
+                            }
+                        }
+                        .serviceTitle{
+                            margin-bottom: 20px;
+                        }
+                        .serviceText{
+                            margin-bottom: 30px;
+                            p{
+                                font-size: $fzInfo;
+                            }
+                        }
+                    }
+                }
+            } 
+            @media all and (max-width: $small){
+                .serviceContent{
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    .servicePart{
+                        width: 95%;
+                        &:nth-child(1){
+                            padding: 10px;
+                            margin-bottom: 10px;
+                            &::before{
+                                width: 90%;
+                                height: 100%;
+                                margin-left: 0;
+                            }
+                        }
+                        .serviceTitle{
+                            margin-bottom: 15px;
+                        }
+                        .serviceText{
+                            margin-bottom: 30px;
+                            p{
+                                font-size: $fzInfo;
+                            }
+                        }
+                    }
+                }
+            }
+            @media all and (max-width: $small){
+                .serviceContent{
+                    .servicePart{
+                        width: 100%;
+                        &:nth-child(1){
+                            padding: 10px;
+                            margin-bottom: 10px;
+                            &::before{
+                                width: 90%;
+                                height: 100%;
+                                margin-left: 0;
+                            }
+                        }
+                        .serviceText{
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }                    
         }
     }
 }

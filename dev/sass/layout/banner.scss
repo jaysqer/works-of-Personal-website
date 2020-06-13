@@ -29,13 +29,13 @@
                 width: 1920px;
                 height: 650px;
                 display: flex;
-                // flex-direction: column;
                 justify-content: center;
                 align-items: center;
                 position: relative;
                 .bannerCover{
-                    width: 100%;
-                    height: 740px;
+                    width: 115%;
+                    max-width: 1920px;
+                    height: 115%;
                     position: absolute;
                     top: -25%;
                     img{
@@ -63,48 +63,72 @@
         }
         @media all and (max-width : 1199px) {
             .banner#{$var} {
-                &::before{
-                    content: "";
-                }
                 .bannerImage{
-                    height: 500px;
+                    height: 600px;
+                    .bannerCover{
+                        width: 115%;
+                        height: 650px;
+                        top: -15%;
+                    }
                 }
             }
         }
         @media all and (max-width : $medium) {
             .banner#{$var} {
-                &::before{
-                    content: "";
-                }
+                
                 .bannerImage{
-                    width: 1200px;
-                }
-            }
-        }
-        @media all and (max-width : 991px) {
-            .banner#{$var} {
-                border-radius: 0;
-                &::before{
-                    content: "";
-                    border-radius: 0;
-                }
-                .bannerImage{
+                    height: 550px;
                     background-position: center;
+                    .bannerCover{
+                        width: 125%;
+                        height: 600px;
+                    }
                     
                 }
             }
         }
         @media all and (max-width : $small) {
             .banner#{$var} {
-                height: unset;
                 &::before{
-                    content: "";
+                    bottom: -10px;
                 }
                 .bannerImage{
-                    padding-top: 100%;
-                    height: unset;
+                    .bannerCover{
+                        width: 135%;
+                    }
+                    .logo{
+                        width: 200px;
+                    }
+                    .bannerTitle{
+                        width: 300px;
+                    }
                 }
             }
         }
+        @media all and (max-width: $smaller){
+            .banner#{$var} {
+                .bannerImage{
+                    height: 450px;
+                    .bannerCover{
+                        top: 0;
+                    }
+                    .logo{
+                        width: 165px;
+                    }
+                    .bannerTitle{
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+    @media all and (max-width: 1199px){
+        height: 780px;
+    }
+    @media all and (max-width: $small){
+        height: 680px;
+    }
+    @media all and (max-width: $smaller){
+        height: 650px;
     }
 }

@@ -8,79 +8,80 @@
     // carouselBlock
     .carouselBlock{
         width: 100%;
+        padding:20px;
         margin: auto;
         position: relative;
         overflow: hidden;
         border-radius: $radius;
         border: 1px solid rgba($color: #000000, $alpha: .1);
-        box-shadow: $itemsShadow;
-        // controlBock 控制
-        .controlBlock{
-            width: 120px;
-            height: 60px;
-            display: flex;
-            background-color: rgba(254,235,227,.85);
-            position: absolute;
-            z-index: 2;
-            left:50%;
-            transform: translateX(-70%);
-            bottom: 0;
-            cursor: pointer;
-            .arrowLine{
-                width: 30px;
-                height: 8px;
-                background-color: #fff;
-                display: block;
-                transition: .5s;
-            }
-            .leftArrow,.rightArrow{
-                border: 1px solid rgba($color: #000000, $alpha: .1);
-                width: 50%;
-                height: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-
-            }
-            .leftArrow{
-                padding-right: 10px;
-                .arrowLine:nth-child(1){
-                    box-shadow: -1px 2px 2px rgba($color: #000000, $alpha: .1);
-                    transform: rotate(-45deg) translateX(5px);
-                }
-                .arrowLine:nth-child(2){
-                    box-shadow: 0px 2px 4px rgba($color: #000000, $alpha: .1);
-                    transform: rotate(45deg) translateX(5px);
-                }
-                &:hover{
-                    .arrowLine:nth-child(2){
-                        box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: .25);
-                    }
-                }
-            }
-            .rightArrow{
-                padding-left: 10px;
-                .arrowLine:nth-child(1){
-                    box-shadow: 1px 2px 2px rgba($color: #000000, $alpha: .1);
-                    transform: rotate(45deg) translateX(-5px);
-                }
-                .arrowLine:nth-child(2){
-                    box-shadow: -1px 2px 4px rgba($color: #000000, $alpha: .1);
-                    transform: rotate(-45deg) translateX(-5px);
-                }
-                &:hover{
-                    .arrowLine:nth-child(2){
-                        box-shadow: -2px 2px 4px rgba($color: #000000, $alpha: .25);
-                    }
-                }  
-            }
-        }
         // carouselItems 輪播內容
         .carouselsContent{
             width: 100%;
             height: 550px;
             position: relative;
+            box-shadow: $itemsShadow;
+            // controlBock 控制
+            .controlBlock{
+                width: 120px;
+                height: 60px;
+                display: flex;
+                background-color: rgba(254,235,227,.85);
+                position: absolute;
+                z-index: 2;
+                left:50%;
+                transform: translateX(-70%);
+                bottom: 0;
+                cursor: pointer;
+                .arrowLine{
+                    width: 30px;
+                    height: 8px;
+                    background-color: #fff;
+                    display: block;
+                    transition: .5s;
+                }
+                .leftArrow,.rightArrow{
+                    border: 1px solid rgba($color: #000000, $alpha: .1);
+                    width: 50%;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+    
+                }
+                .leftArrow{
+                    padding-right: 10px;
+                    .arrowLine:nth-child(1){
+                        box-shadow: -1px 2px 2px rgba($color: #000000, $alpha: .1);
+                        transform: rotate(-45deg) translateX(5px);
+                    }
+                    .arrowLine:nth-child(2){
+                        box-shadow: 0px 2px 4px rgba($color: #000000, $alpha: .1);
+                        transform: rotate(45deg) translateX(5px);
+                    }
+                    &:hover{
+                        .arrowLine:nth-child(2){
+                            box-shadow: 2px 2px 4px rgba($color: #000000, $alpha: .25);
+                        }
+                    }
+                }
+                .rightArrow{
+                    padding-left: 10px;
+                    .arrowLine:nth-child(1){
+                        box-shadow: 1px 2px 2px rgba($color: #000000, $alpha: .1);
+                        transform: rotate(45deg) translateX(-5px);
+                    }
+                    .arrowLine:nth-child(2){
+                        box-shadow: -1px 2px 4px rgba($color: #000000, $alpha: .1);
+                        transform: rotate(-45deg) translateX(-5px);
+                    }
+                    &:hover{
+                        .arrowLine:nth-child(2){
+                            box-shadow: -2px 2px 4px rgba($color: #000000, $alpha: .25);
+                        }
+                    }  
+                }
+            }
             .active{
                 z-index: 1;
                 opacity: 1;
@@ -165,6 +166,7 @@
                     background-size: cover;
                     background-repeat: no-repeat;
                     background-position: bottom;
+                    box-shadow: $slightShadow;
                     overflow: hidden;
                     position: relative;
                     opacity: 0;
@@ -203,18 +205,103 @@
                 transform: translateX(0);
             }
         }
-
+        @media all and (max-width: $large){
+            .carouselsContent{
+                height: 520px;
+            }
+        }
+        @media all and (max-width: $medium){
+            .carouselsContent{
+                height: 450px;
+            }
+        }
+        @media all and (max-width: $small){
+            .carouselsContent{
+                height: 760px;
+                .controlBlock{
+                    left: 0;
+                    transform: translateX(0);
+                }
+                .carouselItems{
+                    padding: 20px 0 10px;
+                    flex-direction: column;
+                    align-items: center;
+                    .itemContent{
+                        width: 100%;
+                        height: 90%;
+                        order: 2;
+                        .itemTitle{
+                            margin-bottom: 20px;
+                        }
+                        .itemText{
+                            margin-bottom: 30px;
+                        }
+                        .itemFooter{
+                            margin-bottom: 0px;
+                        }
+                    }
+                    .itemImage{
+                        width: 80%;
+                        height: 120%;
+                    }
+                }                    
+            }
+        }
+        @media all and (max-width: $smaller){
+            .carouselsContent{
+                height: 600px;
+                .controlBlock{
+                    width: 100px;
+                    height: 50px;
+                }
+                .carouselItems{
+                    .itemContent{
+                        transform: translateY(-30px);
+                        .itemTitle{
+                            margin-bottom: 10px;
+                            .mainTitle{
+                                font-size: $fzLarge;
+                                span{
+                                    font-size: $fzMiddle;
+                                }
+                            }
+                        }
+                        .itemText{
+                            margin-bottom: 20px;
+                            font-size: $fzInfo;
+                        }
+                        .itemFooter{
+                            margin-bottom: 15px;
+                        }
+                    }
+                    .itemImage{
+                        width: 85%;
+                        height: 75%;
+                    }
+                }                    
+            }
+        }
+        @media all and (max-width:$cellPhone) {
+            .carouselsContent{
+                height: 540px;
+                .carouselItems{
+                    .itemImage{
+                        width: 85%;
+                        height: 65%;
+                    }
+                }                  
+            }
+        }
     }
-    // collections
+    // collections 卡片式高低排列
     .collectionsBlock{
         width: 100%;
         margin-top: 120px;
+        padding: 10px;
         display: flex;
         flex-wrap: wrap;
         justify-content: space-around;
-        .collectionItem:nth-child(even){
-            transform: translateY(60px);
-        }
+
         .collectionItem{
             width: 280px;
             height: 360px;
@@ -224,6 +311,9 @@
             border-radius: $radius;
             background-color: rgba($color: #fff, $alpha: .65);
             box-shadow: $itemsShadow;
+            &:nth-child(even){
+                transform: translateY(60px);
+            }
             .collectionImage{
                 margin-top: 20px;
                 overflow: hidden;
@@ -265,6 +355,60 @@
                     bottom:0px;
                 }  
             } 
+        }
+        @media all and (max-width: 1199px) {
+            justify-content: center;
+            .collectionItem{
+                margin: 0 20px 25px;
+                &:nth-child(even){
+                    transform: translateY(0px);
+                }
+                &:last-child{
+                    display: none;
+                }
+            }
+        }
+        @media all and (max-width: $large) {
+            padding: 0;
+        }
+        @media all and (max-width: $medium) {
+            .collectionItem{
+                margin: 0 10px 25px;
+            }
+        }
+        @media all and (max-width: 916px) {
+            .collectionItem{
+                width: 240px;
+                height: 320px;
+            }
+        }
+        @media all and (max-width: 796px) {
+            .collectionItem{
+                width: 220px;
+                height: 300px;
+            }
+        }
+        @media all and (max-width: $small) {
+            .collectionItem{
+                width: 280px;
+                height: 360px;
+                &:last-child{
+                    display: block;
+                }
+            }
+        }
+        @media all and (max-width: 616px) {
+            .collectionItem{
+                width: 240px;
+                height: 300px;
+            }
+        }
+        @media all and (max-width: $smaller) {
+            margin-top: 60px;
+            .collectionItem{
+                width: 300px;
+                height: 380px;
+            }
         }
     }
 }

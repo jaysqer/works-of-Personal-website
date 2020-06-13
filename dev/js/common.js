@@ -212,18 +212,41 @@ $(document).ready(function () {
     });
     // carousel 輪播切換 點擊向左右移動一次 混加了 js 去寫
     var itemsLength = services.find('.itemRelatedsContent').find('.itemRelated').length / 4;
-    var itemWidth = services.find('.itemRelatedsContent').find('.itemRelated').width() + 22;
-    var itemRelatedsCarouselWidth = services.find('.itemRelatedsCarousel').width() + 20; // 因為 padding 有誤差值 20px
+    var itemWidth = services.find('.itemRelatedsContent').find('.itemRelated').width() + 19;
     var itemRelatedsContent = services.find('.itemRelatedsContent');
-    // var itemRelatedsContentLeft = parseInt(services.find('.itemRelatedsContent').css('left'));
     var currentLeftOffset = itemRelatedsContent.css('left') ? parseInt(itemRelatedsContent.css('left')) : 0;
-    if (itemRelatedsCarouselWidth >= 1192) {
-      var movez = 0;
-      var limit = itemsLength - 4;
-      // console.log(limit)
-      services.find('.rightArrow').on('click', next);
-      // services.find('.leftArrow').on('click', prev);
+    var itemRelatedsCarouselWidth = services.find('.itemRelatedsCarousel').width() + 10; // 因為 padding 有誤差值 10px
+    // var itemRelatedsContentLeft = parseInt(services.find('.itemRelatedsContent').css('left'));
+    var movez;
+    var limit;
+    $(window).resize(function () {
+      carouselRwdz();
+    });
+    function carouselRwdz() {
+      itemRelatedsContent.css('left', '0px');
+      currentLeftOffset = itemRelatedsContent.css('left') ? parseInt(itemRelatedsContent.css('left')) : 0;
+      itemWidth = services.find('.itemRelatedsContent').find('.itemRelated').width() + 19;
+      itemRelatedsCarouselWidth = services.find('.itemRelatedsCarousel').width() + 10;
+      movez = 0;
+      if (itemRelatedsCarouselWidth >= 955) {
+        limit = itemsLength - 4;
+        services.find('.rightArrow').off('click').on('click', next);
+        // services.find('.leftArrow').on('click', prev); // 起始設定無法往左按(上一個)
+      } else if (itemRelatedsCarouselWidth >= 720) {
+        limit = itemsLength - 3;
+        services.find('.rightArrow').off('click').on('click', next);
+      } else if (itemRelatedsCarouselWidth >= 480) {
+        limit = itemsLength - 2;
+        services.find('.rightArrow').off('click').on('click', next);
+      } else if (itemRelatedsCarouselWidth >= 310) {
+        limit = itemsLength - 1;
+        services.find('.rightArrow').off('click').on('click', next);
+      } else {
+        services.find('.rightArrow').off('click');
+        services.find('.leftArrow').off('click');
+      }
     }
+    carouselRwdz();
     function next() {
       movez++;
       // console.log(movez);
@@ -245,7 +268,6 @@ $(document).ready(function () {
         $(this).off('click', prev);
       }
     }
-
   });
 
 });
