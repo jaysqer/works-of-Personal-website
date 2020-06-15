@@ -26,10 +26,15 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 * {
 	box-sizing: border-box;
 	color:$fcNormal;
+	font-weight: 400;
 } 
 /* a */
 a{
 	text-decoration: none;
+	display: inline-block;
+}
+img{
+	vertical-align: middle;
 }
 body {
 	line-height: 1;

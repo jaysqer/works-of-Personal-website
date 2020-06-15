@@ -1,0 +1,22 @@
+// --- reset ---
+@import "./base/reset.scss";
+// --- var ---
+@import "./base/var.scss";
+
+// --- 每一頁分頁的css ---
+// --- banner ---
+@import "./layout/banner.scss";
+
+// --- collections ---
+@import "./paginations/collections.scss";
+// --- services ---
+@import "./paginations/services.scss";
+// --- events ---
+@import "./paginations/events.scss";
+// --- aboutUs ---
+@import "./paginations/aboutUs.scss";
+// --- teaching ---
+@import "./paginations/teaching.scss";
+
+// --- contactUs ---
+@import "./paginations/contactUs.scss";

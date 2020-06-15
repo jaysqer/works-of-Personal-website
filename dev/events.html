@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch The Idea｜Events</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/page.css">
+    <!-- js -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        @@include('./layout/header.html',{
+        "fontType3":"fontBold",
+        "display3":"navDisplay"
+        })
+        <!-- banner -->
+        <div class="bannerBlock">
+            <div class="banner_03">
+                <div class="bannerImage">
+                    <div class="bannerCover">
+                        <img src="./img/banner/bannerCover_01.png" alt="">
+                    </div>
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="./img/banner/bannerLogo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="bannerTitle">
+                        <img src="./img/banner/bannerTitle_03.png" alt="">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <!-- events 活動 -->
+        <main class="events border">
+            <!-- breadCrumbs 麵包屑 -->
+
+            <!-- events 活動內容區塊 -->
+            <div class="eventsBlock border">
+                <!-- item_01 -->
+                <div class="eventItem border">
+                    <div class="eventItemPart border">
+                        <div class="eventItemImage">
+                            <img src="./img/pagination/events/eventImage_04.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="eventItemPart border">
+                        <div class="eventItemContent border">
+                            <div class="eventTitle border">
+                                <p class="mainTitle border">520 我愛你/妳</p>
+                                <p class="subTitle border">520 I Love You</p>
+                            </div>
+                            <div class="eventText border">
+                                <p>一年一度的5月20號來囉</p>
+                                <p>求婚驚喜、結婚場地等布置</p>
+                                <p>將享有最多8折優惠</p>
+                            </div>
+                            <!-- 更多內容 按鈕 -->
+                            @@include('./layout/btnSecond.html',{
+                            "link":"",
+                            "innerText1":"More",
+                            "innerText2":"更多內容"
+                            })
+                        </div>
+                    </div>
+                </div>
+                <!-- item_02 -->
+                <div class="eventItem border">
+                    <div class="eventItemPart border">
+                        <div class="eventItemImage">
+                            <img src="./img/pagination/events/eventImage_06.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="eventItemPart border">
+                        <div class="eventItemContent border">
+                            <div class="eventTitle border">
+                                <p class="mainTitle border">同學，畢業快樂</p>
+                                <p class="subTitle border">Happy Graduation</p>
+                            </div>
+                            <div class="eventText border">
+                                <p>又到了鳳凰花開的日子</p>
+                                <p>畢業會場、畢業派對等布置</p>
+                                <p>將享有最多85折優惠</p>
+                            </div>
+                            <!-- 更多內容 按鈕 -->
+                            @@include('./layout/btnSecond.html',{
+                            "link":"",
+                            "innerText1":"More",
+                            "innerText2":"更多內容"
+                            })
+                        </div>
+                    </div>
+                </div>
+                <!-- item_03 -->
+                <div class="eventItem border">
+                    <div class="eventItemPart border">
+                        <div class="eventItemImage">
+                            <img src="./img/pagination/events/eventImage_05.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="eventItemPart border">
+                        <div class="eventItemContent border">
+                            <div class="eventTitle border">
+                                <p class="mainTitle border">氣球禮物盒傳情</p>
+                                <p class="subTitle border">Balloon's Gift And Post</p>
+                            </div>
+                            <div class="eventText border">
+                                <p>樂點子團隊利用氣球結合禮物盒的概念</p>
+                                <p>設計出的氣球禮物盒</p>
+                                <p>情人節、友情、生日等 送禮物</p>
+                                <p>由您提出 由我們為您傳情</p>
+                            </div>
+                            <!-- 更多內容 按鈕 -->
+                            @@include('./layout/btnSecond.html',{
+                            "link":"",
+                            "innerText1":"More",
+                            "innerText2":"更多內容"
+                            })
+                        </div>
+                    </div>
+                </div>
+                <!-- item_04 -->
+                <div class="eventItem border">
+                    <div class="eventItemPart border">
+                        <div class="eventItemImage">
+                            <img src="./img/pagination/events/eventImage_03.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="eventItemPart border">
+                        <div class="eventItemContent border">
+                            <div class="eventTitle border">
+                                <p class="mainTitle border">七夕情人節Coming</p>
+                                <p class="subTitle border">Chinese Valentine's Day</p>
+                            </div>
+                            <div class="eventText border">
+                                <p>七夕情人節來囉</p>
+                                <p>讓我們來幫您設計一個告白驚喜</p>
+                                <p>讓我們來幫您計畫一個求婚驚喜</p>
+                                <p>讓一切再多點 歡樂 和 浪漫</p>
+                            </div>
+                            <!-- 更多內容 按鈕 -->
+                            @@include('./layout/btnSecond.html',{
+                            "link":"",
+                            "innerText1":"More",
+                            "innerText2":"更多內容"
+                            })
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        @@include('./layout/footer.html',{})
+    </div>
+</body>
+
+</html>

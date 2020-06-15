@@ -1,0 +1,103 @@
+.footer{
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    .footerInfo{
+        width: 100%;
+        box-shadow: $slightShadow;
+        P{  
+            text-align: center;
+            background-color: rgba($color: #fff, $alpha: .8);
+            padding: 10px 0;
+            font-size: $fzInfo;
+        }
+    }
+}
+// socialMedia 社交軟體連結
+.socialMediasBlock{
+    position: fixed;
+    z-index: 20;
+    bottom: 300px;
+    right: 235px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 1s;
+    .socialMedia{
+        position: absolute;
+        animation: floatz 2s alternate infinite;
+        transform: translateY(0);
+        @keyframes floatz {
+            from{transform: translateY(0px);}
+            to{transform: translateY(-5px);}
+        }
+        img{
+            width: 100%;
+            filter: brightness(.95);
+        }
+        &:hover{
+            img{
+                filter: brightness(1.05);
+            }
+        }
+        &:nth-child(1){
+            width: 110px;
+            top: -20px;
+            left: -20px;
+            animation-delay: 1.2s;
+        }
+        &:nth-child(2){
+            width: 70px;
+            top: 20px;
+            left: 100px;
+            animation-delay: .8s;
+        }
+        &:nth-child(3){
+            width: 80px;
+            top: 105px;
+            left: -10px;
+            animation-delay: .3s;
+            img{
+                transform: rotate(-5deg)
+            }
+        }
+        &:nth-child(4){
+            width: 60px;
+            top: 200px;
+            left: 10px;
+        }
+
+    }
+    @media all and (max-width: $medium) {
+        right: 200px;
+     }
+    @media all and (max-width: $small) {
+        width: unset;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        right: 10px;
+        bottom: 15%;
+        .socialMedia{
+            width: 75px !important;
+            margin-bottom: 5px;
+            position: static;
+            &:nth-child(1),&:nth-child(2){
+                width: 80px !important;
+            }
+        }
+    }
+    @media all and (max-width: $smaller) {
+        right: 17px;
+        bottom: 20%;
+        .socialMedia{
+            width: 50px !important;
+            margin-bottom: 5px;
+            position: static;
+            &:nth-child(1),&:nth-child(2){
+                width: 52px !important;
+            }
+        }
+    }
+}

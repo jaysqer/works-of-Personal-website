@@ -1,0 +1,134 @@
+.bannerBlock{
+    height: 980px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid rgba($color: #000000, $alpha: .1);
+    @each $var in _01, _02, _03, _04, _05, _06{
+        .banner#{$var} {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            &::before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                bottom: -25px;
+                z-index: 2;
+                background-image: url('../img/banner/bannerCover.png');
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: bottom;
+            }
+            .bannerImage{
+                background-image: url('../img/banner/banner#{$var}.jpg');
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 1920px;
+                height: 650px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative;
+                .bannerCover{
+                    width: 115%;
+                    max-width: 1920px;
+                    height: 115%;
+                    position: absolute;
+                    top: -25%;
+                    img{
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .logo{
+                    width: 240px;
+                    // margin-top: 60px;
+                    z-index: 2;
+                    img{
+                        width: 100%;
+                    }
+                }
+                .bannerTitle{
+                    margin-top: 40px;
+                    width: 420px;
+                    z-index: 2;
+                    img{
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        @media all and (max-width : 1199px) {
+            .banner#{$var} {
+                .bannerImage{
+                    height: 600px;
+                    .bannerCover{
+                        width: 115%;
+                        height: 650px;
+                        top: -15%;
+                    }
+                }
+            }
+        }
+        @media all and (max-width : $medium) {
+            .banner#{$var} {
+                
+                .bannerImage{
+                    height: 550px;
+                    background-position: center;
+                    .bannerCover{
+                        width: 125%;
+                        height: 600px;
+                    }
+                    
+                }
+            }
+        }
+        @media all and (max-width : $small) {
+            .banner#{$var} {
+                &::before{
+                    bottom: -10px;
+                }
+                .bannerImage{
+                    .bannerCover{
+                        width: 135%;
+                    }
+                    .logo{
+                        width: 200px;
+                    }
+                    .bannerTitle{
+                        width: 300px;
+                    }
+                }
+            }
+        }
+        @media all and (max-width: $smaller){
+            .banner#{$var} {
+                .bannerImage{
+                    height: 450px;
+                    .bannerCover{
+                        top: 0;
+                    }
+                    .logo{
+                        width: 165px;
+                    }
+                    .bannerTitle{
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+    @media all and (max-width: 1199px){
+        height: 780px;
+    }
+    @media all and (max-width: $small){
+        height: 680px;
+    }
+    @media all and (max-width: $smaller){
+        height: 650px;
+    }
+}

@@ -1,0 +1,513 @@
+
+// --- mainSection
+.services{
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 40px;
+    margin: auto;
+    // serviceBlock 服務項目
+    .servicesBlock{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        // servicesTab 服務項目選項
+        .servicesTabBlock{
+            width: 100%;
+            margin-bottom: 40px;
+            padding: 10px;
+            .servicesItemsTitleBlock{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .servicesItemsTitle{
+                    margin-bottom: 20px;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .mainTitle{
+                        font-size:$fzMiddle;
+                        font-weight: bold;
+                        margin-bottom: 5px;
+                    }
+                    .subTitle{
+                        font-size: $fzSmall;
+                    }
+                }
+                .leftLine ,.rightLine{
+                    display: block;
+                    width: 240px;
+                    height: 2px;
+                    background-color: rgba($color: #000000, $alpha: .2);
+                }
+                .leftLine{
+                    margin-right: 10px;
+                }
+                .rightLine{
+                    margin-left: 10px;
+                }
+            }
+            .servicesTab{
+                display: flex;
+                justify-content: center;
+                border-bottom: 2px solid rgba($color: #000000, $alpha: .15);
+                li{
+                    border-right: 1px solid rgba($color: #000000, $alpha: .1);
+                    font-size: $fzSmall;
+                    padding: 15px 30px;
+                    transition: background-color .2s;
+                    &:last-child{
+                        border-right: unset;
+                    }
+                    &:hover{
+                        background-color: rgba($color: #000000, $alpha: .04);
+                        font-weight: bold;
+                        color: rgba($color: #000000, $alpha: .6);
+                        cursor: pointer;
+                    }
+                }
+                .-on{
+                    background-color: rgba($color: #000000, $alpha: .04);
+                    font-weight: bold;
+                    color: rgba($color: #000000, $alpha: .6);
+                }
+            }
+            @media all and (max-width: $small){
+                margin-bottom: 10px;
+                .servicesItemsTitleBlock{
+                    
+                    .leftLine ,.rightLine{
+                        width: 150px;
+                    }
+                }
+            }
+            @media all and (max-width: $smaller){
+                padding: 5px;
+                .servicesItemsTitleBlock{
+                    .servicesItemsTitle{
+                        text-align: center;
+                        margin-bottom: 10px;
+                        .subTitle{
+                            font-size: $fzInfo;
+                        }
+                    }
+                    .leftLine ,.rightLine{
+                        width: 60px;
+                    }
+                }
+                .servicesTab{
+                    li{
+                        font-size: $fzInfo;
+                        padding: 15px 10px;
+                    }
+                }
+            }
+        }
+        .serviceItem{    
+            width: 100%;
+            padding: 10px;
+            display: none;
+            // services 服務內容
+            .serviceContent{
+                width: 100%;
+                padding: 20px;
+                margin-bottom: 40px;
+                display: flex;
+                justify-content: center;
+                border: 1px solid rgba($color: #000000, $alpha: .1);
+                background-color: rgba($color: #fff, $alpha: .6);
+                .servicePart{
+                    width: 50%;
+                    // height: 450px;
+                    display: flex;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    &:nth-child(1){
+                        flex-direction: column;
+                        align-items: center;
+                        position: relative;
+                        &::before{
+                            content: "";
+                            width: 85%;
+                            height: 85%;
+                            margin-left: 2%;
+                            border: 4px solid rgba($color: #fff, $alpha: .8);
+                            position: absolute;
+                        }
+                    }
+                    .serviceTitle{
+                        margin-bottom: 45px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .mainTitle{
+                            font-size: $fzLarge;
+                            font-weight: bold;
+                            color:$fcGold;
+                            text-shadow: $importantFontShadow;
+                            margin-bottom: 5px;
+                        }
+                        .subTitle{
+                            font-size: $fzSmall;
+                            font-weight: bold;
+                            color:#fff;
+                            text-shadow: $titleShadow;
+                        }
+                    }
+                    .serviceText{
+                        align-self: center;
+                        margin-bottom: 45px;
+                        p{
+                            text-align: center;
+                            font-size: $fzSmall;
+                            line-height: $lineHeight;
+                        }
+                    }
+                    .serviceQuarter{
+                        width:45%;
+                        margin: 2px;
+                        overflow: hidden;
+                        position: relative;
+                        box-shadow: $slightShadow;
+                        img{
+                            width:100%;
+                            transition: transform .5s;
+                        }
+                        .serviceName{
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            bottom: 0;
+                            z-index: 1;
+                            p{
+                                width: 95%;
+                                height: 95%;
+                                border: 4px solid rgba($color: #fff, $alpha: .6);
+                                background-color: rgba($color: #fff, $alpha: .2);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                font-size: $fzSmall;
+                                font-weight: bold;
+                                text-shadow: $titleShadow;
+                                color:#fff;
+                            }
+                        }
+                        &:hover{
+                            img{
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+            &.-on{
+                display: block;
+            }
+            // itemRelatedsBlock 服務的相關連結
+            .itemRelatedsBlock{
+                padding: 20px 0 40px 0;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                border-bottom: 1px solid rgba($color: #000000, $alpha: .1);
+                .itemRelatedsTitle{
+                    margin-bottom: 20px;
+                    text-align: center;
+                    .mainTitle{
+                        font-size: $fzMiddle;
+                        font-weight: bold;
+                        color: $fcGold;
+                        text-shadow: $importantFontShadow;
+                        margin-bottom: 5px;
+                    }
+                    .subTitle{
+                        font-size: $fzSmall;
+                    }
+                }
+                .itemRelatedsCarousel{
+                    width: 100%;
+                    padding: 5px;
+                    overflow: hidden;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    position: relative;
+                    .itemRelatedsContent{
+                        align-self: flex-start;
+                        display: flex;
+                        position: relative;
+                        left: 0;
+                        z-index: 2;
+                        transition:.5s;
+                        .itemRelated{
+                            width: 280px;
+                            height: 360px;
+                            margin: 0 8.5px;
+                            overflow: hidden;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            position: relative;
+                            background-color: rgba($color: #fff, $alpha: .65);
+                            box-shadow: $itemsShadow;
+                            border: 1px solid rgba($color: #000000, $alpha: .1);
+                            &:first-child{
+                                margin-left: 0;
+                            }
+                            &:last-child{
+                                margin-right: 0;
+                            }
+                            .relatedImage{
+                                margin-top: 20px;
+                                overflow: hidden;
+                                position: relative;
+                                img{
+                                    width: 100%;
+                                    transition: transform .5s;
+                                }
+                                &::before{
+                                    content: "";
+                                    width: 100%;
+                                    height: 100%;
+                                    opacity: 0;
+                                    position: absolute;
+                                    z-index: 1;
+                                    top: 0;
+                                    background-color: $fcHover;
+                                    transition: opacity .5s;
+                                }
+                            }
+                            .relatedTitle{
+                                padding-left: 40px;
+                                position: relative;
+                                z-index: 2;
+                                bottom: 120px;
+                                transition: bottom 1s;
+                                p{
+                                    font-size: $fzSmall;
+                                    font-weight: bold;
+                                    text-shadow: $titleShadow;
+                                    color:rgba($color: #fff, $alpha: 1.0);
+                                }
+                            }
+                            .relatedDescription{
+                                position: relative;
+                                bottom: 0;
+                                z-index: 2;
+                                opacity: 0;
+                                padding-left: 40px;
+                                transition: opacity 1s,bottom 1s;
+                                p{
+                                    font-size: $fzSmall;
+                                    font-weight: bold;
+                                    text-shadow: $titleShadow;
+                                    color:rgba($color: #fff, $alpha: 1.0);
+                                }
+                            }
+                            &:hover {
+                                .relatedImage{
+                                    img{
+                                        transform: scale(1.1);
+                                    }
+                                    &::before{
+                                        opacity: 1;
+                                    }
+                                }
+                                .relatedTitle{
+                                    bottom: 200px;
+                                }
+                                .relatedDescription{
+                                    opacity: 1;
+                                    bottom: 180px;
+                                }
+                            }
+                        }
+                    }
+                    // controlBlock 控制區
+                    .itemRelatedControl{
+                        width: 100%;
+                        height: 100%;
+                        position: absolute;
+                        top: 0;
+                        cursor: pointer;
+                        .arrowLine{
+                            width: 30px;
+                            height: 8px;
+                            background-color: #fff;
+                            display: block;
+                        }
+                        .leftArrow,.rightArrow{ 
+                            width: auto;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            align-items: center;
+                            position: absolute;
+                            z-index: 2;
+                            transition: background-color .2s;
+                        }
+                        .leftArrow{
+                            padding-right: 10px;
+                            left: 0;
+                            .arrowLine:nth-child(1){
+                                box-shadow: -1px 2px 2px rgba($color: #000000, $alpha: .1);
+                                transform: rotate(-45deg) translateX(5px);
+                            }
+                            .arrowLine:nth-child(2){
+                                box-shadow: 0px 2px 4px rgba($color: #000000, $alpha: .1);
+                                transform: rotate(45deg) translateX(5px);
+                            }
+                            &:hover{
+                                background-color: rgba($color: #000000, $alpha: .05);
+                            }
+                        }
+                        .rightArrow{
+                            padding-left: 10px;
+                            right: 0;
+                            .arrowLine:nth-child(1){
+                                box-shadow: 1px 2px 2px rgba($color: #000000, $alpha: .1);
+                                transform: rotate(45deg) translateX(-5px);
+                            }
+                            .arrowLine:nth-child(2){
+                                box-shadow: -1px 2px 4px rgba($color: #000000, $alpha: .1);
+                                transform: rotate(-45deg) translateX(-5px);
+                            }
+                            &:hover{
+                                background-color: rgba($color: #000000, $alpha: .05);
+                            }   
+                        }
+                    }
+                    @media all and (max-width: 1199px){
+                        max-width: 960px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 225px;
+                                height: 300px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: $medium){
+                        max-width: 885px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 280px;
+                                height: 360px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: 919px){
+                        max-width: 720px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 225px;
+                                height: 300px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: $small){
+                        max-width: 590px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 280px;
+                                height: 360px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: 624px){
+                        max-width: 480px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 225px;
+                                height: 300px;
+                            }
+                        }
+                    }
+                    @media all and (max-width: $smaller){
+                        max-width: 310px;
+                        .itemRelatedsContent{
+                            .itemRelated{
+                                width: 300px;
+                                height: 400px;
+                            }
+                        }
+                    }
+                }
+            }
+            @media all and (max-width: $medium){
+                .serviceContent{
+                    .servicePart{
+                        &:nth-child(1){
+                            &::before{
+                                width: 95%;
+                                height: 100%;
+                            }
+                        }
+                        .serviceTitle{
+                            margin-bottom: 20px;
+                        }
+                        .serviceText{
+                            margin-bottom: 30px;
+                            p{
+                                font-size: $fzInfo;
+                            }
+                        }
+                    }
+                }
+            } 
+            @media all and (max-width: $small){
+                .serviceContent{
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    .servicePart{
+                        width: 95%;
+                        &:nth-child(1){
+                            padding: 10px;
+                            margin-bottom: 10px;
+                            &::before{
+                                width: 90%;
+                                height: 100%;
+                                margin-left: 0;
+                            }
+                        }
+                        .serviceTitle{
+                            margin-bottom: 15px;
+                        }
+                        .serviceText{
+                            margin-bottom: 30px;
+                            p{
+                                font-size: $fzInfo;
+                            }
+                        }
+                    }
+                }
+            }
+            @media all and (max-width: $small){
+                .serviceContent{
+                    .servicePart{
+                        width: 100%;
+                        &:nth-child(1){
+                            padding: 10px;
+                            margin-bottom: 10px;
+                            &::before{
+                                width: 90%;
+                                height: 100%;
+                                margin-left: 0;
+                            }
+                        }
+                        .serviceText{
+                            margin-bottom: 20px;
+                        }
+                    }
+                }
+            }                    
+        }
+    }
+}

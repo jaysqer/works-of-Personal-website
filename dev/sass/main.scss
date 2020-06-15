@@ -5,14 +5,22 @@
 // --- var ---
 @import "./base/var.scss";
 
+// --- referenceBorder ---
+// .border{
+//     border: 1px solid #bbb;
+// }
+
 // --- breadCrumb ---
 @import "./modules/breadCrumb.scss";
 // --- btn ---
 @import "./modules/btn.scss";
 
+// background
+.wrapper{
+    background-image: $backgroundImage;
+}
+
 // --- header ---
 @import "./layout/header.scss";
-// --- banner ---
-@import "./layout/banner.scss";
 // --- footer ---
 @import "./layout/footer.scss";

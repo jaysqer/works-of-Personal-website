@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch The Idea｜Teaching</title>
+    <!-- css -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/page.css">
+    <!-- js -->
+    <script src="./js/jquery-3.4.1.min.js"></script>
+    <script src="./js/common.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        @@include('./layout/header.html',{
+        "fontType5":"fontBold",
+        "display5":"navDisplay"
+        })
+        <!-- banner -->
+        <div class="bannerBlock">
+            <div class="banner_05">
+                <div class="bannerImage">
+                    <div class="bannerCover">
+                        <img src="./img/banner/bannerCover_01.png" alt="">
+                    </div>
+                    <div class="logo">
+                        <a href="./index.html">
+                            <img src="./img/banner/bannerLogo.png" alt="">
+                        </a>
+                    </div>
+                    <div class="bannerTitle">
+                        <img src="./img/banner/bannerTitle_05.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- teaching 氣球教學 -->
+        <main class="teaching border">
+            <!-- breadCrumbs 麵包屑 -->
+
+            <!-- teachigBlock 氣球教學 -->
+            <div class="teachingBlock border">
+                <!-- teachingCourse 一對一單人教學課程 -->
+                <div class="teachingPart border">
+                    <div class="teachingCourse border">
+                        <div class="teachingCourseImage border">
+                            <img src="./img/pagination/teaching/teachingCourse_01.jpg" alt="">
+                        </div>
+                        <div class="teachingContent border">
+                            <div class="contentPart border">
+                                <div class="teachingCourseTitle border">
+                                    <p class="mainTitle">一對一私人教學課程</p>
+                                    <p class="subTitle">Private Course</p>
+                                </div>
+                                <div class="teachingCourseText border">
+                                    <p>按照學員對造型氣球的了解程度 安排課程</p>
+                                    <p>基礎課程：適合初學者學習</p>
+                                    <p>安排一系列基礎技法 學習如何製作小型造型氣球</p>
+                                    <p>進階課程：適合熟悉造型氣球者、街頭藝人</p>
+                                    <p>安排一系列進階課程 學習如何製作中、大型造型氣球</p>
+                                </div>
+                                @@include("./layout/btnSecond.html",{
+                                "link":"",
+                                "innerText1":"Contract",
+                                "innerText2":"聯絡我們"
+                                })
+                            </div>
+                            <!-- <div class="contentPart border"></div> -->
+                        </div>
+                    </div>
+                    <div class="teachingItems border">
+                        <div class="teachingItem border">
+                            <img src="./img/pagination/teaching/teachingExample_06.jpg" alt="">
+                            <div class="teachingItemName border">
+                                <p>卡通造型氣球</p>
+                            </div>
+                        </div>
+                        <div class="teachingItem border">
+                            <img src="./img/pagination/teaching/teachingExample_02.jpg" alt="">
+                            <div class="teachingItemName border">
+                                <p>創意氣球布置</p>
+                            </div>
+                        </div>
+                        <div class="teachingItem border">
+                            <img src="./img/pagination/teaching/teachingExample_04.jpg" alt="">
+                            <div class="teachingItemName border">
+                                <p>氣球拱門設計</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- teachingCourse 一對多團體教學課程 -->
+                <div class="teachingPart border">
+                    <div class="teachingCourse border">
+                        <div class="teachingCourseImage border">
+                            <img src="./img/pagination/teaching/teachingCourse_05.jpg" alt="">
+                        </div>
+                        <div class="teachingContent border">
+                            <div class="contentPart border">
+                                <div class="teachingCourseTitle border">
+                                    <p class="mainTitle">一對多團體教學課程</p>
+                                    <p class="subTitle">Group Course</p>
+                                </div>
+                                <div class="teachingCourseText border">
+                                    <p>依照學員人數 安排課程</p>
+                                    <p>團體課程：適合學校教學、社團課程等</p>
+                                    <p>安排一整個系列的課程規劃</p>
+                                    <p>學習如何運用創意來製作造型氣球和簡易的氣球搭配</p>
+                                </div>
+                                @@include("./layout/btnSecond.html",{
+                                "link":"",
+                                "innerText1":"Contract",
+                                "innerText2":"聯絡我們"
+                                })
+                            </div>
+                            <!-- <div class="contentPart border"></div> -->
+                        </div>
+                    </div>
+                    <div class="teachingItems border">
+                        <div class="teachingItem border">
+                            <img src="./img/pagination/teaching/teachingExample_07.jpg" alt="">
+                            <div class="teachingItemName border">
+                                <p>簡易氣球搭配</p>
+                            </div>
+                        </div>
+                        <div class="teachingItem border">
+                            <img src="./img/pagination/teaching/teachingExample_01.jpg" alt="">
+                            <div class="teachingItemName border">
+                                <p>造型氣球禮物</p>
+                            </div>
+                        </div>
+                        <div class="teachingItem border">
+                            <img src="./img/pagination/teaching/teachingExample_05.jpg" alt="">
+                            <div class="teachingItemName border">
+                                <p>創意造型氣球</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+        @@include('./layout/footer.html',{})
+    </div>
+</body>
+
+</html>

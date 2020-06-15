@@ -1,0 +1,224 @@
+
+// --- mainSection
+.teaching{
+    width: 100%;
+    max-width: 1200px;
+    padding-bottom: 40px;
+    margin: auto;
+    // teachigBlock 氣球教學
+    .teachingBlock{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        .teachingPart{
+            width: 100%;
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            // &:last-child{
+            //     margin-bottom: unset;
+            // }
+            .teachingCourse{
+                width: 100%;
+                overflow: hidden;
+                position: relative;
+                .teachingCourseImage{
+                    height: 450px;
+                    padding: 0 5px;
+                    filter: blur(1.5px);
+                    img{
+                        width: 100%;
+                    }
+                }
+                .teachingContent{
+                    width: 100%;
+                    height: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    &::before{
+                        content: "";
+                        width: 95%;
+                        height: 95%;
+                        position: absolute;
+                        background-color: rgba($color: #fff, $alpha: .15);
+                    }
+                    .contentPart{
+                        width: 100%;
+                        height: 100%;
+                        padding-left: 100px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: flex-start;
+                        position: relative;
+                        .teachingCourseTitle{
+                            margin-bottom: 45px;
+                            .mainTitle{
+                                font-size: $fzLarge;
+                                font-weight: bold;
+                                color: rgba($color: #fff, $alpha: 1.0);
+                                text-shadow: $titleShadow;
+                                margin-bottom: 5px;
+                            }
+                            .subTitle{
+                                font-size: $fzMiddle;
+                                font-weight: bold;
+                                color: rgba($color: #fff, $alpha: 1.0);
+                                text-shadow: $titleShadow;
+                            }
+                        }
+                        .teachingCourseText{
+                            margin-bottom: 45px;
+                            p{
+                                font-size: $fzSmall;
+                                font-weight: bold;
+                                line-height: $lineHeight;
+                                text-shadow: $fontShadow;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+            }
+            .teachingItems{
+                width: 100%;
+                margin-top: 10px;
+                display: flex;  
+                .teachingItem{
+                    width: 33.33%;
+                    margin:0 5px 5px;
+                    // height: 320px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    box-shadow: $slightShadow;
+                    overflow: hidden;
+                    position: relative;
+                    img{
+                        width: 100%;
+                        transition: .5s;
+                    }
+                    .teachingItemName{
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        p{
+                            font-size: $fzSmall;
+                            font-weight: bold;
+                            text-shadow: $titleShadow;
+                            color: #fff;
+                        }
+                        &::before{
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            background-image: url("../img/element/imageFrame_01.png");
+                            background-size: contain;
+                            position: absolute;
+                            opacity: .4;
+                            transition: opacity .5s;
+
+                        }
+                    }
+                    &:hover{
+                        img{
+                            transform: scale(1.1)rotate(2deg);
+                            filter: blur(1px);
+                        }
+                        & ::before{
+                            opacity: .65;
+                        }
+                    }
+                }
+            }
+            @media all and (max-width: 1199px ){
+                max-width: 880px;
+            }
+            @media all and (max-width: $medium ){
+                max-width: 680px;
+            }
+            @media all and (max-width: $small ){
+                max-width: 520px;
+                .teachingCourse{
+                    .teachingCourseImage{
+                        height: unset;
+                    }
+                    .teachingContent{
+                        .contentPart{
+                            padding-left: unset;
+                            align-items: center;
+                            .teachingCourseTitle{
+                                margin-bottom: 20px;
+                            }
+                            .teachingCourseText{
+                                margin-bottom: 30px;
+                                p{
+                                    font-size: $fzSmall;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            @media all and (max-width: $smaller ){
+                max-width: 350px;
+                .teachingCourse{
+                    .teachingCourseImage{
+                        height: 350px;
+                        position: relative;
+                        img{
+                            width: unset;
+                            height: 350px;
+                            position: absolute;
+                            top: 0;
+                            right: 0px;
+                        }
+                    }
+                    .teachingContent{
+                        .contentPart{
+                            padding-left: unset;
+                            align-items: center;
+                            .teachingCourseTitle{
+                                margin-bottom: 10px;
+                            }
+                            .teachingCourseText{
+                                width: 90%;
+                                margin-bottom: 20px;
+                                p{
+                                    font-size: unset;
+                                    font-weight: normal;
+                                    text-shadow: $titleShadow;
+                                }
+                            }
+                        }
+                    }
+                }
+                .teachingItems{
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    .teachingItem{
+                        width: 95%;
+                        margin: 0;
+                        margin-bottom: 40px;
+                        &:last-child{
+                            margin-bottom: unset;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
