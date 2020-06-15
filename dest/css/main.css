@@ -59,6 +59,9 @@ q:before, q:after {
 blockquote, q {
   quotes: "" ""; }
 
+.border {
+  border: 1px solid #bbb; }
+
 .btnFirst {
   background-color: white;
   width: 180px;
