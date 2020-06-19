@@ -5,12 +5,32 @@
     max-width: 1200px;
     padding-bottom: 40px;
     margin: auto;
+    .teachingTitleBlock{
+        width: 100%;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: .1);
+        .mainTitle{
+            font-size:$fzMiddle;
+            font-weight: bold;
+            text-shadow: $importantFontShadow;
+            color: rgba($color: $fcGold, $alpha: 1.0);
+            margin-bottom: 5px;
+        }
+        .subTitle{
+            font-size: $fzInfo;
+        }
+    }
     // teachigBlock 氣球教學
     .teachingBlock{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        border-bottom: 1px solid rgba($color: #000000, $alpha: .1);
         .teachingPart{
             width: 100%;
             margin-bottom: 60px;

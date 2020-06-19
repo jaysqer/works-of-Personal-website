@@ -25,7 +25,6 @@ $(document).ready(function () {
   var socialMedia = $('.socialMediasBlock'); // socialMedia 社交軟體
   $(window).resize(function () {
     k = fullHeader.offset().top;
-    console.log(k)
   });
   $(window).scroll(function () {
     s = $(document).scrollTop();
@@ -100,22 +99,26 @@ $(document).ready(function () {
       'left': -100 * iNow + '%',
     });
   });
+
+  // setTimeout
   function autoPlay() {
-    timer = setInterval(function () {
-      iNow++;
-      if (iNow > adsControls.length - 1) {
-        iNow = 0;
-      }
-      adsControls.eq(iNow).trigger('click');
-    }, 5000);
+    iNow++;
+    if (iNow > adsControls.length - 1) {
+      iNow = 0;
+    }
+    adsControls.eq(iNow).trigger('click');
+    timer = setTimeout(autoPlay, 3000)
   };
-  autoPlay();
+  timer = setTimeout(autoPlay, 3000);
+
   latestAds.hover(
     function () {
-      clearInterval(timer);
+      clearTimeout(timer);
     },
     function () {
-      autoPlay();
+      clearTimeout(timer);
+      timer = setTimeout(autoPlay, 3000);
+
     }
   );
 

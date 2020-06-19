@@ -20,7 +20,7 @@
       .banner .webCenterBlock .webNameBlock .logo {
         width: 320px;
         transform: translateY(-30px);
-        margin: 0 10px 0 0; }
+        margin-right: 10px; }
         .banner .webCenterBlock .webNameBlock .logo img {
           width: 100%; }
       .banner .webCenterBlock .webNameBlock .webName img {
@@ -32,6 +32,38 @@
         text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
         padding-left: 45px;
         margin-top: 2px; }
+      .banner .webCenterBlock .webNameBlock .scrollDownBlock {
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        bottom: -20px;
+        left: 52%;
+        transform: translateX(-50%);
+        overflow: hidden; }
+        .banner .webCenterBlock .webNameBlock .scrollDownBlock .scrollDown {
+          width: 2px;
+          height: 100%;
+          background-color: #fff;
+          box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+          position: relative;
+          top: -100%;
+          animation: downz 1.5s ease-in-out infinite forwards; }
+        .banner .webCenterBlock .webNameBlock .scrollDownBlock .scrollText {
+          color: #fff;
+          margin-left: 5px;
+          text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.45);
+          right: -20px; }
+
+@keyframes downz {
+  0% {
+    top: -100%; }
+  75% {
+    top: 0%; }
+  100% {
+    top: 100%; } }
   @media all and (max-width: 991px) {
     .banner {
       height: 768px; } }
@@ -49,17 +81,19 @@
     .banner .webCenterBlock .webNameBlock .logo {
       width: 160px;
       transform: translateY(0px);
-      margin-right: 10px; }
+      margin: 0px; }
     .banner .webCenterBlock .webNameBlock .webName img {
-      width: 260px; } }
+      width: 260px; }
+    .banner .webCenterBlock .webNameBlock .scrollDownBlock {
+      bottom: -40px;
+      left: 40%; } }
   @media all and (max-width: 414px) {
     .banner {
       height: 100vh;
       background-position: -180px center; }
       .banner .webCenterBlock .webNameBlock {
         flex-direction: column;
-        align-items: center;
-        margin-bottom: 20px; }
+        align-items: center; }
         .banner .webCenterBlock .webNameBlock .logo {
           width: 300px;
           margin: 0;
@@ -68,7 +102,10 @@
           align-self: flex-end;
           margin-right: 30px; }
           .banner .webCenterBlock .webNameBlock .webName img {
-            width: 250px; } }
+            width: 250px; }
+        .banner .webCenterBlock .webNameBlock .scrollDownBlock {
+          bottom: -30px;
+          left: 20%; } }
 
 .content {
   width: 100%;
@@ -866,7 +903,7 @@
                 display: block;
                 margin-top: 5px; }
             .content .sectionBlock .events .eventsCardBlock .eventsCard .cardContent .cardText {
-              width: 85%;
+              width: 90%;
               padding: 0 5%;
               font-size: 16px; }
         @media all and (max-width: 1150px) {
@@ -896,10 +933,12 @@
                 border-radius: unset; }
               .content .sectionBlock .events .eventsCardBlock .eventsCard .cardContent {
                 margin-bottom: 20px;
-                padding: 10px 0;
+                padding: 15px 0;
                 z-index: 10;
                 background-color: rgba(255, 255, 255, 0.95);
-                box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4); } }
+                box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.4); }
+                .content .sectionBlock .events .eventsCardBlock .eventsCard .cardContent .cardText {
+                  width: 85%; } }
         @media all and (max-width: 767px) {
           .content .sectionBlock .events .eventsCardBlock .eventsCard {
             width: 450px; } }
@@ -1020,8 +1059,7 @@
     .content .sectionBlock .aboutUs {
       width: 100%; }
       .content .sectionBlock .aboutUs .aboutSubTitle {
-        padding: 20px 0;
-        margin: auto;
+        margin: 0 auto 20px;
         text-align: center; }
         .content .sectionBlock .aboutUs .aboutSubTitle .mainTitle {
           font-size: 24px;
@@ -1030,10 +1068,11 @@
           text-shadow: 0px 1px 2px white;
           margin-bottom: 5px; }
         .content .sectionBlock .aboutUs .aboutSubTitle .subTitle {
-          font-size: 18px; }
+          font-size: 16px; }
       .content .sectionBlock .aboutUs .igWallsBlock {
         display: flex;
-        justify-content: center; }
+        justify-content: center;
+        margin-bottom: 20px; }
         .content .sectionBlock .aboutUs .igWallsBlock .igWallsContent .igWalls {
           width: 900px;
           display: flex; }

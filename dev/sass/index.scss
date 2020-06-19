@@ -27,7 +27,7 @@
                 // margin:20px 20px 0 0; // Idea
                 width: 320px; // Le
                 transform: translateY(-30px); // Le
-                margin:0 10px 0 0; // Le
+                margin-right: 10px; // Le
                 img{
                     width: 100%;
                 }
@@ -44,6 +44,40 @@
                     text-shadow: $slightShadow;
                     padding-left: 45px;
                     margin-top: 2px;
+                }
+            }
+            .scrollDownBlock{
+                // border: 1px solid rgba($color: #fff, $alpha: 1.0);
+                width: 60px;
+                height: 60px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                bottom: -20px;
+                left: 52%;
+                transform: translateX(-50%);
+                overflow: hidden;
+                .scrollDown{
+                    width: 2px;
+                    height: 100%;
+                    background-color: #fff;
+                    box-shadow: $slightShadow;
+                    position: relative;
+                    top: -100%;
+                    animation: downz 1.5s ease-in-out infinite forwards;
+                }
+                .scrollText{
+                    color: #fff;
+                    margin-left: 5px;
+                    text-shadow: $fontShadow;
+                    // position: absolute;
+                    right: -20px;
+                }
+                @keyframes downz {
+                    0%{top: -100%;}
+                    75%{top: 0%;}
+                    100%{top:100%}
                 }
             }
         }
@@ -77,12 +111,16 @@
                     // width: 100px; // Idea
                     width: 160px; // Le
                     transform: translateY(0px); // Le
-                    margin-right: 10px;
+                    margin: 0px;
                 }
                 .webName{
                     img{
                         width: 260px;
                     }
+                }
+                .scrollDownBlock{
+                    bottom: -40px;
+                    left: 40%;
                 }
             }
         }
@@ -94,7 +132,6 @@
             .webNameBlock{
                 flex-direction: column;
                 align-items: center;
-                margin-bottom: 20px;
                 .logo{
                     width: 300px;
                     margin: 0;
@@ -106,6 +143,10 @@
                     img{
                         width: 250px;
                     }
+                }
+                .scrollDownBlock{
+                    bottom: -30px;
+                    left: 20%;
                 }
             }
         }
@@ -1137,7 +1178,7 @@
                             }
                         }
                         .cardText{
-                            width: 85%;
+                            width: 90%;
                             padding: 0 5%;
                             font-size: $fzInfo;
                         }
@@ -1174,10 +1215,13 @@
                         }
                         .cardContent{
                             margin-bottom: 20px;
-                            padding: 10px 0;
+                            padding: 15px 0;
                             z-index: 10;
                             background-color: rgba($color: #fff, $alpha: .95);
                             box-shadow: $mediumShadow;
+                            .cardText{
+                                width: 85%;
+                            }
                         }
                     }
                 }
@@ -1360,8 +1404,7 @@
             width: 100%;
             // 副標題
             .aboutSubTitle{
-                padding: 20px 0;
-                margin: auto;
+                margin: 0 auto 20px;
                 text-align: center;
                 .mainTitle{
                     font-size: $fzMiddle;
@@ -1371,13 +1414,14 @@
                     margin-bottom: 5px;
                 }
                 .subTitle{
-                    font-size: $fzSmall;
+                    font-size: $fzInfo;
                 }
             }
             // InstagramWallBlock
             .igWallsBlock{
                 display: flex;
                 justify-content: center;
+                margin-bottom: 20px;
                 .igWallsContent{   
                     .igWalls{
                         width: 900px;
